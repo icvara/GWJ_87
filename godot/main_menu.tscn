@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://ttjt2usgy45u"]
+
+[ext_resource type="Texture2D" uid="uid://53yw3huv4oyx" path="res://asset/GWJ_art/noBG-GWJ-Wallpaper 1080.png" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://clq7clh31y7rs" path="res://asset/GWJ_art/87-All-Cards.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://dped3d4615jgf" path="res://asset/GWJ_art/87-Decay.png" id="3_glbon"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 646.0
+color = Color(0.078431375, 0.13333334, 0.2509804, 1)
+
+[node name="NoBgGwjWallpaper1080" type="Sprite2D" parent="."]
+position = Vector2(836, 124)
+scale = Vector2(0.34086314, 0.33472225)
+texture = ExtResource("1_fu7sn")
+
+[node name="87AllCards" type="Sprite2D" parent="."]
+position = Vector2(832.99994, 500.99997)
+scale = Vector2(0.22009967, 0.22009967)
+texture = ExtResource("2_jix8l")
+
+[node name="87Decay" type="Sprite2D" parent="."]
+position = Vector2(836, 283)
+scale = Vector2(0.18831182, 0.18831185)
+texture = ExtResource("3_glbon")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 95.0
+offset_top = 154.0
+offset_right = 375.0
+offset_bottom = 527.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -102.5
+offset_right = 47.0
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "2
+"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "3"
+
+[node name="Button4" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "4"
