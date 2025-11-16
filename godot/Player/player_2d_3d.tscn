@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3clc63v3sp0b"]
+[gd_scene load_steps=17 format=3 uid="uid://d3clc63v3sp0b"]
 
 [ext_resource type="Script" uid="uid://d3qu3c5jolwwy" path="res://state_manager/state_manager.gd" id="1_20cw5"]
 [ext_resource type="Script" uid="uid://bdg8fy62tixdu" path="res://Player/player_2d_3d.gd" id="1_pulta"]
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="2_ao76n"]
-[ext_resource type="Script" uid="uid://bfr5qi6ifnb5k" path="res://Player/spring_arm_3d.gd" id="2_habko"]
+[ext_resource type="Script" path="res://Player/spring_arm_3d.gd" id="2_habko"]
 [ext_resource type="Script" uid="uid://bjb8hbwltft21" path="res://state_manager/player_control.gd" id="3_7qxor"]
 [ext_resource type="PackedScene" uid="uid://bd8dxq34goerd" path="res://Player/hud.tscn" id="6_eua6v"]
 [ext_resource type="PackedScene" uid="uid://c0bf85xkaei2x" path="res://Menus/in_game_menu.tscn" id="7_00ovx"]
+[ext_resource type="PackedScene" uid="uid://bn0d4lboe0w77" path="res://Menus/death_interface.tscn" id="8_lwjg3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eua6v"]
 atlas = ExtResource("2_ao76n")
@@ -97,3 +98,5 @@ metadata/_custom_type_script = "uid://bjb8hbwltft21"
 [node name="InGame_Menu" parent="." instance=ExtResource("7_00ovx")]
 process_mode = 3
 visible = false
+
+[node name="Death_interface" parent="." instance=ExtResource("8_lwjg3")]

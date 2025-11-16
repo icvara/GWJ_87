@@ -32,9 +32,10 @@ func Update_physique_process(delta):
 			#print(brain_owner.global_transform.origin.distance_to(target.global_transform.origin))
 			#turn here
 			#StateOwner.look_at(Vector3(StateOwner.target.global_position.x, StateOwner.target.global_position.y, StateOwner.target.global_position.z))
-			if StateOwner.global_transform.origin.distance_to(StateOwner.target.global_transform.origin) < 0.5:
+			if StateOwner.global_transform.origin.distance_to(StateOwner.target.global_transform.origin) < 1:
 				pass
-				#print("touched")
+				print("touched")
+				#get_parent().get_node("Player2D3D/Death_interface").show()
 				#Change_state.emit(self, new_state_A)
 			if StateOwner.global_transform.origin.distance_to(StateOwner.target.global_transform.origin) > detection_distance:
 				#print("toofar")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn0d4lboe0w77"]
+
+[ext_resource type="Script" uid="uid://cts1wcpognrcm" path="res://Menus/death_interface.gd" id="1_w7nci"]
+
+[node name="Death_interface" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_w7nci")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 79.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Ÿou Died!"
