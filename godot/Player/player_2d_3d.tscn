@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3qu3c5jolwwy" path="res://state_manager/state_manager.gd" id="1_20cw5"]
 [ext_resource type="Script" uid="uid://bdg8fy62tixdu" path="res://Player/player_2d_3d.gd" id="1_pulta"]
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="2_ao76n"]
-[ext_resource type="Script" path="res://Player/spring_arm_3d.gd" id="2_habko"]
+[ext_resource type="Script" uid="uid://bfr5qi6ifnb5k" path="res://Player/spring_arm_3d.gd" id="2_habko"]
 [ext_resource type="Script" uid="uid://bjb8hbwltft21" path="res://state_manager/player_control.gd" id="3_7qxor"]
 [ext_resource type="PackedScene" uid="uid://bd8dxq34goerd" path="res://Player/hud.tscn" id="6_eua6v"]
 [ext_resource type="PackedScene" uid="uid://c0bf85xkaei2x" path="res://Menus/in_game_menu.tscn" id="7_00ovx"]

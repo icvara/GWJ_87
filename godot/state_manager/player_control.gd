@@ -92,6 +92,7 @@ func Update_physique_process(delta):
 			if StateOwner.plant:
 				var np = StateOwner.plant.instantiate()
 				np.position = StateOwner.global_position
+				np.sun = StateOwner.sun
 				if StateOwner.get_parent().has_node("Plants"):
 					StateOwner.get_parent().get_node("Plants").add_child(np)
 				else:

@@ -230,9 +230,10 @@ environment = SubResource("Environment_cdc7a")
 
 [node name="Sun" parent="." instance=ExtResource("2_twcpi")]
 
-[node name="Player2D3D" parent="." instance=ExtResource("1_01p1j")]
+[node name="Player2D3D" parent="." node_paths=PackedStringArray("sun") instance=ExtResource("1_01p1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5928864, 2.929254)
 plant = ExtResource("4_2a3kn")
+sun = NodePath("../Sun")
 
 [node name="Calm1" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(228, 628)
@@ -269,6 +270,8 @@ layers = 3
 mesh = SubResource("BoxMesh_twcpi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D14"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D14/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0)
@@ -281,6 +284,8 @@ mesh = SubResource("BoxMesh_twcpi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D15"]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, -2.9802322e-08, 0, 2.9802322e-08, 0.9999999, 0, 0, 0)
