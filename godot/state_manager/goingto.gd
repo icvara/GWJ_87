@@ -3,7 +3,7 @@ class_name state_going_to
 
 
 var detection_distance = 500.
-var speed = 100
+var speed = 300
 var acceleration = 5  
 var target_position
 

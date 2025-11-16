@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://r0lifsujp8jj"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_mlfo1"]
+size = Vector2(0.2, 3)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_kl2qe"]
+albedo_color = Color(0.8836934, 0.58520734, 0.558452, 1)
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_n88bu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tju8"]
+albedo_color = Color(0.16145983, 0.42081526, 0.28996208, 1)
+billboard_mode = 2
+
+[node name="tree" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5097747, 0)
+mesh = SubResource("QuadMesh_mlfo1")
+surface_material_override/0 = SubResource("ORMMaterial3D_kl2qe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5606139, 0)
+mesh = SubResource("QuadMesh_n88bu")
+surface_material_override/0 = SubResource("StandardMaterial3D_2tju8")

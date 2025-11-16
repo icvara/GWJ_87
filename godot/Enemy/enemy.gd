@@ -17,10 +17,10 @@ func _physics_process(delta: float) -> void:
 
 				if condition_time >= 5:
 					die_from_sunlight()
-		
-		else:
-			$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			
+			else:
+				$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+				
 		if not is_on_floor():
 			velocity.y -= WorldData.gravity * delta	 
 		move_and_slide()
