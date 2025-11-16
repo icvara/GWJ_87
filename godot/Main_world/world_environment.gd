@@ -8,4 +8,4 @@ func _process(delta: float) -> void:
 		print("here")
 		environment.set_volumetric_fog_density(0)
 	else: 
-		environment.set_volumetric_fog_density(0.25)
+		environment.set_volumetric_fog_density(0.0)

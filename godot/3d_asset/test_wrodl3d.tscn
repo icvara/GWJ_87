@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4rkfxr4275k3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w35nc"]
+size = Vector3(0.2, 1.5, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oq8a4"]
+size = Vector3(1.9, 0.2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_70pwi"]
+size = Vector3(0.2, 1.5, 0.2)
+
+[node name="Shed_1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_w35nc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8026904, 0.72688645, 0.71151525)
+mesh = SubResource("BoxMesh_oq8a4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.50507987)
+mesh = SubResource("BoxMesh_w35nc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.459443)
+mesh = SubResource("BoxMesh_w35nc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5975575, 0, 0)
+mesh = SubResource("BoxMesh_w35nc")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5975575, 0, 1.0016462)
+mesh = SubResource("BoxMesh_w35nc")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5975575, 0, 1.459443)
+mesh = SubResource("BoxMesh_w35nc")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46295512, 0, 1.459443)
+mesh = SubResource("BoxMesh_70pwi")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8670144, 0, 1.459443)
+mesh = SubResource("BoxMesh_70pwi")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2327633, 0, 1.459443)
+mesh = SubResource("BoxMesh_70pwi")
