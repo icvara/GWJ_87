@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi1fgutnwxidr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_w8vr0"]
+size = Vector3(20, 0.2, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_01p1j"]
+size = Vector3(12, 0.2, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cdc7a"]
+size = Vector3(10, 0.2, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8vr0"]
+
+[sub_resource type="Sky" id="Sky_01p1j"]
+sky_material = SubResource("ShaderMaterial_w8vr0")
+
+[sub_resource type="Environment" id="Environment_cdc7a"]
+sky = SubResource("Sky_01p1j")
+
+[node name="main_world" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_w8vr0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5853891, 3.7771811)
+mesh = SubResource("BoxMesh_01p1j")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.9615966e-08, -1.8473232e-08, 0.99999994, -0.42261824, 0.90630776, 0, -0.9063077, -0.42261827, -4.3711385e-08, 0, 1.4705215, -3.6869297)
+mesh = SubResource("BoxMesh_cdc7a")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cdc7a")
+
+[node name="DirectionalLight3D_sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7415547, 0)
