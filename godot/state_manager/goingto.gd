@@ -27,7 +27,8 @@ func Update_physique_process(delta):
 			StateOwner.velocity.z = dir.z * speed * delta
 
 			#print(brain_owner.global_transform.origin.distance_to(target.global_transform.origin))
-			StateOwner.look_at(Vector3(StateOwner.target.global_position.x, StateOwner.target.global_position.y, StateOwner.target.global_position.z))
+			#turn here
+			#StateOwner.look_at(Vector3(StateOwner.target.global_position.x, StateOwner.target.global_position.y, StateOwner.target.global_position.z))
 			if StateOwner.global_transform.origin.distance_to(StateOwner.target.global_transform.origin) < 0.5:
 				pass
 				#print("touched")

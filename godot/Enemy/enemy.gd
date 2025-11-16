@@ -6,24 +6,17 @@ extends CharacterBody3D
 var is_dead = false
 
 func _physics_process(delta: float) -> void:
+		print(rotation)
 		if is_dead or sun == null:
 			return
-	# Aim ray towards the sun
-		#var sun_dir = sun.global_transform.basis.z
-		ray.target_position = sun.global_position #* 350.0  # make ray long
-		#ray.rotation = Vector3(0,0,0)
 
+		ray.target_position = sun.global_position #* 350.0  # make ray long
 		if ray.is_colliding() == false:
 			die_from_sunlight()
-			#var obj = ray.get_collider()
-			## If something blocks the sun (like a roof), zombie survives
-			#if obj.is_in_group("SunBlocker"):
-				#return
-	## If nothing is blocking → sunlight hits zombie
-			#else :
-				#die_from_sunlight()
+
 		else:
 			$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			
 		if not is_on_floor():
 				velocity.y -= WorldData.gravity * delta	
 		move_and_slide()
