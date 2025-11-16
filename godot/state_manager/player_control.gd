@@ -79,6 +79,7 @@ func Update_physique_process(delta):
 		if Input.is_action_pressed("move_right"):
 			dir += StateOwner.transform.basis.x
 		
+		
 		'if StateOwner.is_on_floor() and current_landing_time > 0 and isJumping == false:
 			StateOwner.velocity.x = 0
 			StateOwner.velocity.z = 0	
@@ -86,6 +87,20 @@ func Update_physique_process(delta):
 		var normalised_dir = dir.normalized()
 		StateOwner.velocity.x = normalised_dir.x * move_speed
 		StateOwner.velocity.z = normalised_dir.z * move_speed
+	
+		if Input.is_action_just_pressed("action_X"):
+			if StateOwner.plant:
+				var np = StateOwner.plant.instantiate()
+				np.position = StateOwner.global_position
+				if StateOwner.get_parent().has_node("Plants"):
+					StateOwner.get_parent().get_node("Plants").add_child(np)
+				else:
+					print("ERROR: miss Plants node in scene")
+			else:
+				print("ERROR: no packedScene attached to player")
+			#if action_A:
+				#Change_state.emit(self,action_A)
+	
 	
 		'if StateOwner.velocity != Vector3(0,0,0):
 			if current_bump_time > 0: 
