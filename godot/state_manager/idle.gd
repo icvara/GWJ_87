@@ -15,7 +15,7 @@ func Exit():
 func Update_process(delta):
 	if StateOwner.target:
 		if StateOwner.position.distance_to(StateOwner.target.position)< detection_distance:
-			print("close")
+			#print("close")
 			Change_state.emit(self, new_state_A)
 
 	pass

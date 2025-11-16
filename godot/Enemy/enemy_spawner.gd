@@ -13,7 +13,7 @@ var timer = 1
 func _process(delta: float) -> void:
 	ray.target_position = sun.global_position #* 350.0  # make ray long
 	if ray.is_colliding():
-		timer -= delta
+		timer -= delta  * WorldData.gamespeed
 		if timer <= 0.0:
 			Spawn(1)
 			reset_timer()  # Reset timer after each spawn

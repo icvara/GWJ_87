@@ -6,10 +6,11 @@ extends Node3D
 
 var center = Vector3(0, 0,0)
 var radius = 20
-var speed = 0.1   # radians per second
+var speed = 1.1   # radians per second
 var angle = 0.0
 
 func _process(delta: float) -> void:
+	speed = 0.1 * WorldData.gamespeed
 	angle += speed * delta
 	var z = cos(angle) * radius
 	var y = sin(angle) * radius

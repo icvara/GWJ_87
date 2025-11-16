@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 
 		ray.target_position = sun.global_position #* 350.0  # make ray long
 		if ray.is_colliding() == false:
-			condition_time += delta  # Add time the condition has been true
+			condition_time += delta * WorldData.gamespeed  # Add time the condition has been true
 			$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
 
 			if condition_time >= 5:
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			
 		if not is_on_floor():
-			velocity.y -= WorldData.gravity * delta	
+			velocity.y -= WorldData.gravity * delta	 
 		move_and_slide()
 		#print(velocity)
 
