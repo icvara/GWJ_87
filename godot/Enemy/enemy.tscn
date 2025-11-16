@@ -128,3 +128,4 @@ new_state_A = NodePath("../state_idle")
 metadata/_custom_type_script = "uid://dpmnch8k03lgg"
 
 [node name="RayCast3D_suncheck" type="RayCast3D" parent="."]
+collision_mask = 2
