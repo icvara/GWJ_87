@@ -38,3 +38,11 @@ func _on_resume_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_full_screen_pressed() -> void:
+		var is_fullscreen := DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+		if is_fullscreen:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
