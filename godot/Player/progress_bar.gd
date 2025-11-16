@@ -7,7 +7,7 @@ func _ready() -> void:
 	modulate = Color(1,0,0)
 	value = 100
 func _process(delta: float) -> void:
-	print(value)
+	#print(value)
 	value -= delta * 10
 	if value <= 0 :
 		isNight =abs(isNight) - 1
