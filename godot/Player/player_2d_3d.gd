@@ -6,6 +6,7 @@ var win = false
 @export var plant : PackedScene
 @export var sun : Node3D
 
+var HP = 100
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int(), true)
