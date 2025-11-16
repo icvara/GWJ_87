@@ -68,7 +68,8 @@ func Update_physique_process(delta):
 	
 	#if StateOwner.is_multiplayer_authority() and StateOwner.is_screen_focus:		
 		#dir = Vector3.ZERO
-		dir = Vector3(0,0,0)
+		dir.x = 0
+		dir.z = 0 # = Vector3(0,0,0)
 		if Input.is_action_pressed("move_forward"):				
 			dir -= StateOwner.transform.basis.z
 		if Input.is_action_pressed("move_backward"):
@@ -82,8 +83,10 @@ func Update_physique_process(delta):
 			StateOwner.velocity.x = 0
 			StateOwner.velocity.z = 0	
 		else:'
-		StateOwner.velocity = dir.normalized() * move_speed
-		
+		var normalised_dir = dir.normalized()
+		StateOwner.velocity.x = normalised_dir.x * move_speed
+		StateOwner.velocity.z = normalised_dir.z * move_speed
+	
 		'if StateOwner.velocity != Vector3(0,0,0):
 			if current_bump_time > 0: 
 				StateOwner.velocity.y = bumbing_jump * delta'

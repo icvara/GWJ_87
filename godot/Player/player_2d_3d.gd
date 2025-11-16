@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	#if is_multiplayer_authority():		
 		if not is_on_floor():
 				velocity.y -= WorldData.gravity * delta
+				#print(velocity.y )
 		
 		move_and_slide()
 	
