@@ -4,6 +4,7 @@ var gravi
 
 var is_screen_focus = true
 var win = false
+@export var plant : PackedScene
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int(), true)

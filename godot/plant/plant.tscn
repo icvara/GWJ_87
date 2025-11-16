@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbmii1r4y4bn6"]
+
+[ext_resource type="Script" uid="uid://cfw0ed5lwcj88" path="res://plant/plant.gd" id="1_xbvqn"]
+[ext_resource type="Texture2D" uid="uid://da46umkxt6xhy" path="res://plant/asset/berry_1.png" id="2_6usjy"]
+[ext_resource type="Texture2D" uid="uid://ddk2mytya2nap" path="res://plant/asset/berry_2.png" id="3_y7ddk"]
+[ext_resource type="Texture2D" uid="uid://c2nt78543n0fr" path="res://plant/asset/berry_3.png" id="4_nrv1c"]
+[ext_resource type="Texture2D" uid="uid://ds3ptturh0s3s" path="res://plant/asset/berry_4.png" id="5_8gqe8"]
+[ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="6_w3adf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cd5w"]
+atlas = ExtResource("2_6usjy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g4d3"]
+atlas = ExtResource("3_y7ddk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih4tc"]
+atlas = ExtResource("4_nrv1c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyifu"]
+atlas = ExtResource("5_8gqe8")
+region = Rect2(0, 0, 96, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7toh"]
+atlas = ExtResource("6_w3adf")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y7p0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cd5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g4d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih4tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyifu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7toh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Plant" type="Node3D"]
+script = ExtResource("1_xbvqn")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_y7p0b")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
