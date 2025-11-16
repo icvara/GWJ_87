@@ -1,12 +1,29 @@
 [gd_scene load_steps=3 format=3 uid="uid://batnb8dxrhrdq"]
 
-[ext_resource type="Script" uid="uid://c2ra3u1g7p66e" path="res://Player/player.gd" id="1_l8h54"]
+[sub_resource type="GDScript" id="GDScript_hvfyp"]
+script/source = "extends CharacterBody2D
+
+
+
+@export var speed = 400.
+
+var dir: Vector2 = Vector2(0,0)
+
+func _physics_process(delta: float) -> void:	
+	var input_vector = Vector2.ZERO
+	input_vector.x = Input.get_action_strength(\"ui_right\") - Input.get_action_strength(\"ui_left\")
+	input_vector.y = Input.get_action_strength(\"ui_down\") - Input.get_action_strength(\"ui_up\")
+
+	input_vector = input_vector.normalized()
+	velocity = input_vector * speed
+	move_and_slide()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8h54"]
 size = Vector2(38, 36)
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_l8h54")
+script = SubResource("GDScript_hvfyp")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 40.0

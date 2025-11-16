@@ -1,4 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=9 format=3 uid="uid://bi1fgutnwxidr"]
+
+[ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
+[ext_resource type="AudioStream" uid="uid://bdvy3bx5hs40q" path="res://asset/music/calm1.wav" id="2_cdc7a"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w8vr0"]
 size = Vector3(20, 0.2, 20)
@@ -35,3 +38,11 @@ environment = SubResource("Environment_cdc7a")
 
 [node name="DirectionalLight3D_sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7415547, 0)
+
+[node name="Player2D3D" parent="." instance=ExtResource("1_01p1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5928864, 2.929254)
+
+[node name="Calm1" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(228, 628)
+stream = ExtResource("2_cdc7a")
+autoplay = true
