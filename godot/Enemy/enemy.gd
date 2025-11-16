@@ -8,17 +8,16 @@ var is_dead = false
 
 func _physics_process(delta: float) -> void:
 		#print(rotation)
-		if is_dead or sun == null:
-			return
+		
+		if sun:
+			ray.target_position = sun.global_position #* 350.0  # make ray long
+			if ray.is_colliding() == false:
+				condition_time += delta * WorldData.gamespeed  # Add time the condition has been true
+				$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
 
-		ray.target_position = sun.global_position #* 350.0  # make ray long
-		if ray.is_colliding() == false:
-			condition_time += delta * WorldData.gamespeed  # Add time the condition has been true
-			$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
-
-			if condition_time >= 5:
-				die_from_sunlight()
-
+				if condition_time >= 5:
+					die_from_sunlight()
+		
 		else:
 			$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			
