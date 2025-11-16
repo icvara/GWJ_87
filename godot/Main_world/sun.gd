@@ -6,7 +6,7 @@ extends Node3D
 
 var center = Vector3(0, 0,0)
 var radius = 20
-var speed = 1.0   # radians per second
+var speed = 0.1   # radians per second
 var angle = 0.0
 
 func _process(delta: float) -> void:
