@@ -10,7 +10,7 @@ var speed = 1.1   # radians per second
 var angle = 0.0
 
 func _process(delta: float) -> void:
-	speed = 0.01 * WorldData.gamespeed
+	speed = 0.1 * WorldData.gamespeed
 	angle += speed * delta
 	var z = cos(angle) * radius
 	var y = sin(angle) * radius
