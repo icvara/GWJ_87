@@ -112,8 +112,6 @@ frame_progress = 0.58047783
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_doop2")
 
-[node name="RayCast3D_suncheck" type="RayCast3D" parent="CollisionShape3D"]
-
 [node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_4gyqm")
 initial_state = NodePath("state_idle")
@@ -128,3 +126,5 @@ metadata/_custom_type_script = "uid://de3edklcdw8xb"
 script = ExtResource("5_ncf7h")
 new_state_A = NodePath("../state_idle")
 metadata/_custom_type_script = "uid://dpmnch8k03lgg"
+
+[node name="RayCast3D_suncheck" type="RayCast3D" parent="."]
