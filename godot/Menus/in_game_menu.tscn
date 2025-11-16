@@ -51,3 +51,5 @@ text = "FullScreen"
 [node name="QuitGame" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "QuitGame"
+
+[connection signal="pressed" from="Panel/VBoxContainer/FullScreen" to="." method="_on_full_screen_pressed"]
