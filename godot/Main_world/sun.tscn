@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce3qphjh5yeyq"]
+[gd_scene load_steps=5 format=3 uid="uid://ce3qphjh5yeyq"]
 
 [ext_resource type="Script" uid="uid://2xq1jfs81vg6" path="res://Main_world/sun.gd" id="1_e2hdu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ki7hj"]
-albedo_color = Color(0.49803922, 0.21568628, 1, 1)
+albedo_color = Color(1, 1, 1, 0)
+metallic = 0.5
+metallic_specular = 1.0
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.94901603, 0.87602305, 0.7100601, 1)
+emission_energy_multiplier = 50.0
 disable_receive_shadows = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_e2hdu"]
 radius = 5.0
 height = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2hdu"]
 
 [node name="Sun" type="Node3D"]
 script = ExtResource("1_e2hdu")
@@ -19,4 +27,6 @@ shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ki7hj")
+cast_shadow = 0
 mesh = SubResource("SphereMesh_e2hdu")
+surface_material_override/0 = SubResource("StandardMaterial3D_e2hdu")
