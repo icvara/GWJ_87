@@ -1,8 +1,9 @@
-[gd_scene load_steps=36 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=39 format=3 uid="uid://bi1fgutnwxidr"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
 [ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_5sbxf"]
 [ext_resource type="AudioStream" uid="uid://bdvy3bx5hs40q" path="res://asset/music/calm1.wav" id="2_cdc7a"]
+[ext_resource type="Script" uid="uid://b6wx0k8fw3yic" path="res://Main_world/world_environment.gd" id="2_q06bt"]
 [ext_resource type="PackedScene" uid="uid://ce3qphjh5yeyq" path="res://Main_world/sun.tscn" id="2_twcpi"]
 [ext_resource type="PackedScene" uid="uid://bbmii1r4y4bn6" path="res://plant/plant.tscn" id="4_2a3kn"]
 [ext_resource type="PackedScene" uid="uid://dqyoo5kixp6vj" path="res://Enemy/enemy.tscn" id="5_yasq4"]
@@ -70,6 +71,8 @@ sky_material = SubResource("ShaderMaterial_w8vr0")
 
 [sub_resource type="Environment" id="Environment_cdc7a"]
 sky = SubResource("Sky_01p1j")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.179
 
 [sub_resource type="BoxMesh" id="BoxMesh_63dkx"]
 material = SubResource("StandardMaterial3D_2a3kn")
@@ -101,6 +104,13 @@ size = Vector3(12, 1, 0.2)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hbv0y"]
 data = PackedVector3Array(-6, 0.5, 0.099999994, 6, 0.5, 0.099999994, -6, -0.5, 0.099999994, 6, 0.5, 0.099999994, 6, -0.5, 0.099999994, -6, -0.5, 0.099999994, 6, 0.5, -0.099999994, -6, 0.5, -0.099999994, 6, -0.5, -0.099999994, -6, 0.5, -0.099999994, -6, -0.5, -0.099999994, 6, -0.5, -0.099999994, 6, 0.5, 0.099999994, 6, 0.5, -0.099999994, 6, -0.5, 0.099999994, 6, 0.5, -0.099999994, 6, -0.5, -0.099999994, 6, -0.5, 0.099999994, -6, 0.5, -0.099999994, -6, 0.5, 0.099999994, -6, -0.5, -0.099999994, -6, 0.5, 0.099999994, -6, -0.5, 0.099999994, -6, -0.5, -0.099999994, 6, 0.5, 0.099999994, -6, 0.5, 0.099999994, 6, 0.5, -0.099999994, -6, 0.5, 0.099999994, -6, 0.5, -0.099999994, 6, 0.5, -0.099999994, -6, -0.5, 0.099999994, 6, -0.5, 0.099999994, -6, -0.5, -0.099999994, 6, -0.5, 0.099999994, 6, -0.5, -0.099999994, -6, -0.5, -0.099999994)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q06bt"]
+albedo_color = Color(0.14922741, 0.51800394, 0.41036257, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p6qna"]
+material = SubResource("StandardMaterial3D_q06bt")
+size = Vector2(200, 200)
 
 [node name="main_world" type="Node3D"]
 
@@ -227,8 +237,14 @@ shape = SubResource("ConcavePolygonShape3D_yasq4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cdc7a")
+script = ExtResource("2_q06bt")
+
+[node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1594844, 0)
+collision_mask = 3
 
 [node name="Sun" parent="." instance=ExtResource("2_twcpi")]
+unique_name_in_owner = true
 
 [node name="Player2D3D" parent="." node_paths=PackedStringArray("sun") instance=ExtResource("1_01p1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5928864, 2.929254)
@@ -317,3 +333,6 @@ sun = NodePath("../Sun")
 
 [node name="Plants" type="Node3D" parent="."]
 unique_name_in_owner = true
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_p6qna")
