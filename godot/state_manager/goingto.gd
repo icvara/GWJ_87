@@ -2,7 +2,7 @@ extends State
 class_name state_going_to
 
 
-var detection_distance = 5.
+var detection_distance = 500.
 var speed = 100
 var acceleration = 5  
 

@@ -2,7 +2,7 @@ extends State
 class_name state_idle
 
 
-var detection_distance = 5.
+var detection_distance = 500.
 @export var new_state_A: State
 @export var new_state_B: State
 
