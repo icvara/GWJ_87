@@ -14,6 +14,8 @@ func _physics_process(delta: float) -> void:
 		ray.target_position = sun.global_position #* 350.0  # make ray long
 		if ray.is_colliding() == false:
 			condition_time += delta  # Add time the condition has been true
+			$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
+
 			if condition_time >= 5:
 				die_from_sunlight()
 
@@ -27,7 +29,4 @@ func _physics_process(delta: float) -> void:
 
 func die_from_sunlight():
 	is_dead = true
-	print("Zombie died from sunlight!")
-	$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
-	#await get_tree().create_timer(.5).timeout
 	queue_free()

@@ -37,6 +37,7 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_quit_pressed():
+	get_tree().paused = false
 	get_tree().quit()
 
 
