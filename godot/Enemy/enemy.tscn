@@ -123,9 +123,10 @@ script = ExtResource("4_eqilm")
 new_state_A = NodePath("../state_going_to")
 metadata/_custom_type_script = "uid://de3edklcdw8xb"
 
-[node name="state_going_to" type="Node" parent="state_manager" node_paths=PackedStringArray("new_state_A")]
+[node name="state_going_to" type="Node" parent="state_manager" node_paths=PackedStringArray("new_state_A", "NavAgent")]
 script = ExtResource("5_ncf7h")
 new_state_A = NodePath("../state_idle")
+NavAgent = NodePath("../../NavigationAgent3D")
 metadata/_custom_type_script = "uid://dpmnch8k03lgg"
 
 [node name="RayCast3D_suncheck" type="RayCast3D" parent="."]
@@ -134,3 +135,6 @@ collision_mask = 2
 [node name="Debug" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63756526, 0)
 billboard = 1
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true

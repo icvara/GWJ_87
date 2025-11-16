@@ -1,27 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://483fwfa68aq8"]
+[gd_scene load_steps=9 format=3 uid="uid://483fwfa68aq8"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_23kx7"]
 [ext_resource type="PackedScene" uid="uid://bbmii1r4y4bn6" path="res://plant/plant.tscn" id="2_0730j"]
 [ext_resource type="PackedScene" uid="uid://dqyoo5kixp6vj" path="res://Enemy/enemy.tscn" id="2_j7k2x"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_0730j"]
+vertices = PackedVector3Array(4.5, 0.49597883, 1.25, 4.75, 0.49597883, 2.25, 9.5, 0.49597883, 2.25, 9.5, 0.49597883, -9.5, -9.5, 0.49597883, 2.25, -4.5, 0.49597883, 2.25, -4.25, 0.49597883, 1.25, -9.5, 0.49597883, -9.5, -4.25, 0.49597883, 3.5, -2.25, 0.49597883, 9.5, -2.25, 0.49597883, 3.5, -9.5, 0.49597883, 9.5, 4.5, 0.49597883, 3.5, 2.5, 0.49597883, 3.5, 2.5, 0.49597883, 9.5, 9.5, 0.49597883, 9.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 6, 3), PackedInt32Array(3, 6, 7), PackedInt32Array(4, 5, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(4, 8, 11), PackedInt32Array(11, 8, 9), PackedInt32Array(12, 1, 2), PackedInt32Array(14, 13, 12), PackedInt32Array(2, 15, 12), PackedInt32Array(12, 15, 14), PackedInt32Array(10, 13, 9), PackedInt32Array(9, 13, 14)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hnqkd"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_23kx7"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_0730j"]
+size = Vector3(8, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kxvoh"]
+data = PackedVector3Array(-4, 0.5, 0.5, 4, 0.5, 0.5, -4, -0.5, 0.5, 4, 0.5, 0.5, 4, -0.5, 0.5, -4, -0.5, 0.5, 4, 0.5, -0.5, -4, 0.5, -0.5, 4, -0.5, -0.5, -4, 0.5, -0.5, -4, -0.5, -0.5, 4, -0.5, -0.5, 4, 0.5, 0.5, 4, 0.5, -0.5, 4, -0.5, 0.5, 4, 0.5, -0.5, 4, -0.5, -0.5, 4, -0.5, 0.5, -4, 0.5, -0.5, -4, 0.5, 0.5, -4, -0.5, -0.5, -4, 0.5, 0.5, -4, -0.5, 0.5, -4, -0.5, -0.5, 4, 0.5, 0.5, -4, 0.5, 0.5, 4, 0.5, -0.5, -4, 0.5, 0.5, -4, 0.5, -0.5, 4, 0.5, -0.5, -4, -0.5, 0.5, 4, -0.5, 0.5, -4, -0.5, -0.5, 4, -0.5, 0.5, 4, -0.5, -0.5, -4, -0.5, -0.5)
+
 [node name="Node3D" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hnqkd")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_23kx7")
-
 [node name="Player2D3D" parent="." instance=ExtResource("1_23kx7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19173609, 0.55754066, 0.42059866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19173609, 0.55754066, 5.484856)
 plant = ExtResource("2_0730j")
 
 [node name="enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_j7k2x")]
@@ -30,3 +31,28 @@ target = NodePath("../Player2D3D")
 
 [node name="Plants" type="Node3D" parent="."]
 unique_name_in_owner = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_0730j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hnqkd")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_23kx7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19071817, 0.49597883, 2.4173656)
+mesh = SubResource("BoxMesh_0730j")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D2/CollisionShape3D"]
+shape = SubResource("ConcavePolygonShape3D_kxvoh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
