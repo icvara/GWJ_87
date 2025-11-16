@@ -1,16 +1,44 @@
-[gd_scene load_steps=9 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=18 format=3 uid="uid://bi1fgutnwxidr"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
+[ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_5sbxf"]
+[ext_resource type="Script" uid="uid://cdpjjwy6it2eb" path="res://Main_world/directional_light_3d_sun.gd" id="1_wsgyk"]
 [ext_resource type="AudioStream" uid="uid://bdvy3bx5hs40q" path="res://asset/music/calm1.wav" id="2_cdc7a"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yasq4"]
+albedo_texture = ExtResource("1_5sbxf")
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_w8vr0"]
+material = SubResource("StandardMaterial3D_yasq4")
 size = Vector3(20, 0.2, 20)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cdc7a"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wsgyk"]
+data = PackedVector3Array(-10, 0.099999994, 10, 10, 0.099999994, 10, -10, -0.099999994, 10, 10, 0.099999994, 10, 10, -0.099999994, 10, -10, -0.099999994, 10, 10, 0.099999994, -10, -10, 0.099999994, -10, 10, -0.099999994, -10, -10, 0.099999994, -10, -10, -0.099999994, -10, 10, -0.099999994, -10, 10, 0.099999994, 10, 10, 0.099999994, -10, 10, -0.099999994, 10, 10, 0.099999994, -10, 10, -0.099999994, -10, 10, -0.099999994, 10, -10, 0.099999994, -10, -10, 0.099999994, 10, -10, -0.099999994, -10, -10, 0.099999994, 10, -10, -0.099999994, 10, -10, -0.099999994, -10, 10, 0.099999994, 10, -10, 0.099999994, 10, 10, 0.099999994, -10, -10, 0.099999994, 10, -10, 0.099999994, -10, 10, 0.099999994, -10, -10, -0.099999994, 10, 10, -0.099999994, 10, -10, -0.099999994, -10, 10, -0.099999994, 10, 10, -0.099999994, -10, -10, -0.099999994, -10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2a3kn"]
+albedo_texture = ExtResource("1_5sbxf")
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_01p1j"]
+material = SubResource("StandardMaterial3D_2a3kn")
 size = Vector3(12, 0.2, 6)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5sbxf"]
+data = PackedVector3Array(-6, 0.099999994, 3, 6, 0.099999994, 3, -6, -0.099999994, 3, 6, 0.099999994, 3, 6, -0.099999994, 3, -6, -0.099999994, 3, 6, 0.099999994, -3, -6, 0.099999994, -3, 6, -0.099999994, -3, -6, 0.099999994, -3, -6, -0.099999994, -3, 6, -0.099999994, -3, 6, 0.099999994, 3, 6, 0.099999994, -3, 6, -0.099999994, 3, 6, 0.099999994, -3, 6, -0.099999994, -3, 6, -0.099999994, 3, -6, 0.099999994, -3, -6, 0.099999994, 3, -6, -0.099999994, -3, -6, 0.099999994, 3, -6, -0.099999994, 3, -6, -0.099999994, -3, 6, 0.099999994, 3, -6, 0.099999994, 3, 6, 0.099999994, -3, -6, 0.099999994, 3, -6, 0.099999994, -3, 6, 0.099999994, -3, -6, -0.099999994, 3, 6, -0.099999994, 3, -6, -0.099999994, -3, 6, -0.099999994, 3, 6, -0.099999994, -3, -6, -0.099999994, -3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twcpi"]
+albedo_texture = ExtResource("1_5sbxf")
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_cdc7a"]
+material = SubResource("StandardMaterial3D_twcpi")
 size = Vector3(10, 0.2, 3)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yasq4"]
+data = PackedVector3Array(-5, 0.099999994, 1.5, 5, 0.099999994, 1.5, -5, -0.099999994, 1.5, 5, 0.099999994, 1.5, 5, -0.099999994, 1.5, -5, -0.099999994, 1.5, 5, 0.099999994, -1.5, -5, 0.099999994, -1.5, 5, -0.099999994, -1.5, -5, 0.099999994, -1.5, -5, -0.099999994, -1.5, 5, -0.099999994, -1.5, 5, 0.099999994, 1.5, 5, 0.099999994, -1.5, 5, -0.099999994, 1.5, 5, 0.099999994, -1.5, 5, -0.099999994, -1.5, 5, -0.099999994, 1.5, -5, 0.099999994, -1.5, -5, 0.099999994, 1.5, -5, -0.099999994, -1.5, -5, 0.099999994, 1.5, -5, -0.099999994, 1.5, -5, -0.099999994, -1.5, 5, 0.099999994, 1.5, -5, 0.099999994, 1.5, 5, 0.099999994, -1.5, -5, 0.099999994, 1.5, -5, 0.099999994, -1.5, 5, 0.099999994, -1.5, -5, -0.099999994, 1.5, 5, -0.099999994, 1.5, -5, -0.099999994, -1.5, 5, -0.099999994, 1.5, 5, -0.099999994, -1.5, -5, -0.099999994, -1.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8vr0"]
 
@@ -25,19 +53,39 @@ sky = SubResource("Sky_01p1j")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_w8vr0")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+physics_material_override = SubResource("PhysicsMaterial_cdc7a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wsgyk")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5853891, 3.7771811)
 mesh = SubResource("BoxMesh_01p1j")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5sbxf")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.9615966e-08, -1.8473232e-08, 0.99999994, -0.42261824, 0.90630776, 0, -0.9063077, -0.42261827, -4.3711385e-08, 0, 1.4705215, -3.6869297)
+transform = Transform3D(-3.9615966e-08, -1.8473232e-08, 0.99999994, -0.42261824, 0.90630776, 0, -0.9063077, -0.42261827, -4.3711385e-08, 0, 1.4926612, -3.752848)
 mesh = SubResource("BoxMesh_cdc7a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+transform = Transform3D(1, 0, 3.5527137e-15, -2.9802322e-08, 1, 1.7763568e-15, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_yasq4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cdc7a")
 
 [node name="DirectionalLight3D_sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7415547, 0)
+transform = Transform3D(1, 0, 0, 0, -0.42261833, 0.90630776, 0, -0.90630776, -0.42261833, 0, 19.343523, -3.975453)
+shadow_enabled = true
+script = ExtResource("1_wsgyk")
+rotation_step_degrees = 1.0
 
 [node name="Player2D3D" parent="." instance=ExtResource("1_01p1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5928864, 2.929254)
