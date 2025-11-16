@@ -26,4 +26,5 @@ func die_from_sunlight():
 	#is_dead = true
 	#print("Zombie died from sunlight!")
 	$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
+	#await get_tree().create_timer(.5).timeout
 	#queue_free()

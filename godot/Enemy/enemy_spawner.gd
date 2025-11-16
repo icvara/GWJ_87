@@ -3,6 +3,8 @@ extends Node3D
 
 @export var enemy1 :PackedScene
 @export var target :Node3D
+@export var sun: Node3D
+
 
 
 var timer = 1
@@ -21,6 +23,7 @@ func Spawn(id):
 	if id == 1:
 		var ne = enemy1.instantiate()
 		ne.target = target
+		ne.sun = sun
 		ne.position = choose_pos()
 		add_child(ne) 
 		

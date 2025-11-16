@@ -199,15 +199,17 @@ mesh = SubResource("BoxMesh_1qotm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hbv0y")
 
-[node name="EnemySpawner" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_twcpi")]
+[node name="EnemySpawner" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.142452, 0, -4.852236)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
+sun = NodePath("../Sun")
 
-[node name="EnemySpawner2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_twcpi")]
+[node name="EnemySpawner2" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1570954, 0, -4.852236)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
+sun = NodePath("../Sun")
 
 [node name="Plants" type="Node3D" parent="."]
 unique_name_in_owner = true
