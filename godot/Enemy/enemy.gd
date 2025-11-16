@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var  target : Node3D
 @export var sun: Node3D
 @onready var ray: RayCast3D = $RayCast3D_suncheck
+var condition_time = 0 
 var is_dead = false
 
 func _physics_process(delta: float) -> void:
@@ -12,7 +13,9 @@ func _physics_process(delta: float) -> void:
 
 		ray.target_position = sun.global_position #* 350.0  # make ray long
 		if ray.is_colliding() == false:
-			die_from_sunlight()
+			condition_time += delta  # Add time the condition has been true
+			if condition_time >= 5:
+				die_from_sunlight()
 
 		else:
 			$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
@@ -23,8 +26,8 @@ func _physics_process(delta: float) -> void:
 		#print(velocity)
 
 func die_from_sunlight():
-	#is_dead = true
-	#print("Zombie died from sunlight!")
+	is_dead = true
+	print("Zombie died from sunlight!")
 	$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
 	#await get_tree().create_timer(.5).timeout
-	#queue_free()
+	queue_free()
