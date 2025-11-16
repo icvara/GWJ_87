@@ -5,7 +5,7 @@ extends Node3D
 
 
 var center = Vector3(0, 0,0)
-var radius = 20
+var radius = 45
 var speed = 1.1   # radians per second
 var angle = 0.0
 
