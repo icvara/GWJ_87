@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0bf85xkaei2x"]
+
+[ext_resource type="Script" uid="uid://o6phkfexi5ue" path="res://Menus/in_game_menu.gd" id="1_q0gyq"]
+
+[node name="InGame_Menu" type="CanvasLayer"]
+script = ExtResource("1_q0gyq")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 176.0
+offset_bottom = 195.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Music_off_on" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Music_off_on"
+
+[node name="SoundEffect_off_on" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "SoundEffect_off_on"
+
+[node name="FullScreen" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "FullScreen"
+
+[node name="QuitGame" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "QuitGame"
