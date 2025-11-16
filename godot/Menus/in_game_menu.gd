@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var resume_button = $Panel/VBoxContainer/Resume
 @onready var quit_button = $Panel/VBoxContainer/QuitGame
 
+var isPaused = false
+
 func _ready():
 	visible = false
 	resume_button.pressed.connect(_on_resume_pressed)
@@ -10,16 +12,24 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("open_menu") and visible == false:
-		open_menu()
-	if Input.is_action_pressed("open_menu") and visible == true:
+	if Input.is_action_just_pressed("open_menu") and isPaused == true:
 		close_menu()
+	elif Input.is_action_just_pressed("open_menu") and isPaused == false : 
+		print("ddd")
+		open_menu()
+	
 func open_menu():
-	visible = true
+	#visible = true
+	isPaused = true
+	show()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 
 func close_menu():
-	visible = false
+	hide()
+	#visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	isPaused = false
 	get_tree().paused = false
 
 func _on_resume_pressed():
