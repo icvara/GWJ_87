@@ -76,6 +76,7 @@ frame_progress = 0.39754054
 shape = SubResource("SphereShape3D_v6ek8")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
+collision_mask = 2
 script = ExtResource("2_habko")
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
