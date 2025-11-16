@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://jpgyhbhrqtt3"]
+
+[ext_resource type="Script" uid="uid://7jdo7lh2n1bp" path="res://Enemy/enemy_spawner.gd" id="1_nnkw1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnkw1"]
+size = Vector3(5, 1, 5)
+
+[node name="EnemySpawner" type="Node3D"]
+script = ExtResource("1_nnkw1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_nnkw1")
+debug_color = Color(0.38533312, 0.5062263, 0.9038687, 0.41960785)

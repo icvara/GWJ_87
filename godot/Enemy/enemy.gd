@@ -6,7 +6,7 @@ extends CharacterBody3D
 var is_dead = false
 
 func _physics_process(delta: float) -> void:
-		print(rotation)
+		#print(rotation)
 		if is_dead or sun == null:
 			return
 
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
 			
 		if not is_on_floor():
-				velocity.y -= WorldData.gravity * delta	
+			velocity.y -= WorldData.gravity * delta	
 		move_and_slide()
 		#print(velocity)
 
