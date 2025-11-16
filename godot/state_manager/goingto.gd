@@ -4,11 +4,13 @@ class_name state_going_to
 
 var detection_distance = 5.
 var speed = 100
+var acceleration = 5  
 
 @export var new_state_A: State
 @export var new_state_B: State
 
 func Enter():
+	speed = 100
 	pass
 	
 func Exit():
@@ -16,6 +18,7 @@ func Exit():
 	
 func Update_process(delta):
 	pass
+	speed += acceleration * delta
 
 func Update_physique_process(delta):
 		if StateOwner.target:
@@ -35,6 +38,8 @@ func Update_physique_process(delta):
 				#Change_state.emit(self, new_state_A)
 			if StateOwner.global_transform.origin.distance_to(StateOwner.target.global_transform.origin) > detection_distance:
 				#print("toofar")
-				Change_state.emit(self, new_state_A)
+				speed = 100
+				Change_state.emit(self, new_state_A) 
 		else:
+			speed = 100
 			Change_state.emit(self, new_state_A)
