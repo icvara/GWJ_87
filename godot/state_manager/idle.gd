@@ -7,6 +7,7 @@ var detection_distance = 5.
 @export var new_state_B: State
 
 func Enter():
+	StateOwner.get_node("Debug").text = "idle"
 	pass
 	
 func Exit():
@@ -14,7 +15,7 @@ func Exit():
 	
 func Update_process(delta):
 	if StateOwner.target:
-		if StateOwner.position.distance_to(StateOwner.target.position)< detection_distance:
+		if StateOwner.global_position.distance_to(StateOwner.target.global_position) < detection_distance:
 			#print("close")
 			Change_state.emit(self, new_state_A)
 

@@ -10,6 +10,7 @@ var acceleration = 5
 @export var new_state_B: State
 
 func Enter():
+	StateOwner.get_node("Debug").text = "goingto"
 	speed = 100
 	pass
 	

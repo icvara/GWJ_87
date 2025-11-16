@@ -299,7 +299,7 @@ collision_mask = 3
 shape = SubResource("ConcavePolygonShape3D_hbv0y")
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.142452, 0, -4.852236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4080334, 0, -4.852236)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
