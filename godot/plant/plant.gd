@@ -28,5 +28,7 @@ func Die():
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Zombie") and hasgrown:
-		body.die_from_sunlight()
+	if body.is_in_group("Zombie"):
+		if hasgrown:
+			body.die_from_sunlight()
+		queue_free()

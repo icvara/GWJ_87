@@ -3,7 +3,7 @@ class_name state_going_to
 
 
 var detection_distance = 500.
-var speed = 100
+var speed = 300
 var acceleration = 5  
 
 @export var new_state_A: State
@@ -11,7 +11,6 @@ var acceleration = 5
 
 func Enter():
 	StateOwner.get_node("Debug").text = "goingto"
-	speed = 100
 	pass
 	
 func Exit():
