@@ -97,6 +97,7 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_doop2"]
+radius = 0.4
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ncf7h"]
 height = 1.4929199
@@ -141,6 +142,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63756526, 0)
 billboard = 1
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.25
+simplify_path = true
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 9
