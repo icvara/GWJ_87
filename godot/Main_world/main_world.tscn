@@ -165,13 +165,19 @@ stream = ExtResource("2_cdc7a")
 autoplay = true
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4080334, 0, -4.852236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.039827, 0, -7.7130156)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
 
 [node name="EnemySpawner2" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1570954, 0, -4.852236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.640717, 0, 5.3791876)
+enemy1 = ExtResource("5_yasq4")
+target = NodePath("../Player2D3D")
+sun = NodePath("../Sun")
+
+[node name="EnemySpawner3" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.60256004, 0, -18.69794)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
