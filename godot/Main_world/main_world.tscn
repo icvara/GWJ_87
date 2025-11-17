@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=54 format=3 uid="uid://bi1fgutnwxidr"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
 [ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_5sbxf"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b5mvstlisxhxg" path="res://3d_asset/wall_grotto.tscn" id="13_hqy8c"]
 [ext_resource type="PackedScene" uid="uid://ungr6l1e5t7e" path="res://Main_world/wincraft.tscn" id="14_oaurr"]
 [ext_resource type="PackedScene" uid="uid://bsc3ihgug3et8" path="res://plant/sunflower.tscn" id="15_1qotm"]
+[ext_resource type="PackedScene" uid="uid://b7txv58gnbuxh" path="res://3d_asset/laybrinth.tscn" id="15_tbj6t"]
 [ext_resource type="PackedScene" uid="uid://6fbseefb3bye" path="res://Main_world/collectable.tscn" id="16_hbv0y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8vr0"]
@@ -538,6 +539,9 @@ transform = Transform3D(-1.8756204, 0, -0.6942972, 0, 2, 0, 0.6942972, 0, -1.875
 
 [node name="Grotto_5" parent="NavigationRegion3D" instance=ExtResource("12_31ut2")]
 transform = Transform3D(-1.9999793, 0, -0.009110868, 0, 2, 0, 0.009110868, 0, -1.9999793, -24.762812, 1.8849361, -4.176007)
+
+[node name="Laybrinth" parent="." instance=ExtResource("15_tbj6t")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8, 0.40446424, 1)
 
 [node name="wincraft" parent="." instance=ExtResource("14_oaurr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4.686253, 21)
