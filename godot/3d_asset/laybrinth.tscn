@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://b7txv58gnbuxh"]
+[gd_scene load_steps=26 format=3 uid="uid://b7txv58gnbuxh"]
 
-[ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_2eory"]
+[ext_resource type="Texture2D" uid="uid://gqlc2s1yhoqh" path="res://asset/Textures/wall_wood_texture.jpg" id="1_2eory"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt7wc"]
 albedo_texture = ExtResource("1_2eory")
@@ -55,14 +55,11 @@ data = PackedVector3Array(-0.099999994, 0.5, 4, 0.099999994, 0.5, 4, -0.09999999
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1f7bd"]
 albedo_texture = ExtResource("1_2eory")
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_sk04y"]
 material = SubResource("StandardMaterial3D_1f7bd")
 size = Vector3(0.2, 1, 4)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejyjt"]
-albedo_texture = ExtResource("1_2eory")
-uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ubpjo"]
 data = PackedVector3Array(-0.099999994, 0.5, 2, 0.099999994, 0.5, 2, -0.099999994, -0.5, 2, 0.099999994, 0.5, 2, 0.099999994, -0.5, 2, -0.099999994, -0.5, 2, 0.099999994, 0.5, -2, -0.099999994, 0.5, -2, 0.099999994, -0.5, -2, -0.099999994, 0.5, -2, -0.099999994, -0.5, -2, 0.099999994, -0.5, -2, 0.099999994, 0.5, 2, 0.099999994, 0.5, -2, 0.099999994, -0.5, 2, 0.099999994, 0.5, -2, 0.099999994, -0.5, -2, 0.099999994, -0.5, 2, -0.099999994, 0.5, -2, -0.099999994, 0.5, 2, -0.099999994, -0.5, -2, -0.099999994, 0.5, 2, -0.099999994, -0.5, 2, -0.099999994, -0.5, -2, 0.099999994, 0.5, 2, -0.099999994, 0.5, 2, 0.099999994, 0.5, -2, -0.099999994, 0.5, 2, -0.099999994, 0.5, -2, 0.099999994, 0.5, -2, -0.099999994, -0.5, 2, 0.099999994, -0.5, 2, -0.099999994, -0.5, -2, 0.099999994, -0.5, 2, 0.099999994, -0.5, -2, -0.099999994, -0.5, -2)
@@ -195,7 +192,6 @@ shape = SubResource("ConcavePolygonShape3D_jd2sd")
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.9999951, -0.0028217826, 0.0013578148, 0.002824457, 0.99999404, -0.0019690124, -0.0013522431, 0.001972843, 0.99999714, 6, 0, 1)
 mesh = SubResource("BoxMesh_sk04y")
-surface_material_override/0 = SubResource("StandardMaterial3D_ejyjt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D10"]
 collision_layer = 3

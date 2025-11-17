@@ -478,7 +478,7 @@ collision_mask = 3
 shape = SubResource("ConcavePolygonShape3D_oo5j1")
 
 [node name="Laybrinth" parent="NavigationRegion3D" instance=ExtResource("15_tbj6t")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.001484, 0.37277365, 0.9746523)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8.001484, 0.37277365, -0.02534771)
 
 [node name="Shed_1" parent="NavigationRegion3D" instance=ExtResource("10_7q3i3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.591746, 0.92526484, 1.8992941)
