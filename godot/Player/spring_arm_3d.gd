@@ -7,7 +7,7 @@ extends SpringArm3D
 var yaw: float = 0.
 var yaw_camera: float = 0.
 
-var pitch: float = 0.
+var pitch: float = -0.7
 				
 func _process(delta: float) -> void:
 	#if get_parent().is_multiplayer_authority() and 

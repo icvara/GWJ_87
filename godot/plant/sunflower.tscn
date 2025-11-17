@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsc3ihgug3et8"]
+
+[ext_resource type="Script" uid="uid://i01x3cbmb3ka" path="res://plant/sunflower.gd" id="1_rm8k0"]
+[ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="1_vavre"]
+[ext_resource type="PackedScene" uid="uid://bhwefbxxbgi4j" path="res://Menus/dialogue.tscn" id="2_rm8k0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnefd"]
+atlas = ExtResource("1_vavre")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plmgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnefd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vuwrr"]
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qnefd"]
+radius = 7.5
+
+[node name="sunflower" type="CharacterBody3D"]
+script = ExtResource("1_rm8k0")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+offset = Vector2(0, 48)
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_plmgo")
+
+[node name="Dialogue" parent="." instance=ExtResource("2_rm8k0")]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_vuwrr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8716221, 0)
+omni_range = 15.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qnefd")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
