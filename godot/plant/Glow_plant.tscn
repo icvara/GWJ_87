@@ -69,6 +69,8 @@ radius = 1.2
 radius = 0.24379039
 
 [node name="Plant" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_n8v32")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]

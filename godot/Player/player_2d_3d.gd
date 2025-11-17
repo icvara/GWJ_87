@@ -61,7 +61,8 @@ func _process(delta: float) -> void:
 			plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
 			value = 1
 
-
+	if HP <=0:
+		$Death_interface.activate()
 
 	if is_multiplayer_authority():
 		pass

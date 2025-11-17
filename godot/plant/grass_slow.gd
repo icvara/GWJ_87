@@ -30,14 +30,14 @@ func Die():
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Zombie") or body.name == "Player2D3D":
+	if body.is_in_group("Zombie"):# or body.name == "Player2D3D":
 		if hasgrown:
 			body.speedmodifier= 0.2
 
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.is_in_group("Zombie") or body.name == "Player2D3D":
+	if body.is_in_group("Zombie"):# or body.name == "Player2D3D":
 		body.speedmodifier= 1
 		HP -= 1
 		position.y -= 0.1
