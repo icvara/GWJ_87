@@ -19,6 +19,8 @@ mesh = SubResource("BoxMesh_dboac")
 surface_material_override/0 = SubResource("StandardMaterial3D_53oxi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qxpuo")
