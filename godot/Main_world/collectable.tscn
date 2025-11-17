@@ -37,7 +37,7 @@ billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_xycvj")
 autoplay = "default"
-frame_progress = 0.2950501
+frame_progress = 0.646436
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0059814453, 0)

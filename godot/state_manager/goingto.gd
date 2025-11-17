@@ -51,6 +51,7 @@ func Update_physique_process(delta):
 				pass
 				print("touched")
 				StateOwner.target.HP = clamp(StateOwner.target.HP-10,0,100)
+				StateOwner.queue_free()
 				#get_parent().get_node("Player2D3D/Death_interface").show()
 				#Change_state.emit(self, new_state_A)
 			if StateOwner.global_transform.origin.distance_to(StateOwner.target.global_transform.origin) > detection_distance:

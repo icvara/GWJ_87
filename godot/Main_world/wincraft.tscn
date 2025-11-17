@@ -42,5 +42,10 @@ offset_right = 136.0
 offset_bottom = 59.0
 text = "Bring 3 object"
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3117621, 0)
+billboard = 1
+text = "0/3"
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
