@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://ungr6l1e5t7e"]
+
+[ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1uepb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1ftnn"]
+radius = 0.703125
+
+[node name="wincraft" type="Node3D"]
+script = ExtResource("1_mtrxf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_1uepb")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_1ftnn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -56.0
+offset_right = 97.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 36.0
+offset_right = 136.0
+offset_bottom = 59.0
+text = "Bring 3 object"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
