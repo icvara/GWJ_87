@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 			reset_timer()  # Reset timer after each spawn
 
 func reset_timer():
-	timer = randf_range(4.0, 5.0)  # rand_range returns a float
+	timer = randf_range(5.0 - WorldData.wave_number, 6.0 - WorldData.wave_number)  # rand_range returns a float
 
 func Spawn(id):
 	if id == 1:

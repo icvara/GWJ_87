@@ -9,6 +9,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			count += 1
 			body.item -= 1
 			$Label3D.text = str(count) + "/" + str(maxcount)
+			WorldData.wave_number += 1
 			#$CanvasLayer/Panel/Label.text = "Bring " + str(count) + " objects"
 			if count >= maxcount :
 				$CanvasLayer/Panel/Label.text = "You Win"

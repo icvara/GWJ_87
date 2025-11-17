@@ -18,5 +18,5 @@ func _on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	get_tree().paused = false
-
+	WorldData.reset()
 	get_tree().reload_current_scene()
