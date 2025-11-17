@@ -3,18 +3,51 @@
 [ext_resource type="Script" uid="uid://cts1wcpognrcm" path="res://Menus/death_interface.gd" id="1_w7nci"]
 
 [node name="Death_interface" type="CanvasLayer"]
-visible = false
+process_mode = 3
 script = ExtResource("1_w7nci")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 79.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -20.0
+offset_right = 39.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_right = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_right = 37.0
 offset_bottom = 40.0
+grow_horizontal = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Ÿou Died!"
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 23.0
+offset_right = 81.0
+offset_bottom = 54.0
+text = "Continue"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 23.0
+offset_right = 160.0
+offset_bottom = 54.0
+text = "Restart"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
