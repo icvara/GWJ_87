@@ -30,6 +30,7 @@ script = ExtResource("1_rm8k0")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 offset = Vector2(0, 48)
+modulate = Color(1, 1, 0, 1)
 billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_plmgo")

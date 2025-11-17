@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://6fbseefb3bye"]
+
+[ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="1_b0cgh"]
+[ext_resource type="Script" uid="uid://ck53r5jgd5odn" path="res://Main_world/collectable.gd" id="1_ioju7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioju7"]
+atlas = ExtResource("1_b0cgh")
+region = Rect2(96, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv7cm"]
+atlas = ExtResource("1_b0cgh")
+region = Rect2(128, 80, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xycvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioju7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv7cm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cufkw"]
+height = 0.13745117
+radius = 0.13183594
+
+[node name="collectable" type="Area3D"]
+script = ExtResource("1_ioju7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xycvj")
+autoplay = "default"
+frame_progress = 0.2950501
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0059814453, 0)
+shape = SubResource("CylinderShape3D_cufkw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

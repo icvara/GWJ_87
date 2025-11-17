@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=52 format=3 uid="uid://bi1fgutnwxidr"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
 [ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_5sbxf"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dwl42pvt6cc7y" path="res://3d_asset/grotto_1.tscn" id="12_31ut2"]
 [ext_resource type="PackedScene" uid="uid://ungr6l1e5t7e" path="res://Main_world/wincraft.tscn" id="14_oaurr"]
 [ext_resource type="PackedScene" uid="uid://bsc3ihgug3et8" path="res://plant/sunflower.tscn" id="15_1qotm"]
+[ext_resource type="PackedScene" uid="uid://6fbseefb3bye" path="res://Main_world/collectable.tscn" id="16_hbv0y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8vr0"]
 
@@ -497,3 +498,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4.686253, 21)
 
 [node name="sunflower" parent="." instance=ExtResource("15_1qotm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5580554, 3.7109966, 20.516685)
+
+[node name="collectable" parent="." instance=ExtResource("16_hbv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.27676296, 4)
+
+[node name="collectable2" parent="." instance=ExtResource("16_hbv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.782257, 0.27676296, 4)
+
+[node name="collectable3" parent="." instance=ExtResource("16_hbv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.782257, 0.27676296, 6.2198153)
+
+[node name="collectable4" parent="." instance=ExtResource("16_hbv0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6051183, 0.27676296, 6.2198153)
