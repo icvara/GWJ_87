@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5mvstlisxhxg"]
+
+[ext_resource type="Texture2D" uid="uid://d3duch17nxuqi" path="res://asset/Textures/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg" id="1_qxpuo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dboac"]
+size = Vector3(0.5, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53oxi"]
+albedo_texture = ExtResource("1_qxpuo")
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qxpuo"]
+data = PackedVector3Array(-0.25, 1, 1, 0.25, 1, 1, -0.25, -1, 1, 0.25, 1, 1, 0.25, -1, 1, -0.25, -1, 1, 0.25, 1, -1, -0.25, 1, -1, 0.25, -1, -1, -0.25, 1, -1, -0.25, -1, -1, 0.25, -1, -1, 0.25, 1, 1, 0.25, 1, -1, 0.25, -1, 1, 0.25, 1, -1, 0.25, -1, -1, 0.25, -1, 1, -0.25, 1, -1, -0.25, 1, 1, -0.25, -1, -1, -0.25, 1, 1, -0.25, -1, 1, -0.25, -1, -1, 0.25, 1, 1, -0.25, 1, 1, 0.25, 1, -1, -0.25, 1, 1, -0.25, 1, -1, 0.25, 1, -1, -0.25, -1, 1, 0.25, -1, 1, -0.25, -1, -1, 0.25, -1, 1, 0.25, -1, -1, -0.25, -1, -1)
+
+[node name="wall_grotto" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_dboac")
+surface_material_override/0 = SubResource("StandardMaterial3D_53oxi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qxpuo")
