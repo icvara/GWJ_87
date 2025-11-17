@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var ray: RayCast3D = $RayCast3D_suncheck
 var condition_time = 0 
 var is_dead = false
+var speedmodifier = 1.0
 
 func _physics_process(delta: float) -> void:
 		#print(rotation)
@@ -23,9 +24,15 @@ func _physics_process(delta: float) -> void:
 				
 		if not is_on_floor():
 			velocity.y -= WorldData.gravity * delta	 
+		velocity = velocity *speedmodifier
 		move_and_slide()
 		#print(velocity)
 
 func die_from_sunlight():
 	is_dead = true
 	queue_free()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("light"):
+		target = body

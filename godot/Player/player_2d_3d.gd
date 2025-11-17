@@ -3,12 +3,26 @@ extends CharacterBody3D
 
 var is_screen_focus = true
 var win = false
-@export var plant : PackedScene
+@export var plant1 : PackedScene
+@export var plant2 : PackedScene
+@export var plant3 : PackedScene
+
+var plant_selected = 0
+var plant_amount = []
 @export var sun : Node3D
+
+var plant_list = []
+var speedmodifier = 1.0
 
 var HP = 100
 
+var sunrise_bool = false
+var value = 0
+
 func _enter_tree() -> void:
+	plant_list = [plant1,plant2,plant3]
+	plant_amount = [10,5,3]
+
 	set_multiplayer_authority(name.to_int(), true)
 	#set_multiplayer_authority(multiplayer.get_unique_id(), true)
 
@@ -31,11 +45,23 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 				velocity.y -= WorldData.gravity * delta
 				#print(velocity.y )
-		
+		velocity = speedmodifier*velocity
 		move_and_slide()
 	
 
 func _process(delta: float) -> void:
+	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
+	if $RayCast3D.is_colliding() == false:
+		value += delta * WorldData.gamespeed
+		if int(value) % 10 == 0:
+			HP = clamp(HP + 10, 0 ,100)
+			plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,20)
+			plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
+			plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
+			value = 1
+
+
+
 	if is_multiplayer_authority():
 		pass
 		'if WorldInfo.win:	

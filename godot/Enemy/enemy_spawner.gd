@@ -24,7 +24,7 @@ func reset_timer():
 func Spawn(id):
 	if id == 1:
 		var ne = enemy1.instantiate()
-		ne.target = target
+		#ne.target = target
 		ne.sun = sun
 		add_child(ne) 
 		ne.global_position = choose_pos()

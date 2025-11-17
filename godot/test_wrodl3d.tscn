@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://483fwfa68aq8"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_23kx7"]
-[ext_resource type="PackedScene" uid="uid://bbmii1r4y4bn6" path="res://plant/plant.tscn" id="2_0730j"]
+[ext_resource type="PackedScene" uid="uid://bbmii1r4y4bn6" path="res://plant/Glow_plant.tscn" id="2_0730j"]
 [ext_resource type="PackedScene" uid="uid://dqyoo5kixp6vj" path="res://Enemy/enemy.tscn" id="2_j7k2x"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0730j"]

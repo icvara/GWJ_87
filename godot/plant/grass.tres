@@ -6,10 +6,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_color = Color(0.24874008, 0.44564497, 0.222408, 1)
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
+billboard_mode = 1
 
 [resource]
 material = SubResource("StandardMaterial3D_satkl")

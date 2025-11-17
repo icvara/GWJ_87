@@ -1,10 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3clc63v3sp0b"]
+[gd_scene load_steps=20 format=3 uid="uid://d3clc63v3sp0b"]
 
 [ext_resource type="Script" uid="uid://d3qu3c5jolwwy" path="res://state_manager/state_manager.gd" id="1_20cw5"]
 [ext_resource type="Script" uid="uid://bdg8fy62tixdu" path="res://Player/player_2d_3d.gd" id="1_pulta"]
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="2_ao76n"]
 [ext_resource type="Script" uid="uid://bfr5qi6ifnb5k" path="res://Player/spring_arm_3d.gd" id="2_habko"]
+[ext_resource type="PackedScene" uid="uid://bbmii1r4y4bn6" path="res://plant/Glow_plant.tscn" id="2_utrke"]
 [ext_resource type="Script" uid="uid://bjb8hbwltft21" path="res://state_manager/player_control.gd" id="3_7qxor"]
+[ext_resource type="PackedScene" uid="uid://ygpo174a2ano" path="res://plant/grass_slow.tscn" id="3_fpspg"]
+[ext_resource type="PackedScene" uid="uid://bkw7ffk7xmqmy" path="res://plant/jump_plant.tscn" id="4_fpspg"]
 [ext_resource type="PackedScene" uid="uid://bd8dxq34goerd" path="res://Player/hud.tscn" id="6_eua6v"]
 [ext_resource type="PackedScene" uid="uid://c0bf85xkaei2x" path="res://Menus/in_game_menu.tscn" id="7_00ovx"]
 [ext_resource type="PackedScene" uid="uid://bn0d4lboe0w77" path="res://Menus/death_interface.tscn" id="8_lwjg3"]
@@ -62,8 +65,11 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_v6ek8"]
 radius = 0.25
 
-[node name="Player2D3D" type="CharacterBody3D"]
+[node name="Player2D3D" type="CharacterBody3D" groups=["light"]]
 script = ExtResource("1_pulta")
+plant1 = ExtResource("2_utrke")
+plant2 = ExtResource("3_fpspg")
+plant3 = ExtResource("4_fpspg")
 
 [node name="Sprites_Managers" type="Node3D" parent="."]
 
@@ -101,3 +107,6 @@ process_mode = 3
 visible = false
 
 [node name="Death_interface" parent="." instance=ExtResource("8_lwjg3")]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+collision_mask = 3

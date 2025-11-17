@@ -89,14 +89,17 @@ func Update_physique_process(delta):
 		StateOwner.velocity.z = normalised_dir.z * move_speed
 	
 		if Input.is_action_just_pressed("action_X"):
-			if StateOwner.plant:
-				var np = StateOwner.plant.instantiate()
-				np.position = StateOwner.global_position
-				np.sun = StateOwner.sun
-				if StateOwner.get_parent().has_node("Plants"):
-					StateOwner.get_parent().get_node("Plants").add_child(np)
-				else:
-					print("ERROR: miss Plants node in scene")
+			if StateOwner.plant_list[StateOwner.plant_selected]:
+				if StateOwner.plant_amount[StateOwner.plant_selected] > 0 :
+					StateOwner.plant_amount[StateOwner.plant_selected] -= 1
+					print(StateOwner.plant_amount)
+					var np = StateOwner.plant_list[StateOwner.plant_selected].instantiate()
+					np.position = StateOwner.global_position
+					np.sun = StateOwner.sun
+					if StateOwner.get_parent().has_node("Plants"):
+						StateOwner.get_parent().get_node("Plants").add_child(np)
+					else:
+						print("ERROR: miss Plants node in scene")
 			else:
 				print("ERROR: no packedScene attached to player")
 			#if action_A:
