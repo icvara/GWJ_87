@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwfrdllwscdre"
-path="res://.godot/imported/sunflower.png-8750822e8c74026a3f5b7a864987e8f5.ctex"
+uid="uid://cjeescrpovisi"
+path="res://.godot/imported/grass.png-589a44dbae1655ba65a7aec95fa1bd28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/sunflower.png"
-dest_files=["res://.godot/imported/sunflower.png-8750822e8c74026a3f5b7a864987e8f5.ctex"]
+source_file="res://plant/asset/grass.png"
+dest_files=["res://.godot/imported/grass.png-589a44dbae1655ba65a7aec95fa1bd28.ctex"]
 
 [params]
 

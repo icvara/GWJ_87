@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://i01x3cbmb3ka" path="res://plant/sunflower.gd" id="1_rm8k0"]
 [ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="1_vavre"]
 [ext_resource type="PackedScene" uid="uid://bhwefbxxbgi4j" path="res://Menus/dialogue.tscn" id="2_rm8k0"]
-[ext_resource type="Texture2D" uid="uid://00itgubsxnk2" path="res://plant/asset/sunflower.png" id="4_r08kj"]
+[ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="4_r08kj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnefd"]
 atlas = ExtResource("1_vavre")

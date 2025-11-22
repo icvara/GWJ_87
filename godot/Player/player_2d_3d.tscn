@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bn0d4lboe0w77" path="res://Menus/death_interface.tscn" id="8_lwjg3"]
 [ext_resource type="Shader" uid="uid://w5aknnr4bmmi" path="res://Player/player.gdshader" id="12_kmfur"]
 [ext_resource type="Texture2D" uid="uid://btnkmvwbeq4fi" path="res://Player/player.png" id="13_1aakt"]
-[ext_resource type="Script" uid="uid://cpq0a0ibuy3vg" path="res://Player/omni_light_3d.gd" id="14_1aakt"]
+[ext_resource type="Script" path="res://Player/omni_light_3d.gd" id="14_1aakt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eua6v"]
 atlas = ExtResource("2_ao76n")
