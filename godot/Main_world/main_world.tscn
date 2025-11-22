@@ -195,7 +195,8 @@ sun = NodePath("../Sun")
 unique_name_in_owner = true
 
 [node name="grass" type="MultiMeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014839172, 0.031690598, 0.02534771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014839172, -11.968309, 0.02534771)
+visible = false
 multimesh = SubResource("MultiMesh_63dkx")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -203,6 +204,7 @@ navigation_mesh = SubResource("NavigationMesh_p6qna")
 
 [node name="all_meshes" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13, 0)
+visible = false
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="NavigationRegion3D/all_meshes"]
 mesh = SubResource("PlaneMesh_p6qna")
