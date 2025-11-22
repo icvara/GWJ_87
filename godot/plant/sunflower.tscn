@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsc3ihgug3et8"]
+[gd_scene load_steps=9 format=3 uid="uid://bsc3ihgug3et8"]
 
 [ext_resource type="Script" uid="uid://i01x3cbmb3ka" path="res://plant/sunflower.gd" id="1_rm8k0"]
 [ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="1_vavre"]
 [ext_resource type="PackedScene" uid="uid://bhwefbxxbgi4j" path="res://Menus/dialogue.tscn" id="2_rm8k0"]
+[ext_resource type="Texture2D" uid="uid://00itgubsxnk2" path="res://plant/asset/sunflower.png" id="4_r08kj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnefd"]
 atlas = ExtResource("1_vavre")
@@ -29,6 +30,7 @@ radius = 7.5
 script = ExtResource("1_rm8k0")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+visible = false
 offset = Vector2(0, 48)
 modulate = Color(1, 1, 0, 1)
 billboard = 1
@@ -50,5 +52,11 @@ omni_range = 15.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_qnefd")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65040106, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_r08kj")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
