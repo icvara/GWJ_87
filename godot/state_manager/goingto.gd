@@ -3,7 +3,7 @@ class_name state_going_to
 
 
 var detection_distance = 500.
-var speed = 300
+var speed = 200
 var acceleration = 5  
 var target_position
 
@@ -11,7 +11,7 @@ var target_position
 @export var new_state_B: State
 @export var NavAgent: NavigationAgent3D
 
-
+var time_track = 0
 func Enter():
 	StateOwner.get_node("Debug").text = "goingto"
 	target_position = StateOwner.target.global_transform.origin
@@ -26,7 +26,9 @@ func Update_process(delta):
 	pass
 	speed += acceleration * delta
 
+
 func Update_physique_process(delta):
+		time_track += 1
 		if StateOwner.target:
 			var dir = Vector3.ZERO
 			'dir = (StateOwner.target.global_transform.origin - StateOwner.global_transform.origin)
@@ -41,8 +43,10 @@ func Update_physique_process(delta):
 			dir.z = local_destination.normalized().z
 			StateOwner.velocity.x = dir.x * speed * delta
 			StateOwner.velocity.z = dir.z * speed * delta
-			if target_position != StateOwner.target.global_transform.origin:
-				NavAgent.set_target_position(StateOwner.target.global_transform.origin)
+			if time_track  >= 10:
+				time_track = 0
+				if target_position != StateOwner.target.global_transform.origin:
+					NavAgent.set_target_position(StateOwner.target.global_transform.origin)
 
 			#print(brain_owner.global_transform.origin.distance_to(target.global_transform.origin))
 			#turn here

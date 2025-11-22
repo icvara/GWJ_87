@@ -71,7 +71,10 @@ func _process(delta: float) -> void:
 			if timer_night >= 0.5:
 				timer_night = 0
 				HP = clamp(HP - 5, 0 ,100)
-
+	
+	var health_ratio = float(HP) / 100.
+	var nscale =lerp(0.1, 1., health_ratio)
+	$Sprite3Ds.scale =   Vector3(nscale,nscale,nscale)
 
 	if HP <=0:
 		$Death_interface.activate()
