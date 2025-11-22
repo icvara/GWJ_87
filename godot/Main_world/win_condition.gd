@@ -39,7 +39,7 @@ func grow_sprite():
 	$Sprite3D/OmniLight3D.omni_range *= factor
 	$Sprite3D/OmniLight3D.light_size *= factor
 	$Sprite3D/OmniLight3D.light_energy *= factor
-	$Area3D_ZombKill/CollisionShape3D.scale *= factor
+	#$Area3D_ZombKill/CollisionShape3D.scale *= factor
 	# New height
 	var new_height = $Sprite3D.scale.y
 
