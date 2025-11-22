@@ -1,8 +1,9 @@
 extends Node3D
 
 var count = 0
-var maxcount = 1
-@export var initial_maxcount = 1
+var maxcount :float = 1.0
+@export var initial_maxcount := 1.0
+var factor 
 
 func _ready():
 	maxcount = initial_maxcount
@@ -26,7 +27,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			#$CanvasLayer.show()
 
 func grow_sprite():
-	var factor = (maxcount+initial_maxcount)/maxcount
+	var factor = ((maxcount+initial_maxcount)/maxcount)*1.2
 
 	# Save previous height (assuming the pivot is at the center)
 	var old_height = $Sprite3D.scale.y
