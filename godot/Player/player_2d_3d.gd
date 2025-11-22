@@ -21,6 +21,7 @@ var HP = 100
 
 var sunrise_bool = false
 var value = 0
+var timer_night = 0
 
 func _enter_tree() -> void:
 	plant_list = [plant1,plant2,plant3]
@@ -65,6 +66,11 @@ func _process(delta: float) -> void:
 				plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
 				plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
 				value = 1
+		else:
+			timer_night += delta * WorldData.gamespeed
+			if timer_night >= 0.5:
+				timer_night = 0
+				HP = clamp(HP - 5, 0 ,100)
 
 
 	if HP <=0:
