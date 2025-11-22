@@ -112,7 +112,7 @@ frame_progress = 0.39754054
 shape = SubResource("SphereShape3D_v6ek8")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9781476, 0.2079117, 0, -0.2079117, 0.9781476, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9781476, 0.2079117, 0, -0.2079117, 0.9781476, 0, 0.14802133, -0.071217895)
 collision_mask = 4
 spring_length = 5.0
 script = ExtResource("2_habko")

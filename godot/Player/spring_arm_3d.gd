@@ -30,9 +30,9 @@ func _process(delta: float) -> void:
 		yaw -= look_x * camera_speed
 		pitch -= look_y * camera_speed
 		if sign(spring_length) >0:
-			pitch = clamp(pitch, deg_to_rad(-80), deg_to_rad(0))	
+			pitch = clamp(pitch, deg_to_rad(-60), deg_to_rad(0))	
 		else:
-			pitch = clamp(pitch, deg_to_rad(0), deg_to_rad(80))	
+			pitch = clamp(pitch, deg_to_rad(-90), deg_to_rad(90))	
 		if get_parent().velocity != Vector3.ZERO:
 			#MOVING
 			#get_parent().rotation = Vector3(0 , yaw_player, 0)
@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("zoom_out"):
 			spring_length += zoom_speed
 		
-		spring_length = clamp(spring_length,-0.01,50)
+		spring_length = clamp(spring_length,-0.01,5)
 
 
 func _input(event: InputEvent) -> void:

@@ -14,7 +14,7 @@ anchor_bottom = 0.5
 offset_left = -88.0
 offset_top = -97.5
 offset_right = 88.0
-offset_bottom = 97.5
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -26,9 +26,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -78.0
-offset_top = -85.5
+offset_top = -49.75
 offset_right = 78.0
-offset_bottom = 85.5
+offset_bottom = 121.25
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -37,10 +37,12 @@ layout_mode = 2
 text = "Resume"
 
 [node name="Music_off_on" type="Button" parent="Panel/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Music_off_on"
 
 [node name="SoundEffect_off_on" type="Button" parent="Panel/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "SoundEffect_off_on"
 
