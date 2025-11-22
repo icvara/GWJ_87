@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpivec207eryp"]
+[gd_scene load_steps=8 format=3 uid="uid://dpivec207eryp"]
 
+[ext_resource type="Script" uid="uid://cmlt3r0u2dyic" path="res://3d_asset/camp_fire.gd" id="1_fklin"]
 [ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_qlkee"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fklin"]
@@ -20,6 +21,7 @@ size = Vector3(0.2, 0.2, 0.2)
 albedo_color = Color(1, 1, 0.39875868, 1)
 
 [node name="Camp_fire" type="Node3D"]
+script = ExtResource("1_fklin")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_kr62p")
