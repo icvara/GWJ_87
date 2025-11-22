@@ -57,3 +57,4 @@ mesh = SubResource("PrismMesh_ndlto")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19, 0)
+light_color = Color(0.840403, 0.6157942, 0, 1)
