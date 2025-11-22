@@ -97,6 +97,7 @@ func Update_physique_process(delta):
 					np.position = StateOwner.global_position
 					np.sun = StateOwner.sun
 					if StateOwner.get_parent().has_node("Plants"):
+						StateOwner.get_node("music").get_node("PlantSeed").play()
 						StateOwner.get_parent().get_node("Plants").add_child(np)
 					else:
 						print("ERROR: miss Plants node in scene")

@@ -30,6 +30,8 @@ func _physics_process(delta: float) -> void:
 
 func die_from_sunlight():
 	is_dead = true
+	get_node("music").get_node("die").playing = true
+
 	queue_free()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqyoo5kixp6vj"]
+[gd_scene load_steps=23 format=3 uid="uid://dqyoo5kixp6vj"]
 
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="1_7k104"]
 [ext_resource type="Script" uid="uid://fq0ys6ch8v1h" path="res://Enemy/enemy.gd" id="1_am0pq"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://de3edklcdw8xb" path="res://state_manager/idle.gd" id="4_eqilm"]
 [ext_resource type="Script" uid="uid://dpmnch8k03lgg" path="res://state_manager/goingto.gd" id="5_ncf7h"]
 [ext_resource type="Texture2D" uid="uid://c15dr6367pupv" path="res://Enemy/Sprite-0004.png" id="6_m6jha"]
+[ext_resource type="AudioStream" uid="uid://bj3lsa2laq2e8" path="res://asset/music/Hurt.wav" id="7_0rspp"]
+[ext_resource type="AudioStream" uid="uid://yfexioru5ck5" path="res://asset/music/Unalived.wav" id="8_efk13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
 atlas = ExtResource("1_7k104")
@@ -161,5 +163,13 @@ billboard = 1
 shaded = true
 texture_filter = 0
 texture = ExtResource("6_m6jha")
+
+[node name="music" type="Node3D" parent="."]
+
+[node name="hurt" type="AudioStreamPlayer3D" parent="music"]
+stream = ExtResource("7_0rspp")
+
+[node name="die" type="AudioStreamPlayer3D" parent="music"]
+stream = ExtResource("8_efk13")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
