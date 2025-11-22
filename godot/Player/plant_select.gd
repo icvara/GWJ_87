@@ -1,4 +1,4 @@
-extends ColorRect
+extends Control
 
 var player: Node3D
 
