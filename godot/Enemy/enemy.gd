@@ -7,6 +7,8 @@ var condition_time = 0
 var is_dead = false
 var speedmodifier = 1.0
 
+var detect_array = []
+
 func _physics_process(delta: float) -> void:
 		#print(rotation)
 		
@@ -37,4 +39,10 @@ func die_from_sunlight():
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("light"):
-		target = body
+		detect_array.append(body)
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.is_in_group("light"):
+		if detect_array.has(body):
+			detect_array.erase(body)
