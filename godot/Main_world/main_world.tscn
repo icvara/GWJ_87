@@ -14,14 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://cjluxqvqfxsgn" path="res://Menus/tuto_window.tscn" id="19_atmmq"]
 [ext_resource type="PackedScene" uid="uid://egmb5vyiv5x6" path="res://Main_world/spawner_collectable.tscn" id="20_d4t0v"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oo5j1"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oo5j1"]
 
-[sub_resource type="Sky" id="Sky_01p1j"]
-sky_material = SubResource("PanoramaSkyMaterial_oo5j1")
+[sub_resource type="Sky" id="Sky_oaurr"]
+sky_material = SubResource("ProceduralSkyMaterial_oo5j1")
 
 [sub_resource type="Environment" id="Environment_cdc7a"]
 background_mode = 2
-sky = SubResource("Sky_01p1j")
+sky = SubResource("Sky_oaurr")
 volumetric_fog_density = 0.179
 
 [sub_resource type="MultiMesh" id="MultiMesh_63dkx"]
@@ -45,9 +45,10 @@ filter_walkable_low_height_spans = true
 
 [node name="main_world" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." node_paths=PackedStringArray("sun")]
 environment = SubResource("Environment_cdc7a")
 script = ExtResource("2_q06bt")
+sun = NodePath("../Sun")
 
 [node name="RayCast3D" type="RayCast3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1594844, 0)
