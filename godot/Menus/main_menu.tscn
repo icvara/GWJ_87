@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://ttjt2usgy45u"]
+
+[ext_resource type="Script" uid="uid://cg66s6la4ec01" path="res://Menus/main_menu.gd" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://bajm2ovx6mn5p" path="res://asset/GWJ_art/GWJ-Full-Logo-noBG-4k.png" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://dped3d4615jgf" path="res://asset/GWJ_art/87-Decay.png" id="3_glbon"]
+[ext_resource type="AudioStream" uid="uid://bhwkattekdo34" path="res://asset/music/background.wav" id="5_glbon"]
+[ext_resource type="Texture2D" uid="uid://ivmdaqso5px4" path="res://asset/GWJ_art/out-out-brief-candle.png" id="5_gn11b"]
+[ext_resource type="Texture2D" uid="uid://bcn6ksp0usja1" path="res://asset/GWJ_art/venn-diagram.png" id="6_2k0p2"]
+[ext_resource type="Texture2D" uid="uid://btnkmvwbeq4fi" path="res://Player/player.png" id="7_y501u"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_glbon")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -8.0
+offset_right = 1174.0
+offset_bottom = 662.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.13333334, 0.2509804, 1)
+
+[node name="87Decay" type="Sprite2D" parent="."]
+position = Vector2(178.00012, 361)
+scale = Vector2(0.11493512, 0.11493515)
+texture = ExtResource("3_glbon")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 535.0
+offset_top = 245.0
+offset_right = 919.0
+offset_bottom = 445.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -86.0
+offset_right = 88.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Full Screen
+"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "3"
+
+[node name="Button4" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="GwjFullLogoNoBg4k" type="Sprite2D" parent="."]
+position = Vector2(152, 114)
+scale = Vector2(0.13711113, 0.13711113)
+texture = ExtResource("3_fu7sn")
+
+[node name="Calm1" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(228, 628)
+stream = ExtResource("5_glbon")
+autoplay = true
+
+[node name="OutOutBriefCandle" type="Sprite2D" parent="."]
+position = Vector2(92.99988, 528)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("5_gn11b")
+
+[node name="VennDiagram" type="Sprite2D" parent="."]
+position = Vector2(260.99994, 529)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("6_2k0p2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 572.0
+offset_top = 127.0
+offset_right = 876.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 60
+text = "FireToSUN"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 563.0
+offset_top = 589.0
+offset_right = 1296.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 40
+text = "Made by Kyunsei, Izva & Josh"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1000, 512)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_y501u")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

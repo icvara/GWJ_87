@@ -6,32 +6,39 @@
 process_mode = 3
 script = ExtResource("1_o7es1")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 646.0
+color = Color(0.078431375, 0.13333334, 0.2509804, 1)
+
 [node name="Panel" type="Panel" parent="."]
+modulate = Color(0.5961391, 0.5392467, 0.27087212, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -190.5
-offset_top = -189.0
+offset_top = -236.0
 offset_right = 190.5
-offset_bottom = 189.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.96300006
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -46.0
-offset_top = -39.0
-offset_right = 33.0
-offset_bottom = -8.0
+offset_left = -71.0
+offset_top = 26.021973
+offset_right = 69.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 30
 text = "Continue"
 
 [node name="Label" type="Label" parent="Panel"]
@@ -53,27 +60,30 @@ offset_bottom = 147.0
 text = "WASD: move
 1,2,3: Plant a seed
 MouseWheel: Zoom
-Mouse: Camera"
+Mouse: Camera
+Esc: Pause - menu"
 
 [node name="Label4" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 101.5
-offset_top = 198.0
+offset_top = 208.0
 offset_right = 345.5
-offset_bottom = 325.0
+offset_bottom = 361.0
 text = "Left-joystick: move
 X: Plant a seed
 Left/right-arraow: Change Plant
 Up/Down-arrow: Zoom
-Right-joystick: Camera"
+Right-joystick: Camera
+A: Menu button
+Pause: pause-menu"
 
 [node name="Label2" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 22.5
-offset_top = 163.0
-offset_right = 120.5
-offset_bottom = 191.0
+offset_top = 176.0
+offset_right = 243.5
+offset_bottom = 204.0
 theme_override_font_sizes/font_size = 20
-text = "Controller"
+text = "Controller (x-box label)"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

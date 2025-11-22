@@ -22,6 +22,8 @@ func open_menu():
 	#visible = true
 	isPaused = true
 	show()
+	$Panel/VBoxContainer/Resume.grab_focus()
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 
