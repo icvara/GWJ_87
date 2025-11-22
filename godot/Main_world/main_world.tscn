@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=19 format=3 uid="uid://bi1fgutnwxidr"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
 [ext_resource type="Script" uid="uid://b6wx0k8fw3yic" path="res://Main_world/world_environment.gd" id="2_q06bt"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://jpgyhbhrqtt3" path="res://Enemy/enemy_spawner.tscn" id="6_twcpi"]
 [ext_resource type="QuadMesh" uid="uid://w5i6pl0mim0y" path="res://plant/grass.tres" id="8_63dkx"]
 [ext_resource type="PackedScene" uid="uid://ungr6l1e5t7e" path="res://Main_world/wincraft.tscn" id="14_oaurr"]
-[ext_resource type="PackedScene" uid="uid://bsc3ihgug3et8" path="res://plant/sunflower.tscn" id="15_1qotm"]
 [ext_resource type="PackedScene" uid="uid://dlbb1chh1i0u0" path="res://3d_asset/labyrinth_2.tscn" id="15_atmmq"]
 [ext_resource type="PackedScene" uid="uid://cjluxqvqfxsgn" path="res://Menus/tuto_window.tscn" id="19_atmmq"]
 [ext_resource type="PackedScene" uid="uid://egmb5vyiv5x6" path="res://Main_world/spawner_collectable.tscn" id="20_d4t0v"]
@@ -102,10 +101,7 @@ navigation_mesh = SubResource("NavigationMesh_p6qna")
 [node name="labyrinth 2" parent="NavigationRegion3D" instance=ExtResource("15_atmmq")]
 
 [node name="wincraft" parent="." instance=ExtResource("14_oaurr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 1.2067978, -0.1796689)
-
-[node name="sunflower" parent="." instance=ExtResource("15_1qotm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.822639, 0.487656, 0.05688715)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 1.5767978, -0.1796689)
 
 [node name="Tuto_window" parent="." instance=ExtResource("19_atmmq")]
 

@@ -3,7 +3,7 @@ extends OmniLight3D
 @export var player: Node3D        # Drag your player here in the editor
 
 var max_brightness := 3.0
-var min_brightness := -0.2  # how dim the light gets at 0 health
+var min_brightness := 0.0  # how dim the light gets at 0 health
 var base_energy = 3.0
 var flicker_amount = 0.4
 var speed = 0.5

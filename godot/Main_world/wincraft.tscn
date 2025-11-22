@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=5 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
+[ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1uepb"]
 
@@ -11,6 +12,7 @@ radius = 0.703125
 script = ExtResource("1_mtrxf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CylinderMesh_1uepb")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -46,6 +48,11 @@ text = "Bring 3 object"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3117621, 0)
 billboard = 1
 text = "0/3"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+billboard = 2
+texture = ExtResource("2_1uepb")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
