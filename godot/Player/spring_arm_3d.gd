@@ -23,8 +23,8 @@ func _process(delta: float) -> void:
 			look_y = 0
 
 		#MOUSE
-		look_x += Input.get_last_mouse_velocity().x * mouse_sensitivity
-		look_y += Input.get_last_mouse_velocity().y * mouse_sensitivity
+		look_x = Input.get_last_mouse_velocity().x * mouse_sensitivity
+		look_y = Input.get_last_mouse_velocity().y * mouse_sensitivity
 		
 		#rotation
 		yaw -= look_x * camera_speed
