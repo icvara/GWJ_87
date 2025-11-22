@@ -51,15 +51,16 @@ func _physics_process(delta: float) -> void:
 	
 
 func _process(delta: float) -> void:
-	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
-	if $RayCast3D.is_colliding() == false:
-		value += delta * WorldData.gamespeed
-		if int(value) % 10 == 0:
-			HP = clamp(HP + 10, 0 ,100)
-			plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,20)
-			plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
-			plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
-			value = 1
+	if sun:
+		$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
+		if $RayCast3D.is_colliding() == false:
+			value += delta * WorldData.gamespeed
+			if int(value) % 10 == 0:
+				HP = clamp(HP + 10, 0 ,100)
+				plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,20)
+				plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
+				plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
+				value = 1
 
 	if HP <=0:
 		$Death_interface.activate()
