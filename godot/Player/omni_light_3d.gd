@@ -11,6 +11,6 @@ var speed = 0.5
 func _process(delta):
 	if player and ("HP") in player :
 		var health_ratio = float(player.HP) / 100
-		light_energy = lerp(min_brightness, max_brightness, health_ratio)+ sin(Time.get_ticks_msec() * 0.01 * speed) * flicker_amount 
+		light_energy = lerp(min_brightness, max_brightness, health_ratio)+ sin(Time.get_ticks_msec() * 0.01 * speed) * flicker_amount *randf_range(1,1.5)
 		self.omni_range = 2 + lerp(min_brightness, max_brightness, health_ratio)
 			 # \+ randf() * 0.1
