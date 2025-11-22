@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsc3ihgug3et8"]
+[gd_scene load_steps=12 format=3 uid="uid://bsc3ihgug3et8"]
 
 [ext_resource type="Script" uid="uid://i01x3cbmb3ka" path="res://plant/sunflower.gd" id="1_rm8k0"]
 [ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="1_vavre"]
 [ext_resource type="PackedScene" uid="uid://bhwefbxxbgi4j" path="res://Menus/dialogue.tscn" id="2_rm8k0"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="4_r08kj"]
+[ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="5_eo3ou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnefd"]
 atlas = ExtResource("1_vavre")
@@ -25,6 +26,21 @@ height = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qnefd"]
 radius = 7.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eo3ou"]
+render_priority = 0
+shader = ExtResource("5_eo3ou")
+shader_parameter/albedo_tex = ExtResource("4_r08kj")
+shader_parameter/alpha_scissor_threshold = 1.0
+shader_parameter/speed = 2.0
+shader_parameter/dis = 0.08
+shader_parameter/texture_size = Vector2(256, 256)
+shader_parameter/region = Vector4(0, 0, 64, 64)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3u3mp"]
+material = SubResource("ShaderMaterial_eo3ou")
 
 [node name="sunflower" type="CharacterBody3D"]
 script = ExtResource("1_rm8k0")
@@ -58,5 +74,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65040106, 0)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("4_r08kj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65040106, 0)
+visible = false
+mesh = SubResource("QuadMesh_3u3mp")
+skeleton = NodePath("../Sprite3D")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

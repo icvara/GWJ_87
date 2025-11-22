@@ -19,8 +19,11 @@ func _process(delta: float) -> void:
 
 func changeColor(ID):
 	if ID == 0:
+		$ColorRect.position.x = 12
 		$ColorRect.modulate = Color(0.0, 0.356, 0.0, 1.0)
 	elif ID == 1:
+		$ColorRect.position.x = 62
 		$ColorRect.modulate  = Color(0.4, 0.161, 0.918, 1.0)
 	elif ID == 2:
+		$ColorRect.position.x = 106
 		$ColorRect.modulate  = Color(0.452, 0.039, 0.228, 1.0)

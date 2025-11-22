@@ -1,15 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=10 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
+[ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="3_1ftnn"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1uepb"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1ftnn"]
 radius = 0.703125
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ftnn"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_1uepb"]
 radius = 1.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38ohv"]
+render_priority = 0
+shader = ExtResource("3_1ftnn")
+shader_parameter/albedo_tex = ExtResource("2_1uepb")
+shader_parameter/alpha_scissor_threshold = 1.0
+shader_parameter/speed = 2.0
+shader_parameter/dis = 0.08
+shader_parameter/texture_size = Vector2(256, 256)
+shader_parameter/region = Vector4(0, 0, 64, 64)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2tc2x"]
+material = SubResource("ShaderMaterial_38ohv")
 
 [node name="wincraft" type="Node3D"]
 script = ExtResource("1_mtrxf")
@@ -54,6 +72,7 @@ text = "0/3"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_overlay = SubResource("ShaderMaterial_1ftnn")
 billboard = 2
 shaded = true
 texture = ExtResource("2_1uepb")
@@ -69,6 +88,12 @@ shadow_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D_ZombKill"]
 shape = SubResource("SphereShape3D_1uepb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65040106, 0)
+visible = false
+mesh = SubResource("QuadMesh_2tc2x")
+skeleton = NodePath("../Sprite3D")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

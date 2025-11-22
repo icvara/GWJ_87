@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded, cull_disabled;
+render_mode  cull_disabled; //unshaded
 
 uniform sampler2D albedo_tex : source_color;
 uniform float alpha_scissor_threshold : hint_range(0.0, 1.0) = 1.;
@@ -46,7 +46,7 @@ void fragment() {
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
 	ALBEDO = tex_col.rgb;
     ALPHA = tex_col.a;
-	EMISSION = tex_col.rgb * glow_color.rgb * glow_strength * tex_col.a;
+	//EMISSION = tex_col.rgb * glow_color.rgb * glow_strength * tex_col.a;
 }
 
 //void light() {
