@@ -7,6 +7,8 @@ var factor
 
 func _ready():
 	maxcount = initial_maxcount
+	$CanvasLayer/Panel/Label.text = "Bring"+str(initial_maxcount) +"Object"
+	$Label3D.text = "0/"+str(maxcount)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
@@ -14,7 +16,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			count += body.item
 			body.item = 0
 			$Label3D.text = str(count) + "/" + str(maxcount)
-			WorldData.wave_number += 1
 			#$CanvasLayer/Panel/Label.text = "Bring " + str(count) + " objects"
 			if count >= maxcount :
 				#$CanvasLayer/Panel/Label.text = "You Win"
@@ -24,6 +25,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				maxcount += initial_maxcount
 				$Area3D/CollisionShape3D.scale*=1.1
 				grow_sprite()
+				WorldData.wave_number += 1
 			#$CanvasLayer.show()
 
 func grow_sprite():
@@ -34,7 +36,8 @@ func grow_sprite():
 
 	# Scale the sprite
 	$Sprite3D.scale *= factor
-
+	$Sprite3D/OmniLight3D.omni_range *= factor
+	$Sprite3D/OmniLight3D.light_size *= factor
 	# New height
 	var new_height = $Sprite3D.scale.y
 

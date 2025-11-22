@@ -547,29 +547,125 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_5m/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ufyq2")
 
-[node name="wall_5m2" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+[node name="wall_1m" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 11)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m2" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 11)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m2"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m3" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 11)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m3"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m4" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 10)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m4"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m5" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 10)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m5"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m6" type="MeshInstance3D" parent="laby_composition/Cube_7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 8)
-mesh = SubResource("BoxMesh_um5q5")
+mesh = SubResource("BoxMesh_wskc4")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_5m2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m6"]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_5m2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ufyq2")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
 
-[node name="wall_4m" type="MeshInstance3D" parent="laby_composition/Cube_7"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 1, 10.5)
-mesh = SubResource("BoxMesh_rpttc")
+[node name="wall_1m7" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 8)
+mesh = SubResource("BoxMesh_wskc4")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_4m"]
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m7"]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_4m/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fxp3o")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m8" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 8)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m8"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m9" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 9)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m9"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
+
+[node name="wall_1m10" type="MeshInstance3D" parent="laby_composition/Cube_7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 8)
+mesh = SubResource("BoxMesh_wskc4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="laby_composition/Cube_7/wall_1m10"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_1m10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_uos1i")
 
 [node name="Cube_8" type="Node3D" parent="laby_composition"]
 
