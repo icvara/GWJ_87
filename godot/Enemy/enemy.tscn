@@ -100,11 +100,11 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_doop2"]
-radius = 0.4
+radius = 0.25
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ncf7h"]
 height = 1.4929199
-radius = 16.96875
+radius = 30.0
 
 [node name="enemy" type="CharacterBody3D" groups=["Zombie"]]
 script = ExtResource("1_am0pq")
@@ -120,6 +120,7 @@ autoplay = "default"
 frame_progress = 0.58047783
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1442787, 0)
 shape = SubResource("SphereShape3D_doop2")
 
 [node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -150,6 +151,8 @@ billboard = 1
 path_desired_distance = 0.1
 target_desired_distance = 0.25
 simplify_path = true
+radius = 0.25
+debug_enabled = true
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 9

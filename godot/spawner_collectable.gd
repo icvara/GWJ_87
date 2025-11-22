@@ -18,9 +18,9 @@ func _process(delta: float) -> void:
 
 func spawn_on_nav():
 	var random_point = Vector3(
-		randf_range(-20, 20),
+		randf_range(-12, 12),
 		randf_range(0, 0),
-		randf_range(-20, 20)
+		randf_range(-12, 12)
 	)
 
 	# Find the nearest navigable point on the NavMesh
