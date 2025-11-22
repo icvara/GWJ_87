@@ -47,8 +47,9 @@ frame_progress = 0.646436
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.9314077, 0.7227015, 0, 1)
-light_energy = 5.0
-omni_range = 1.0
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 0.6
 
 [node name="Area3D" type="Area3D" parent="."]
 
