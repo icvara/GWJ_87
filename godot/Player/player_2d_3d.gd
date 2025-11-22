@@ -8,6 +8,7 @@ var item = 0
 @export var plant2 : PackedScene
 @export var plant3 : PackedScene
 @export var campfire : PackedScene
+@export var day_is_active : WorldEnvironment
 
 var plant_selected = 0
 var plant_amount = []
@@ -69,7 +70,7 @@ func _process(delta: float) -> void:
 				value = 1
 		else:
 			timer_night += delta * WorldData.gamespeed
-			if timer_night >= 0.5:
+			if timer_night >= 0.5 and day_is_active.get_light_factor() <0:
 				timer_night = 0
 				HP = clamp(HP - health_decay, 0 ,100)
 	

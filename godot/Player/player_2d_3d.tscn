@@ -164,6 +164,7 @@ draw_pass_1 = SubResource("QuadMesh_6bw8v")
 [node name="OmniLight3D" type="OmniLight3D" parent="." node_paths=PackedStringArray("player")]
 light_color = Color(0.9314077, 0.7227015, 0, 1)
 light_energy = 2.0
+shadow_enabled = true
 script = ExtResource("14_1aakt")
 player = NodePath("..")
 

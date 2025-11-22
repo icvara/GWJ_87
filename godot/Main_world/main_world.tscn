@@ -58,10 +58,11 @@ collision_mask = 3
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.465202, 22.34185, 0)
 
-[node name="Player2D3D" parent="." node_paths=PackedStringArray("sun") instance=ExtResource("1_01p1j")]
+[node name="Player2D3D" parent="." node_paths=PackedStringArray("day_is_active", "sun") instance=ExtResource("1_01p1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81319857, -0.22135925)
 plant1 = ExtResource("4_oo5j1")
 plant2 = ExtResource("4_2a3kn")
+day_is_active = NodePath("../WorldEnvironment")
 sun = NodePath("../Sun")
 
 [node name="Calm1" type="AudioStreamPlayer2D" parent="."]
