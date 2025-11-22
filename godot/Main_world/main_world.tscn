@@ -26,6 +26,7 @@
 sky_material = SubResource("ShaderMaterial_w8vr0")
 
 [sub_resource type="Environment" id="Environment_cdc7a"]
+background_mode = 2
 sky = SubResource("Sky_01p1j")
 volumetric_fog_density = 0.179
 
