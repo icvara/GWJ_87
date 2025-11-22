@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("zoom_in"):
 			spring_length -= zoom_speed
 		if Input.is_action_pressed("zoom_out"):
-			spring_length += zoom_speed
+			spring_length += zoom_speed 
 		
 		spring_length = clamp(spring_length,-0.01,5)
 
@@ -67,3 +67,4 @@ func _input(event: InputEvent) -> void:
 			spring_length -= zoom_speed * 2
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			spring_length += zoom_speed *  2
+		spring_length = clamp(spring_length,-0.01,5)

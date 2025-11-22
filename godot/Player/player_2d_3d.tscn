@@ -122,6 +122,9 @@ transform = Transform3D(1, 0, 0, 0, 0.9781476, 0.2079117, 0, -0.2079117, 0.97814
 collision_mask = 4
 spring_length = 5.0
 script = ExtResource("2_habko")
+camera_speed = null
+zoom_speed = null
+mouse_sensitivity = null
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 unique_name_in_owner = true
