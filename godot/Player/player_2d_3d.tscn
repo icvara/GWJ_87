@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d3clc63v3sp0b"]
+[gd_scene load_steps=32 format=3 uid="uid://d3clc63v3sp0b"]
 
 [ext_resource type="Script" uid="uid://d3qu3c5jolwwy" path="res://state_manager/state_manager.gd" id="1_20cw5"]
 [ext_resource type="Script" uid="uid://bdg8fy62tixdu" path="res://Player/player_2d_3d.gd" id="1_pulta"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://cpq0a0ibuy3vg" path="res://Player/omni_light_3d.gd" id="14_1aakt"]
 [ext_resource type="AudioStream" uid="uid://bog3vlscq6r1p" path="res://asset/music/PlantSeed.wav" id="15_k2b4n"]
 [ext_resource type="AudioStream" uid="uid://bj3lsa2laq2e8" path="res://asset/music/Hurt.wav" id="16_bfgv8"]
+[ext_resource type="AudioStream" uid="uid://yfexioru5ck5" path="res://asset/music/Unalived.wav" id="16_qr1c5"]
+[ext_resource type="AudioStream" uid="uid://2yvgy8v10vkx" path="res://asset/music/Plant Grow.wav" id="17_qr1c5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eua6v"]
 atlas = ExtResource("2_ao76n")
@@ -122,9 +124,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9781476, 0.2079117, 0, -0.2079117, 0.97814
 collision_mask = 4
 spring_length = 5.0
 script = ExtResource("2_habko")
-camera_speed = null
-zoom_speed = null
-mouse_sensitivity = null
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 unique_name_in_owner = true
@@ -178,3 +177,9 @@ stream = ExtResource("15_k2b4n")
 
 [node name="Hurt" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("16_bfgv8")
+
+[node name="Unalived" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("16_qr1c5")
+
+[node name="PlantGrow" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("17_qr1c5")

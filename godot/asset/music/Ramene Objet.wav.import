@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d26egn4sl1svq"
+path="res://.godot/imported/Ramene Objet.wav-b11fc57438f9b3cf25656d2cc9c036c3.sample"
+
+[deps]
+
+source_file="res://asset/music/Ramene Objet.wav"
+dest_files=["res://.godot/imported/Ramene Objet.wav-b11fc57438f9b3cf25656d2cc9c036c3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

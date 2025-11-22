@@ -2,10 +2,10 @@ extends Node3D
 
 @export var nav_region3d  : NavigationRegion3D
 @export var colectable  : PackedScene
-
+@export var sun : Node3D
 var nav_map 
 
-var count = 1.
+var count = .5
 
 func _ready() -> void:
 	nav_map = nav_region3d.get_navigation_map()
@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	count -= delta
 	if count <0:
-		count = 1
+		count = 0.5
 		spawn_on_nav()
 
 func spawn_on_nav():
@@ -32,5 +32,15 @@ func spawn_on_nav():
 func spawn_object(pos):
 	var c = colectable.instantiate()
 	c.position = pos
+	c.position.y = 8
 	add_child(c)
-	
+
+
+func sun_detect():		
+	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
+	if $RayCast3D.is_colliding() == false:
+		return true
+	else:
+		return false
+
+		

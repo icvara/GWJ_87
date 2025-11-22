@@ -6,3 +6,5 @@
 [node name="Spawner_collectable" type="Node3D"]
 script = ExtResource("1_pjiow")
 colectable = ExtResource("2_52b7x")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://cjluxqvqfxsgn" path="res://Menus/tuto_window.tscn" id="19_atmmq"]
 [ext_resource type="PackedScene" uid="uid://egmb5vyiv5x6" path="res://Main_world/spawner_collectable.tscn" id="20_d4t0v"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8vr0"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_oo5j1"]
 
 [sub_resource type="Sky" id="Sky_01p1j"]
-sky_material = SubResource("ShaderMaterial_w8vr0")
+sky_material = SubResource("PanoramaSkyMaterial_oo5j1")
 
 [sub_resource type="Environment" id="Environment_cdc7a"]
 background_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6fbseefb3bye"]
+[gd_scene load_steps=8 format=3 uid="uid://6fbseefb3bye"]
 
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="1_b0cgh"]
 [ext_resource type="Script" uid="uid://ck53r5jgd5odn" path="res://Main_world/collectable.gd" id="1_ioju7"]
@@ -29,7 +29,13 @@ animations = [{
 height = 0.13745117
 radius = 0.13183594
 
-[node name="collectable" type="Area3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ioju7"]
+radius = 0.087486565
+
+[node name="collectable" type="RigidBody3D"]
+collision_layer = 0
+mass = 0.5
+gravity_scale = 0.5
 script = ExtResource("1_ioju7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -39,13 +45,19 @@ sprite_frames = SubResource("SpriteFrames_xycvj")
 autoplay = "default"
 frame_progress = 0.646436
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0059814453, 0)
-shape = SubResource("CylinderShape3D_cufkw")
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.9314077, 0.7227015, 0, 1)
 light_energy = 2.0
 omni_range = 2.553272
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0059814453, 0)
+shape = SubResource("CylinderShape3D_cufkw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ioju7")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

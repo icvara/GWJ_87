@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp3fcbhnupj06"
+path="res://.godot/imported/Victory Provisoire.mp3-ae72b0d43d51b49e3026d8e2be2b91be.mp3str"
+
+[deps]
+
+source_file="res://asset/music/Victory Provisoire.mp3"
+dest_files=["res://.godot/imported/Victory Provisoire.mp3-ae72b0d43d51b49e3026d8e2be2b91be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
