@@ -98,6 +98,7 @@ collision_mask = 3
 shape = SubResource("ConcavePolygonShape3D_s2lxu")
 
 [node name="walls" type="Node3D" parent="."]
+visible = false
 
 [node name="wall_1m" type="MeshInstance3D" parent="walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -31)
@@ -556,7 +557,6 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="laby_composition/Cube_7/wall_5m2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ufyq2")
 
 [node name="wall_4m" type="MeshInstance3D" parent="laby_composition/Cube_7"]
