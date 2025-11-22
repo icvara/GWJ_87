@@ -51,6 +51,8 @@ func Update_physique_process(delta):
 				pass
 				print("touched")
 				StateOwner.target.HP = clamp(StateOwner.target.HP-20,0,100)
+				StateOwner.target.get_node("music").get_node("Hurt").play() 
+
 				StateOwner.queue_free()
 				#get_parent().get_node("Player2D3D/Death_interface").show()
 				#Change_state.emit(self, new_state_A)

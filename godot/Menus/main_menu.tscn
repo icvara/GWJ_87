@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ttjt2usgy45u"]
+[gd_scene load_steps=9 format=3 uid="uid://ttjt2usgy45u"]
 
 [ext_resource type="Script" uid="uid://cg66s6la4ec01" path="res://Menus/main_menu.gd" id="1_glbon"]
+[ext_resource type="AudioStream" uid="uid://bp37u8w055rj8" path="res://asset/music/Menu.wav" id="2_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://bajm2ovx6mn5p" path="res://asset/GWJ_art/GWJ-Full-Logo-noBG-4k.png" id="3_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://dped3d4615jgf" path="res://asset/GWJ_art/87-Decay.png" id="3_glbon"]
 [ext_resource type="AudioStream" uid="uid://bhwkattekdo34" path="res://asset/music/background.wav" id="5_glbon"]
@@ -10,6 +11,9 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_glbon")
+
+[node name="Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2k0p2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
