@@ -21,6 +21,10 @@ boot_splash/minimum_display_time=2000
 
 WorldData="*res://data/world_data.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_forward={

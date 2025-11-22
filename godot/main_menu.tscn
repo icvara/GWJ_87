@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://clq7clh31y7rs" path="res://asset/GWJ_art/87-All-Cards.png" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bajm2ovx6mn5p" path="res://asset/GWJ_art/GWJ-Full-Logo-noBG-4k.png" id="3_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://dped3d4615jgf" path="res://asset/GWJ_art/87-Decay.png" id="3_glbon"]
-[ext_resource type="AudioStream" uid="uid://bdvy3bx5hs40q" path="res://asset/music/calm1.wav" id="4_jix8l"]
+[ext_resource type="AudioStream" uid="uid://bhwkattekdo34" path="res://asset/music/background.wav" id="5_glbon"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_glbon")
@@ -72,7 +72,7 @@ texture = ExtResource("3_fu7sn")
 
 [node name="Calm1" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(228, 628)
-stream = ExtResource("4_jix8l")
+stream = ExtResource("5_glbon")
 autoplay = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]

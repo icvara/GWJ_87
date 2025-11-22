@@ -1,13 +1,13 @@
-[gd_scene load_steps=54 format=3 uid="uid://bi1fgutnwxidr"]
+[gd_scene load_steps=55 format=3 uid="uid://bi1fgutnwxidr"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_01p1j"]
 [ext_resource type="Texture2D" uid="uid://bdk0lrrm3nigj" path="res://asset/Textures/A5_WoodTextureSeamless.png" id="1_5sbxf"]
-[ext_resource type="AudioStream" uid="uid://bdvy3bx5hs40q" path="res://asset/music/calm1.wav" id="2_cdc7a"]
 [ext_resource type="Script" uid="uid://b6wx0k8fw3yic" path="res://Main_world/world_environment.gd" id="2_q06bt"]
 [ext_resource type="PackedScene" uid="uid://ce3qphjh5yeyq" path="res://Main_world/sun.tscn" id="2_twcpi"]
 [ext_resource type="PackedScene" uid="uid://bbmii1r4y4bn6" path="res://plant/Glow_plant.tscn" id="4_2a3kn"]
 [ext_resource type="PackedScene" uid="uid://ygpo174a2ano" path="res://plant/grass_slow.tscn" id="4_oo5j1"]
 [ext_resource type="PackedScene" uid="uid://dqyoo5kixp6vj" path="res://Enemy/enemy.tscn" id="5_yasq4"]
+[ext_resource type="AudioStream" uid="uid://bhwkattekdo34" path="res://asset/music/background.wav" id="6_tbj6t"]
 [ext_resource type="PackedScene" uid="uid://jpgyhbhrqtt3" path="res://Enemy/enemy_spawner.tscn" id="6_twcpi"]
 [ext_resource type="QuadMesh" uid="uid://w5i6pl0mim0y" path="res://plant/grass.tres" id="8_63dkx"]
 [ext_resource type="Texture2D" uid="uid://cuy0ue4fg5cfk" path="res://asset/Textures/texture-herbe-sans-couture-vieux-carreaux-pierre_172107-2543.jpg" id="9_p6qna"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bsc3ihgug3et8" path="res://plant/sunflower.tscn" id="15_1qotm"]
 [ext_resource type="PackedScene" path="res://3d_asset/laybrinth.tscn" id="15_tbj6t"]
 [ext_resource type="PackedScene" uid="uid://6fbseefb3bye" path="res://Main_world/collectable.tscn" id="16_hbv0y"]
+[ext_resource type="PackedScene" uid="uid://cjluxqvqfxsgn" path="res://Menus/tuto_window.tscn" id="19_atmmq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w8vr0"]
 
@@ -166,7 +167,7 @@ sun = NodePath("../Sun")
 
 [node name="Calm1" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(228, 628)
-stream = ExtResource("2_cdc7a")
+stream = ExtResource("6_tbj6t")
 autoplay = true
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
@@ -560,3 +561,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.027996, 0.27676296, -7.684
 
 [node name="collectable4" parent="." instance=ExtResource("16_hbv0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6051183, 0.27676296, 2.5959969)
+
+[node name="Tuto_window" parent="." instance=ExtResource("19_atmmq")]
