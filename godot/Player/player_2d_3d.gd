@@ -7,10 +7,12 @@ var item = 0
 @export var plant1 : PackedScene
 @export var plant2 : PackedScene
 @export var plant3 : PackedScene
+@export var campfire : PackedScene
 
 var plant_selected = 0
 var plant_amount = []
 @export var sun : Node3D
+@export var player : Node3D
 
 var plant_list = []
 var speedmodifier = 1.0
@@ -48,8 +50,10 @@ func _physics_process(delta: float) -> void:
 				#print(velocity.y )
 		velocity = speedmodifier*velocity
 		move_and_slide()
-	
-
+		if Input.is_action_just_pressed("space") and player:
+			var campfire_instance = campfire.instantiate()
+			get_tree().current_scene.add_child(campfire_instance)
+			campfire_instance.position = self.position -Vector3(0,0.2,0)
 func _process(delta: float) -> void:
 	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
 	if $RayCast3D.is_colliding() == false:
@@ -60,6 +64,7 @@ func _process(delta: float) -> void:
 			plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
 			plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
 			value = 1
+
 
 	if HP <=0:
 		$Death_interface.activate()

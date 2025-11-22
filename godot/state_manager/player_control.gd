@@ -4,7 +4,7 @@ class_name player_control
 @export var bumbing_jump: float = 110.0
 @export var bumbing_time: float = 0.5
 @export var landing_time: float = .3
-
+@export var player: Node3D 
 
 @export var action_A : State
 @export var action_B : State
@@ -105,8 +105,7 @@ func Update_physique_process(delta):
 				print("ERROR: no packedScene attached to player")
 			#if action_A:
 				#Change_state.emit(self,action_A)
-	
-	
+			
 		'if StateOwner.velocity != Vector3(0,0,0):
 			if current_bump_time > 0: 
 				StateOwner.velocity.y = bumbing_jump * delta'
