@@ -5,6 +5,25 @@ var sun= Node3D
 var value = 0.0
 var hasgrown = false
 var HP = 5
+var growthTime = 5
+
+
+
+func loading_bar_update(v):
+	if v == 0:
+		$Label3D.text = "[□□□□□]"
+	if v == 1:
+		$Label3D.text = "[■□□□□]"
+	if v == 2:
+		$Label3D.text = "[■■□□□]"
+	if v == 3:
+		$Label3D.text = "[■■■□□]"
+	if v == 4:
+		$Label3D.text = "[■■■■□]"
+	if v == 5:
+		$Label3D.text = "[■■■■■]"
+
+
 
 func _process(delta: float) -> void:
 	#timer -= delta
@@ -14,11 +33,11 @@ func _process(delta: float) -> void:
 	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
 	if $RayCast3D.is_colliding() == false:
 		if value < 5 and hasgrown== false:
-
+			print(value)
 			value += delta
-			$Label3D.text = str(int(value)*10) 
+			loading_bar_update(int(value))
 		elif value >= 5 and hasgrown== false :
-			
+			$Label3D.hide()
 			hasgrown = true
 			$MultiMeshInstance3D.show()
 
@@ -39,7 +58,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Zombie"):# or body.name == "Player2D3D":
 		body.speedmodifier= 1
-		HP -= 1
-		position.y -= 0.1
+		#HP -= 1
+		#position.y -= 0.1
 		if HP <0 :
 			Die()
