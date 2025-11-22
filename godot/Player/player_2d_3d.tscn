@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3clc63v3sp0b"]
+[gd_scene load_steps=26 format=3 uid="uid://d3clc63v3sp0b"]
 
 [ext_resource type="Script" uid="uid://d3qu3c5jolwwy" path="res://state_manager/state_manager.gd" id="1_20cw5"]
 [ext_resource type="Script" uid="uid://bdg8fy62tixdu" path="res://Player/player_2d_3d.gd" id="1_pulta"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bd8dxq34goerd" path="res://Player/hud.tscn" id="6_eua6v"]
 [ext_resource type="PackedScene" uid="uid://c0bf85xkaei2x" path="res://Menus/in_game_menu.tscn" id="7_00ovx"]
 [ext_resource type="PackedScene" uid="uid://bn0d4lboe0w77" path="res://Menus/death_interface.tscn" id="8_lwjg3"]
+[ext_resource type="Shader" uid="uid://w5aknnr4bmmi" path="res://Player/player.gdshader" id="12_kmfur"]
+[ext_resource type="Texture2D" uid="uid://btnkmvwbeq4fi" path="res://Player/player.png" id="13_1aakt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eua6v"]
 atlas = ExtResource("2_ao76n")
@@ -65,6 +67,29 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_v6ek8"]
 radius = 0.25
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2b4n"]
+render_priority = 0
+shader = ExtResource("12_kmfur")
+shader_parameter/grass_texture = ExtResource("13_1aakt")
+shader_parameter/gradient_blend = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bfgv8"]
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 10, 0)
+spread = 10.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr1c5"]
+albedo_color = Color(2.4227543, 2.4227543, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_6bw8v"]
+material = SubResource("StandardMaterial3D_qr1c5")
+size = Vector2(0.05, 0.05)
+
 [node name="Player2D3D" type="CharacterBody3D" groups=["light"]]
 script = ExtResource("1_pulta")
 plant1 = ExtResource("2_utrke")
@@ -72,6 +97,7 @@ plant2 = ExtResource("3_fpspg")
 plant3 = ExtResource("4_fpspg")
 
 [node name="Sprites_Managers" type="Node3D" parent="."]
+visible = false
 
 [node name="AnimatedSprite3D_0" type="AnimatedSprite3D" parent="Sprites_Managers"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.077631414, 0)
@@ -113,3 +139,16 @@ visible = false
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 collision_mask = 3
+
+[node name="Sprite3Ds" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08160195, 0)
+material_override = SubResource("ShaderMaterial_k2b4n")
+billboard = 1
+texture_filter = 0
+texture = ExtResource("13_1aakt")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Sprite3Ds"]
+amount_ratio = 0.5
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_bfgv8")
+draw_pass_1 = SubResource("QuadMesh_6bw8v")
