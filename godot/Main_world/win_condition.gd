@@ -38,6 +38,8 @@ func grow_sprite():
 	$Sprite3D.scale *= factor
 	$Sprite3D/OmniLight3D.omni_range *= factor
 	$Sprite3D/OmniLight3D.light_size *= factor
+	$Sprite3D/OmniLight3D.light_energy *= factor
+	$Area3D_ZombKill/CollisionShape3D.scale *= factor
 	# New height
 	var new_height = $Sprite3D.scale.y
 
@@ -49,3 +51,8 @@ func grow_sprite():
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "Player2D3D":
 		$CanvasLayer.hide()
+
+
+func _on_area_3d_zomb_kill_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Zombie"):
+		body.queue_free()
