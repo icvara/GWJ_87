@@ -17,6 +17,10 @@ boot_splash/image="uid://br64ec7ihbaaa"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=2000
 
+[audio]
+
+buses/channel_disable_threshold_db=-20.0
+
 [autoload]
 
 WorldData="*res://data/world_data.gd"
@@ -24,6 +28,10 @@ WorldData="*res://data/world_data.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+
+[global]
+
+SFX=false
 
 [input]
 
