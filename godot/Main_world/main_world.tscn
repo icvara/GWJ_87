@@ -103,6 +103,7 @@ navigation_mesh = SubResource("NavigationMesh_p6qna")
 
 [node name="wincraft" parent="." instance=ExtResource("14_oaurr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 1.5767978, -0.1796689)
+initial_maxcount = 20.0
 
 [node name="Tuto_window" parent="." instance=ExtResource("19_atmmq")]
 
