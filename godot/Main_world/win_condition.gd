@@ -30,7 +30,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func grow_sprite():
 	var factor = ((maxcount+initial_maxcount)/maxcount)*1.2
-
+	$Label3D.text = str(count) + "/" + str(maxcount)
 	# Save previous height (assuming the pivot is at the center)
 	var old_height = $Sprite3D.scale.y
 
