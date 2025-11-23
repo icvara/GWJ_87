@@ -21,6 +21,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			$Collected.play()
 			body.plant_amount[0] = body.plant_amount[0] + floor(body.item/2)
 			body.plant_amount[1] = body.plant_amount[1] + floor(body.item/4)
+			body.get_node("loot").looting( floor(body.item/2),floor(body.item/4))
+
 			count += body.item
 			body.item = 0
 			$Pivot/Label3D.text = str(count) + "/" + str(maxcount)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3clc63v3sp0b"]
+[gd_scene load_steps=26 format=3 uid="uid://d3clc63v3sp0b"]
 
 [ext_resource type="Script" uid="uid://d3qu3c5jolwwy" path="res://state_manager/state_manager.gd" id="1_20cw5"]
 [ext_resource type="Script" uid="uid://bdg8fy62tixdu" path="res://Player/player_2d_3d.gd" id="1_pulta"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bd8dxq34goerd" path="res://Player/hud.tscn" id="6_eua6v"]
 [ext_resource type="PackedScene" uid="uid://c0bf85xkaei2x" path="res://Menus/in_game_menu.tscn" id="7_00ovx"]
 [ext_resource type="PackedScene" uid="uid://bn0d4lboe0w77" path="res://Menus/death_interface.tscn" id="8_lwjg3"]
+[ext_resource type="PackedScene" uid="uid://b8w0lyjca1a1q" path="res://Player/loot.tscn" id="9_rgxvf"]
 [ext_resource type="Shader" uid="uid://w5aknnr4bmmi" path="res://Player/player.gdshader" id="12_kmfur"]
 [ext_resource type="Texture2D" uid="uid://btnkmvwbeq4fi" path="res://Player/player.png" id="13_1aakt"]
 [ext_resource type="Script" uid="uid://cpq0a0ibuy3vg" path="res://Player/omni_light_3d.gd" id="14_1aakt"]
@@ -74,6 +75,8 @@ initial_state = NodePath("player_control")
 [node name="player_control" type="Node" parent="State_manager"]
 script = ExtResource("3_7qxor")
 metadata/_custom_type_script = "uid://bjb8hbwltft21"
+
+[node name="loot" parent="." instance=ExtResource("9_rgxvf")]
 
 [node name="HUD" parent="." instance=ExtResource("6_eua6v")]
 
