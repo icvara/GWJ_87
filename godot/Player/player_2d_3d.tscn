@@ -65,6 +65,7 @@ script = ExtResource("2_habko")
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 unique_name_in_owner = true
+current = true
 
 [node name="State_manager" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_20cw5")

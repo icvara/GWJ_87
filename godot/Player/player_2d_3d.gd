@@ -5,6 +5,7 @@ var is_screen_focus = true
 var win = false
 var item = 0
 var max_item = 20
+var alive = true
 @export var plant1 : PackedScene
 @export var plant2 : PackedScene
 @export var plant3 : PackedScene
@@ -64,37 +65,44 @@ func _physics_process(delta: float) -> void:
 			get_tree().current_scene.add_child(campfire_instance)
 			campfire_instance.position = self.position -Vector3(0,0.2,0)'
 func _process(delta: float) -> void:
-	if end == true:
-		timer += delta*timer_decay * WorldData.gamespeed
-		if timer >= 0.5 :
-			timer= 0
-			timer_decay+= 0.02
-			HP = clamp(HP - health_decay, 0 ,100)
-	if sun:
-		$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
-		if day_is_active.get_light_factor() >0:
-			value += delta * WorldData.gamespeed
-			if int(value) % 10 == 0:
-				HP = clamp(HP + 10, 0 ,100)
-				#plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,50)
-				#plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
-				#plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
-				value = 1
-		else:
-			timer_night += delta * WorldData.gamespeed
-			if timer_night >= 0.5 and day_is_active.get_light_factor() <0:
-				timer_night = 0
+	if alive:
+		if end == true:
+			timer += delta*timer_decay * WorldData.gamespeed
+			if timer >= 0.5 :
+				timer= 0
+				timer_decay+= 0.02
 				HP = clamp(HP - health_decay, 0 ,100)
-	
-	var health_ratio = float(HP) / 100.
-	var nscale =lerp(0.1, 1., health_ratio)
-	$Sprite3Ds.scale =   Vector3(nscale,nscale,nscale)
+		if sun:
+			$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
+			if day_is_active.get_light_factor() >0:
+				value += delta * WorldData.gamespeed
+				if int(value) % 10 == 0:
+					HP = clamp(HP + 10, 0 ,100)
+					#plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,50)
+					#plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
+					#plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
+					value = 1
+			else:
+				timer_night += delta * WorldData.gamespeed
+				if timer_night >= 0.5 and day_is_active.get_light_factor() <0:
+					timer_night = 0
+					HP = clamp(HP - health_decay, 0 ,100)
+		
+		var health_ratio = float(HP) / 100.
+		var nscale =lerp(0.1, 1., health_ratio)
+		$Sprite3Ds.scale =   Vector3(nscale,nscale,nscale)
 
-	if HP <=0 and end == false:
-		$Death_interface.activate()
-	elif HP <=0 and end == true:
-		print ("you died during endscreen")
-	
+		if HP <=0 and end == false:
+			$Death_interface.activate()
+		elif HP <=0 and end == true:
+			alive = false
+			$Sprite3Ds.queue_free()
+			$HUD.queue_free()
+			$OmniLight3D.queue_free()
+			$State_manager.queue_free()
+
+		#rint ("you died during endscreen")
+		
 
 	if is_multiplayer_authority():
 		pass

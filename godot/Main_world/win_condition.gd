@@ -32,6 +32,11 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				$Area3D/CollisionShape3D.scale*=1.1
 				grow_sprite()
 				WorldData.wave_number += 1
+				if  maxcount >= initial_maxcount*4:
+					if get_parent().name != "ENDSCREEN":
+						get_tree().change_scene_to_file("res://Menus/ending.tscn")
+
+
 			#$CanvasLayer.show()
 
 func grow_sprite():
