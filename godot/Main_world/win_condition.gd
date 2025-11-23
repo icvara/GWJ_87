@@ -18,7 +18,7 @@ func _ready():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
 		if body.item >0 :
-			
+			$Collected.play()
 			body.plant_amount[0] = body.plant_amount[0] + floor(body.item/2)
 			body.plant_amount[1] = body.plant_amount[1] + floor(body.item/4)
 			count += body.item
@@ -46,6 +46,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func grow_sprite():
 	factor = ((maxcount+initial_maxcount)/maxcount)*1.2 
+	$Growing.play()
 	#print(factor)
 	#factor = lerp(factor,1.1,1.2)
 	#factor = factor2_curve.get_point_position()
