@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://dlbb1chh1i0u0"]
+[gd_scene load_steps=24 format=3 uid="uid://dlbb1chh1i0u0"]
 
-[ext_resource type="Texture2D" uid="uid://blitl2rneeyy3" path="res://asset/Textures/texture 1024x1024.png" id="1_f6n8u"]
+[ext_resource type="Texture2D" uid="uid://do6y8sh0p8mp5" path="res://asset/Textures/rocky_ground_texture.jpg" id="1_fedtp"]
+[ext_resource type="Texture2D" uid="uid://fl7q2dul77qt" path="res://asset/Textures/ground-texture-arid-floor-cobblestone-1494.jpg" id="2_s2lxu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fedtp"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("1_fedtp")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_fedtp"]
@@ -14,7 +15,7 @@ size = Vector3(40, 1, 40)
 data = PackedVector3Array(-20, 0.5, 20, 20, 0.5, 20, -20, -0.5, 20, 20, 0.5, 20, 20, -0.5, 20, -20, -0.5, 20, 20, 0.5, -20, -20, 0.5, -20, 20, -0.5, -20, -20, 0.5, -20, -20, -0.5, -20, 20, -0.5, -20, 20, 0.5, 20, 20, 0.5, -20, 20, -0.5, 20, 20, 0.5, -20, 20, -0.5, -20, 20, -0.5, 20, -20, 0.5, -20, -20, 0.5, 20, -20, -0.5, -20, -20, 0.5, 20, -20, -0.5, 20, -20, -0.5, -20, 20, 0.5, 20, -20, 0.5, 20, 20, 0.5, -20, -20, 0.5, 20, -20, 0.5, -20, 20, 0.5, -20, -20, -0.5, 20, 20, -0.5, 20, -20, -0.5, -20, 20, -0.5, 20, 20, -0.5, -20, -20, -0.5, -20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6n8u"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("2_s2lxu")
 uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
@@ -25,7 +26,7 @@ material = SubResource("StandardMaterial3D_f6n8u")
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uos1i"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("2_s2lxu")
 uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
@@ -37,7 +38,7 @@ size = Vector3(2, 1, 1)
 data = PackedVector3Array(-1, 0.5, 0.5, 1, 0.5, 0.5, -1, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, -1, -0.5, 0.5, 1, 0.5, -0.5, -1, 0.5, -0.5, 1, -0.5, -0.5, -1, 0.5, -0.5, -1, -0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, -0.5, 1, -0.5, 0.5, -1, 0.5, -0.5, -1, 0.5, 0.5, -1, -0.5, -0.5, -1, 0.5, 0.5, -1, -0.5, 0.5, -1, -0.5, -0.5, 1, 0.5, 0.5, -1, 0.5, 0.5, 1, 0.5, -0.5, -1, 0.5, 0.5, -1, 0.5, -0.5, 1, 0.5, -0.5, -1, -0.5, 0.5, 1, -0.5, 0.5, -1, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, -1, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cldwb"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("2_s2lxu")
 uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
@@ -49,7 +50,7 @@ size = Vector3(3, 1, 1)
 data = PackedVector3Array(-1.5, 0.5, 0.5, 1.5, 0.5, 0.5, -1.5, -0.5, 0.5, 1.5, 0.5, 0.5, 1.5, -0.5, 0.5, -1.5, -0.5, 0.5, 1.5, 0.5, -0.5, -1.5, 0.5, -0.5, 1.5, -0.5, -0.5, -1.5, 0.5, -0.5, -1.5, -0.5, -0.5, 1.5, -0.5, -0.5, 1.5, 0.5, 0.5, 1.5, 0.5, -0.5, 1.5, -0.5, 0.5, 1.5, 0.5, -0.5, 1.5, -0.5, -0.5, 1.5, -0.5, 0.5, -1.5, 0.5, -0.5, -1.5, 0.5, 0.5, -1.5, -0.5, -0.5, -1.5, 0.5, 0.5, -1.5, -0.5, 0.5, -1.5, -0.5, -0.5, 1.5, 0.5, 0.5, -1.5, 0.5, 0.5, 1.5, 0.5, -0.5, -1.5, 0.5, 0.5, -1.5, 0.5, -0.5, 1.5, 0.5, -0.5, -1.5, -0.5, 0.5, 1.5, -0.5, 0.5, -1.5, -0.5, -0.5, 1.5, -0.5, 0.5, 1.5, -0.5, -0.5, -1.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mce0m"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("2_s2lxu")
 uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
@@ -61,7 +62,7 @@ size = Vector3(4, 1, 1)
 data = PackedVector3Array(-2, 0.5, 0.5, 2, 0.5, 0.5, -2, -0.5, 0.5, 2, 0.5, 0.5, 2, -0.5, 0.5, -2, -0.5, 0.5, 2, 0.5, -0.5, -2, 0.5, -0.5, 2, -0.5, -0.5, -2, 0.5, -0.5, -2, -0.5, -0.5, 2, -0.5, -0.5, 2, 0.5, 0.5, 2, 0.5, -0.5, 2, -0.5, 0.5, 2, 0.5, -0.5, 2, -0.5, -0.5, 2, -0.5, 0.5, -2, 0.5, -0.5, -2, 0.5, 0.5, -2, -0.5, -0.5, -2, 0.5, 0.5, -2, -0.5, 0.5, -2, -0.5, -0.5, 2, 0.5, 0.5, -2, 0.5, 0.5, 2, 0.5, -0.5, -2, 0.5, 0.5, -2, 0.5, -0.5, 2, 0.5, -0.5, -2, -0.5, 0.5, 2, -0.5, 0.5, -2, -0.5, -0.5, 2, -0.5, 0.5, 2, -0.5, -0.5, -2, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2lxu"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("2_s2lxu")
 uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
@@ -73,7 +74,7 @@ size = Vector3(5, 1, 1)
 data = PackedVector3Array(-2.5, 0.5, 0.5, 2.5, 0.5, 0.5, -2.5, -0.5, 0.5, 2.5, 0.5, 0.5, 2.5, -0.5, 0.5, -2.5, -0.5, 0.5, 2.5, 0.5, -0.5, -2.5, 0.5, -0.5, 2.5, -0.5, -0.5, -2.5, 0.5, -0.5, -2.5, -0.5, -0.5, 2.5, -0.5, -0.5, 2.5, 0.5, 0.5, 2.5, 0.5, -0.5, 2.5, -0.5, 0.5, 2.5, 0.5, -0.5, 2.5, -0.5, -0.5, 2.5, -0.5, 0.5, -2.5, 0.5, -0.5, -2.5, 0.5, 0.5, -2.5, -0.5, -0.5, -2.5, 0.5, 0.5, -2.5, -0.5, 0.5, -2.5, -0.5, -0.5, 2.5, 0.5, 0.5, -2.5, 0.5, 0.5, 2.5, 0.5, -0.5, -2.5, 0.5, 0.5, -2.5, 0.5, -0.5, 2.5, 0.5, -0.5, -2.5, -0.5, 0.5, 2.5, -0.5, 0.5, -2.5, -0.5, -0.5, 2.5, -0.5, 0.5, 2.5, -0.5, -0.5, -2.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wskc4"]
-albedo_texture = ExtResource("1_f6n8u")
+albedo_texture = ExtResource("2_s2lxu")
 uv1_scale = Vector3(2, 2, 2)
 uv1_offset = Vector3(1, 1, 1)
 uv1_triplanar = true
