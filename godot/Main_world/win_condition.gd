@@ -4,6 +4,7 @@ var count = 0
 var maxcount :float = 1.0
 @export var initial_maxcount := 1.0
 var factor 
+@export var factor2_curve : Curve
 
 func _ready():
 	maxcount = initial_maxcount
@@ -29,7 +30,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			#$CanvasLayer.show()
 
 func grow_sprite():
-	var factor = ((maxcount+initial_maxcount)/maxcount)*1.2
+	factor = ((maxcount+initial_maxcount)/maxcount)*1.2 
+	#print(factor)
+	#factor = lerp(factor,1.1,1.2)
+	#factor = factor2_curve.get_point_position()
 	$Label3D.text = str(count) + "/" + str(maxcount)
 	# Save previous height (assuming the pivot is at the center)
 	var old_height = $Sprite3D.scale.y

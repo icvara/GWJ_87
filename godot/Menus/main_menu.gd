@@ -5,7 +5,7 @@ var isFocus = false
 func _on_button_pressed() -> void:
 	$Menu.play()
 
-	get_tree().change_scene_to_file("res://Main_world/main_world.tscn")
+	get_tree().change_scene_to_file("res://Menus/story.tscn")
 
 
 func _process(delta: float) -> void:

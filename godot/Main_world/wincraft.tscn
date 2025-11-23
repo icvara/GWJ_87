@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=11 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
 [ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="3_1ftnn"]
+
+[sub_resource type="Curve" id="Curve_1ftnn"]
+_data = [Vector2(0.010869563, 1), 0.0, 0.0, 0, 0, Vector2(0.49456525, 0.55056185), -4.2564435, -4.2564435, 0, 0, Vector2(0.9891305, 0.022471905), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1uepb"]
 
@@ -17,6 +21,7 @@ radius = 1.2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38ohv"]
 render_priority = 0
 shader = ExtResource("3_1ftnn")
+shader_parameter/scale = 1.0
 shader_parameter/albedo_tex = ExtResource("2_1uepb")
 shader_parameter/alpha_scissor_threshold = 1.0
 shader_parameter/speed = 2.0
@@ -31,6 +36,7 @@ material = SubResource("ShaderMaterial_38ohv")
 
 [node name="wincraft" type="Node3D"]
 script = ExtResource("1_mtrxf")
+factor2_curve = SubResource("Curve_1ftnn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false

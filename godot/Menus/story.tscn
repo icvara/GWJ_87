@@ -1,0 +1,356 @@
+[gd_scene load_steps=26 format=3 uid="uid://btvh1ychbc5i7"]
+
+[ext_resource type="Shader" uid="uid://w5aknnr4bmmi" path="res://Player/player.gdshader" id="1_4axwh"]
+[ext_resource type="Texture2D" uid="uid://btnkmvwbeq4fi" path="res://Player/player.png" id="2_wiadf"]
+[ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="3_2mfaj"]
+[ext_resource type="PackedScene" uid="uid://dlbb1chh1i0u0" path="res://3d_asset/labyrinth_2.tscn" id="3_wiadf"]
+[ext_resource type="Script" uid="uid://cxiin86l0fe2b" path="res://Menus/dialogue.gd" id="5_1xg5e"]
+[ext_resource type="Texture2D" uid="uid://b324hy0dmvp3x" path="res://plant/asset/sun.png" id="6_nudm8"]
+[ext_resource type="PackedScene" uid="uid://6fbseefb3bye" path="res://Main_world/collectable.tscn" id="6_y111g"]
+[ext_resource type="PackedScene" uid="uid://sv4f6ene52hg" path="res://Menus/tuto.tscn" id="8_y111g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xg5e"]
+render_priority = 0
+shader = ExtResource("1_4axwh")
+shader_parameter/grass_texture = ExtResource("2_wiadf")
+shader_parameter/gradient_blend = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nudm8"]
+emission_shape_scale = Vector3(0.5, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 10, 0)
+spread = 10.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d15i5"]
+albedo_color = Color(2.4227543, 2.4227543, 0, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_y111g"]
+material = SubResource("StandardMaterial3D_d15i5")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d15i5"]
+
+[sub_resource type="Animation" id="Animation_d15i5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.12390091, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.15195715, 18.562344, 1.7788825)]
+}
+
+[sub_resource type="Animation" id="Animation_nudm8"]
+resource_name = "cam0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.6287899, 2.2979593)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7oufa"]
+resource_name = "camera1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.12390091, 0, 0), Vector3(0.6750933, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.6287899, 2.2979593)]
+}
+
+[sub_resource type="Animation" id="Animation_1xg5e"]
+resource_name = "camera2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.6750933, 0, 0), Vector3(-0.60444254, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.6287899, 2.2979593), Vector3(-0.15195715, 18.562344, 1.7788825)]
+}
+
+[sub_resource type="Animation" id="Animation_y111g"]
+resource_name = "text"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_t4vbk"]
+resource_name = "text2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_2wxe8"]
+resource_name = "cam3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.60444254, 0, 0), Vector3(0.031607855, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.15195715, 18.562344, 1.7788825), Vector3(-0.15195715, 1.5119, 1.8245559)]
+}
+
+[sub_resource type="Animation" id="Animation_40p72"]
+resource_name = "text3"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7oufa"]
+_data = {
+&"RESET": SubResource("Animation_d15i5"),
+&"cam0": SubResource("Animation_nudm8"),
+&"cam3": SubResource("Animation_2wxe8"),
+&"camera1": SubResource("Animation_7oufa"),
+&"camera2": SubResource("Animation_1xg5e"),
+&"text1": SubResource("Animation_y111g"),
+&"text2": SubResource("Animation_t4vbk"),
+&"text3": SubResource("Animation_40p72")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xg5e"]
+albedo_color = Color(1, 1, 1, 0)
+metallic = 0.5
+metallic_specular = 1.0
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.94901603, 0.87602305, 0.7100601, 1)
+emission_energy_multiplier = 50.0
+disable_receive_shadows = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_nudm8"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y111g"]
+
+[node name="Story" type="Node3D"]
+
+[node name="Sprite3Ds" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1666725, 0.8110286, 0)
+material_override = SubResource("ShaderMaterial_1xg5e")
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_wiadf")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Sprite3Ds"]
+amount_ratio = 0.5
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_nudm8")
+draw_pass_1 = SubResource("QuadMesh_y111g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99233407, -0.123584144, 0, 0.123584144, 0.99233407, -0.15195715, 18.562344, 1.7788825)
+
+[node name="labyrinth 2" parent="." instance=ExtResource("3_wiadf")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0428846, 1.185565, 0)
+material_overlay = SubResource("ShaderMaterial_d15i5")
+billboard = 2
+shaded = true
+texture = ExtResource("3_2mfaj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 3
+light_size = 0.25
+shadow_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -121.0
+offset_right = 361.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("5_1xg5e")
+collect = ExtResource("6_y111g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 17.0
+offset_right = 195.0
+offset_bottom = 40.0
+text = "Hello, little sun!"
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Panel"]
+root_node = NodePath("../Label")
+libraries = {
+&"": SubResource("AnimationLibrary_7oufa")
+}
+
+[node name="Sun" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(47, 82)
+texture = ExtResource("6_nudm8")
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 81.0
+offset_right = 377.0
+offset_bottom = 112.0
+text = "continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sun" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.666078, -13.8115835)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Sun"]
+transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, -1, 0, 1, -5.9604645e-08, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sun"]
+material_override = SubResource("StandardMaterial3D_1xg5e")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_nudm8")
+surface_material_override/0 = SubResource("StandardMaterial3D_y111g")
+
+[node name="tuto" parent="." instance=ExtResource("8_y111g")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="CanvasLayer/Panel/Button" to="CanvasLayer/Panel" method="_on_button_pressed"]

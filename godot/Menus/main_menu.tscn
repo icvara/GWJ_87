@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ttjt2usgy45u"]
+[gd_scene load_steps=11 format=3 uid="uid://ttjt2usgy45u"]
 
 [ext_resource type="Script" uid="uid://cg66s6la4ec01" path="res://Menus/main_menu.gd" id="1_glbon"]
 [ext_resource type="AudioStream" uid="uid://bp37u8w055rj8" path="res://asset/music/Menu.wav" id="2_2k0p2"]
@@ -8,6 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://ivmdaqso5px4" path="res://asset/GWJ_art/out-out-brief-candle.png" id="5_gn11b"]
 [ext_resource type="Texture2D" uid="uid://bcn6ksp0usja1" path="res://asset/GWJ_art/venn-diagram.png" id="6_2k0p2"]
 [ext_resource type="Texture2D" uid="uid://btnkmvwbeq4fi" path="res://Player/player.png" id="7_y501u"]
+[ext_resource type="Shader" uid="uid://w5aknnr4bmmi" path="res://Player/player.gdshader" id="8_y501u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uayf2"]
+render_priority = 0
+shader = ExtResource("8_y501u")
+shader_parameter/grass_texture = ExtResource("7_y501u")
+shader_parameter/gradient_blend = 0.5
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_glbon")
@@ -113,6 +120,7 @@ theme_override_font_sizes/font_size = 40
 text = "Made by Kyunsei, Izva & Josh"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uayf2")
 position = Vector2(1000, 512)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_y501u")

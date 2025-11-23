@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode cull_disabled, depth_draw_opaque;
+render_mode cull_disabled, depth_draw_opaque, unshaded;
 
 uniform sampler2D grass_texture : filter_nearest, source_color;
 
@@ -7,9 +7,15 @@ uniform sampler2D gradient_texture : filter_linear_mipmap, source_color;
 uniform float gradient_blend : hint_range(0, 1) = 0.5;
 
 void vertex() {
-    NORMAL = vec3(0.0, 1.0, 0.0);
-    VERTEX.x += sin(NODE_POSITION_WORLD.x + TIME * 1.25 + UV.y) * (1.0 - UV.y) * 0.2;
-    VERTEX.z += cos(NODE_POSITION_WORLD.z + TIME * 0.45 + UV.y) * (1.0 - UV.y) * 0.15;
+	
+	//MODELVIEW_MATRIX = VIEW_MATRIX * mat4(vec4(normalize(cross(vec3(0.0, 1.0, 0.0), MAIN_CAM_INV_VIEW_MATRIX[2].xyz)), 0.0),vec4(0.0, 1.0, 0.0, 0.0),vec4(normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),MODEL_MATRIX[3]);
+	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
+    NORMAL = vec3(0.0, 1., 0.0);
+	   
+	VERTEX.y += cos(NODE_POSITION_WORLD.x + TIME * 5. + UV.x) * (1.4 - UV.y) * 0.1;
+// calculate right, up, forward vectors for billboard
+
+   
 }
 
 void fragment() {
