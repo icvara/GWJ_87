@@ -7,9 +7,11 @@ func start() -> void:
 	await get_tree().create_timer(1.0).timeout
 	if count == 0:
 		$CanvasLayer/Panel.show()
+		$CanvasLayer/Panel/Button.grab_focus()
 		$CanvasLayer/Panel/Label.text = "Yeeees, Finally!!!!! Thank You little Sun"
 		$AnimationPlayer.play("text1")
 		await get_tree().create_timer(1.0).timeout
+		
 		$CanvasLayer/Panel/Label.visible_ratio = 0.0
 
 

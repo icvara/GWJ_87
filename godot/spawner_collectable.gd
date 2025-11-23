@@ -4,6 +4,8 @@ extends Node3D
 @export var colectable  : PackedScene
 @export var sun : Node3D
 var nav_map 
+@export var timeforspawn = 0.5
+@export var worldsize = 12
 
 var count = .5
 
@@ -13,14 +15,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	count -= delta
 	if count <0:
-		count = 0.5
+		count = timeforspawn
 		spawn_on_nav()
 
 func spawn_on_nav():
 	var random_point = Vector3(
-		randf_range(-12, 12),
+		randf_range(-worldsize, worldsize),
 		randf_range(0, 0),
-		randf_range(-12, 12)
+		randf_range(-worldsize, worldsize)
 	)
 
 	# Find the nearest navigable point on the NavMesh
