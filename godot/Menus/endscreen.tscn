@@ -75,11 +75,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49046612, 0)
 
 [node name="Spawner_collectable" parent="." node_paths=PackedStringArray("nav_region3d") instance=ExtResource("2_vljsk")]
 nav_region3d = NodePath("../MeshInstance3D/NavigationRegion3D")
-<<<<<<< Updated upstream
+
 timeforspawn = 0.05
 worldsize = 200
-=======
->>>>>>> Stashed changes
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0005236427, 0.9999999, 0, -0.9999999, 0.0005236427, 0, 0.091480255, -3.9310699)
