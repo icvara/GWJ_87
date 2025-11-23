@@ -19,8 +19,8 @@ func _process(delta: float) -> void:
 			reset_timer()  # Reset timer after each spawn
 
 func reset_timer():
-	timer = clamp(randf_range(5.0 - WorldData.wave_number, 6.0 - WorldData.wave_number),1.,10.)  # rand_range returns a float
-
+	#timer = clamp(randf_range(5.0 - WorldData.wave_number, 6.0 - WorldData.wave_number),1.,10.)  # rand_range returns a float
+	timer = clamp(randf_range(5.0 , 6.0 ),1.,10.)  # rand_range returns a float
 func Spawn(id):
 	if id == 1:
 		var ne = enemy1.instantiate()

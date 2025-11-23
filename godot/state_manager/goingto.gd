@@ -6,6 +6,7 @@ var detection_distance = 500.
 var speed = 100
 var acceleration = 1  
 var target_position
+@export var speed_factor_per_wave = 40
 
 @export var new_state_A: State
 @export var new_state_B: State
@@ -16,6 +17,7 @@ func Enter():
 	StateOwner.get_node("Debug").text = "goingto"
 	target_position = StateOwner.target.global_transform.origin
 	NavAgent.set_target_position(target_position)
+	speed = 100 + speed_factor_per_wave*WorldData.wave_number
 
 	pass
 	

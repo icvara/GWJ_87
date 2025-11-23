@@ -305,7 +305,7 @@ max_distance = 10.0
 
 [node name="vanish" type="AudioStreamPlayer3D" parent="music"]
 stream = ExtResource("10_nmr1a")
-max_distance = 10.0
+max_distance = 30.0
 
 [node name="PlantDead" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("9_nmr1a")
