@@ -1,9 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpdj2qh1idt4j"]
+[gd_scene load_steps=16 format=3 uid="uid://cpdj2qh1idt4j"]
 
 [ext_resource type="Script" uid="uid://da8imyacwxoqh" path="res://ending.gd" id="1_kvamt"]
 [ext_resource type="Texture2D" uid="uid://b324hy0dmvp3x" path="res://plant/asset/sun.png" id="2_r8nhn"]
 [ext_resource type="PackedScene" uid="uid://dlbb1chh1i0u0" path="res://3d_asset/labyrinth_2.tscn" id="3_6b527"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="6_552vw"]
+
+[sub_resource type="Environment" id="Environment_q518b"]
+background_energy_multiplier = 0.0
+ambient_light_source = 1
+reflected_light_source = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_32403"]
 
@@ -288,7 +293,8 @@ script = ExtResource("1_kvamt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.99233365, -0.12358409, 0, 0.12358409, 0.99233365, 1.308414, 4.2211614, 3.52734)
+transform = Transform3D(1, 0, 0, 0, 0.9923336, -0.123584084, 0, 0.123584084, 0.9923336, 1.308414, 4.2211614, 3.52734)
+environment = SubResource("Environment_q518b")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.2194009, 3.3353996, 0.13409519)
@@ -362,7 +368,7 @@ libraries = {
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(-0.014712563, 0, 0.9998918, 0, 1, 0, -0.9998918, 0, -0.014712563, 0.7070246, 4.0545483, 0.84827495)
 layers = 3
-light_size = 0.25
+light_size = 0.33
 shadow_enabled = true
 omni_range = 10.0
 
