@@ -4,6 +4,7 @@ extends CharacterBody3D
 var is_screen_focus = true
 var win = false
 var item = 0
+var max_item = 20
 @export var plant1 : PackedScene
 @export var plant2 : PackedScene
 @export var plant3 : PackedScene
