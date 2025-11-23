@@ -1,90 +1,41 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbmii1r4y4bn6"]
+[gd_scene load_steps=10 format=3 uid="uid://bbmii1r4y4bn6"]
 
 [ext_resource type="Script" uid="uid://cfw0ed5lwcj88" path="res://plant/glow_plant.gd" id="1_n8v32"]
-[ext_resource type="Texture2D" uid="uid://da46umkxt6xhy" path="res://plant/asset/berry_1.png" id="2_pil3g"]
-[ext_resource type="Texture2D" uid="uid://ddk2mytya2nap" path="res://plant/asset/berry_2.png" id="3_1xg8t"]
-[ext_resource type="Texture2D" uid="uid://c2nt78543n0fr" path="res://plant/asset/berry_3.png" id="4_s1gbj"]
-[ext_resource type="Texture2D" uid="uid://ds3ptturh0s3s" path="res://plant/asset/berry_4.png" id="5_53vw8"]
 [ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="6_h06sa"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cd5w"]
-atlas = ExtResource("2_pil3g")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3g4d3"]
-atlas = ExtResource("3_1xg8t")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ih4tc"]
-atlas = ExtResource("4_s1gbj")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qyifu"]
-atlas = ExtResource("5_53vw8")
-region = Rect2(0, 0, 96, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7toh"]
-atlas = ExtResource("6_h06sa")
-region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xbvqn"]
-atlas = ExtResource("2_pil3g")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_y7p0b"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3cd5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3g4d3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ih4tc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qyifu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i7toh")
-}],
-"loop": false,
-"name": &"default",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xbvqn")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_xbvqn"]
-radius = 1.2
+[ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="7_pil3g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n8v32"]
 radius = 0.24379039
+
+[sub_resource type="QuadMesh" id="QuadMesh_1xg8t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1gbj"]
+render_priority = 0
+shader = ExtResource("7_pil3g")
+shader_parameter/scale = 1.0
+shader_parameter/albedo_tex = ExtResource("6_h06sa")
+shader_parameter/alpha_scissor_threshold = 0.3910000185725
+shader_parameter/speed = 5.0
+shader_parameter/dis = 0.2
+shader_parameter/texture_size = Vector2(500, 256)
+shader_parameter/region = Vector4(0, 0, 64, 64)
+shader_parameter/glow_strength = 5.0
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pil3g"]
+albedo_color = Color(0.016588071, 0.110654004, 0.22611749, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1xg8t"]
+material = SubResource("StandardMaterial3D_pil3g")
+height = 0.001
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xbvqn"]
+radius = 1.2
 
 [node name="Plant" type="CharacterBody3D"]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_n8v32")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-billboard = 1
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_y7p0b")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-shadow_enabled = true
-
-[node name="Area3D" type="Area3D" parent="OmniLight3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OmniLight3D/Area3D"]
-shape = SubResource("SphereShape3D_xbvqn")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5203358, 0)
@@ -95,4 +46,53 @@ billboard = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_n8v32")
 
-[connection signal="body_entered" from="OmniLight3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[node name="s1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30319524, 0.27353805, -0.213925)
+visible = false
+mesh = SubResource("QuadMesh_1xg8t")
+surface_material_override/0 = SubResource("ShaderMaterial_s1gbj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="s1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19414678, 0.5193708, -0.26590523)
+light_color = Color(1.1551381e-06, 0.79935855, 0.80026376, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="s2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3753208, 0.26981652, -0.1045745)
+visible = false
+mesh = SubResource("QuadMesh_1xg8t")
+surface_material_override/0 = SubResource("ShaderMaterial_s1gbj")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="s2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19552469, 0.727633, 0)
+light_color = Color(1.1551381e-06, 0.79935855, 0.80026376, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="s3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015475869, 0.23825657, 0.26608616)
+visible = false
+mesh = SubResource("QuadMesh_1xg8t")
+surface_material_override/0 = SubResource("ShaderMaterial_s1gbj")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="s3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77464354, 0.44069564)
+light_color = Color(1.1551381e-06, 0.79935855, 0.80026376, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 1.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23467581, 0)
+mesh = SubResource("CylinderMesh_1xg8t")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8628253, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_xbvqn")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

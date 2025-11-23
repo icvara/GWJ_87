@@ -6,8 +6,11 @@ func _process(delta: float) -> void:
 	var f = get_light_factor()
 	if f > 0 :
 		environment.set_bg_energy_multiplier(f)
+		environment.set_volumetric_fog_density(0)
+
 	else :
 		environment.set_bg_energy_multiplier(0)
+		environment.set_volumetric_fog_density((1-f)*0.15)
 
 
 	

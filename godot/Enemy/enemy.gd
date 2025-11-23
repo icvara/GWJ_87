@@ -9,6 +9,9 @@ var speedmodifier = 1.0
 
 var detect_array = []
 
+func _ready() -> void:
+	$Sprite3D/AnimationPlayer.play("new_animation")
+
 func _physics_process(delta: float) -> void:
 		#print(rotation)
 		
@@ -32,7 +35,8 @@ func _physics_process(delta: float) -> void:
 
 func die_from_sunlight():
 	is_dead = true
-	get_node("music").get_node("die").playing = true
+	await get_tree().create_timer(.5).timeout
+	get_node("music").get_node("vanish").playing = true
 
 	queue_free()
 

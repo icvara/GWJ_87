@@ -9,12 +9,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("change_left"):
-		player.plant_selected = clamp(player.plant_selected-1,0,2)
+		player.plant_selected = clamp(player.plant_selected-1,0,1)
 		changeColor(player.plant_selected )
 	if Input.is_action_just_pressed("change_right"):
-		player.plant_selected = clamp(player.plant_selected+1,0,2)	
+		player.plant_selected = clamp(player.plant_selected+1,0,1)	
 		changeColor(player.plant_selected )	
-	#$Label.text = str(player.plant_amount[player.plant_selected ])
+	$Label.text = str(player.plant_amount[0])
+	$Label2.text = str(player.plant_amount[1])
 
 
 func changeColor(ID):

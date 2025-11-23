@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dqyoo5kixp6vj"]
+[gd_scene load_steps=28 format=3 uid="uid://dqyoo5kixp6vj"]
 
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="1_7k104"]
 [ext_resource type="Script" uid="uid://fq0ys6ch8v1h" path="res://Enemy/enemy.gd" id="1_am0pq"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://c15dr6367pupv" path="res://Enemy/Sprite-0004.png" id="6_m6jha"]
 [ext_resource type="AudioStream" uid="uid://bj3lsa2laq2e8" path="res://asset/music/Hurt.wav" id="7_0rspp"]
 [ext_resource type="AudioStream" uid="uid://yfexioru5ck5" path="res://asset/music/Unalived.wav" id="8_efk13"]
+[ext_resource type="Script" uid="uid://c2cnxipj2hura" path="res://Enemy/node_3d.gd" id="9_efk13"]
+[ext_resource type="AudioStream" uid="uid://dj2kbwoj0kjua" path="res://asset/music/Regen.wav" id="10_nmr1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
 atlas = ExtResource("1_7k104")
@@ -106,6 +108,43 @@ radius = 0.25
 height = 1.4929199
 radius = 30.0
 
+[sub_resource type="Animation" id="Animation_efk13"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.08245361, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nmr1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.08245361, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47ove"]
+_data = {
+&"RESET": SubResource("Animation_nmr1a"),
+&"new_animation": SubResource("Animation_efk13")
+}
+
 [node name="enemy" type="CharacterBody3D" groups=["Zombie"]]
 script = ExtResource("1_am0pq")
 
@@ -161,10 +200,98 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25354004, 0)
 shape = SubResource("CylinderShape3D_ncf7h")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-billboard = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08245361, 0)
+billboard = 2
 shaded = true
 texture_filter = 0
 texture = ExtResource("6_m6jha")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_47ove")
+}
+
+[node name="Eye" type="Node3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00094614923, 0)
+script = ExtResource("9_efk13")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06507066, 0.09623116, 0.10425055)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053322613, 0.09623116, 0.10425055)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.053322613, 0.09623116, -0.12185636)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.075388476, 0.09623116, -0.111404315)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11997618, 0.09623116, -0.006655544)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0027034432, 0.09623116, 0.110978186)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1354068, 0.09623116, -0.0013405085)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095249146, 0.09623116, -0.060490012)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11059512, 0.09623116, -0.060490012)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11059512, 0.09623116, 0.05771187)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11364946, 0.09623116, 0.05771187)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11364946, 0.09623116, 0.05771187)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Sprite3D/Eye"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02645275, 0.09623116, -0.12731698)
+light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
+light_energy = 5.0
+omni_range = 0.1
 
 [node name="music" type="Node3D" parent="."]
 
@@ -173,6 +300,9 @@ stream = ExtResource("7_0rspp")
 
 [node name="die" type="AudioStreamPlayer3D" parent="music"]
 stream = ExtResource("8_efk13")
+
+[node name="vanish" type="AudioStreamPlayer3D" parent="music"]
+stream = ExtResource("10_nmr1a")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

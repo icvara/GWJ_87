@@ -22,7 +22,8 @@ sky_material = SubResource("ProceduralSkyMaterial_oo5j1")
 [sub_resource type="Environment" id="Environment_cdc7a"]
 background_mode = 2
 sky = SubResource("Sky_oaurr")
-volumetric_fog_density = 0.179
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
 
 [sub_resource type="MultiMesh" id="MultiMesh_63dkx"]
 transform_format = 1
@@ -103,7 +104,7 @@ navigation_mesh = SubResource("NavigationMesh_p6qna")
 [node name="labyrinth 2" parent="NavigationRegion3D" instance=ExtResource("15_atmmq")]
 
 [node name="wincraft" parent="." instance=ExtResource("14_oaurr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 0.5334877, -0.1796689)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 1.6780354, -0.1796689)
 initial_maxcount = 20.0
 
 [node name="Tuto_window" parent="." instance=ExtResource("19_atmmq")]

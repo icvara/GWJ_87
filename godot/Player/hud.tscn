@@ -43,6 +43,7 @@ offset_bottom = 649.0
 text = "2"
 
 [node name="Label3" type="Label" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 121.0
 offset_top = 626.0
@@ -82,5 +83,6 @@ position = Vector2(-136, 0)
 texture = ExtResource("5_vqtvn")
 
 [node name="3" type="Sprite2D" parent="Control/Plant"]
+visible = false
 position = Vector2(-16, -4)
 texture = ExtResource("6_ufq23")

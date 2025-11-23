@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode  cull_disabled; //unshaded
-
+uniform float scale  = 1.0;
 uniform sampler2D albedo_tex : source_color;
 uniform float alpha_scissor_threshold : hint_range(0.0, 1.0) = 1.;
 
@@ -31,7 +31,13 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
+	float zoom = .5; // >1 zooms in, <1 zooms out
+	vec2 center = vec2(0.5, 0.5);
+
+	vec2 new_uv = (UV - center) * zoom + center;
+	vec2 scaled_uv = (new_uv - 0.5) /scale + 0.5;
 	vec4 tex_col = texture(albedo_tex, UV);
+	
 
 
     // scale UV to atlas grid
