@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=16 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
 [ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="3_1ftnn"]
+[ext_resource type="Script" uid="uid://b85jrudur62k6" path="res://Main_world/pivot.gd" id="4_2tc2x"]
 
 [sub_resource type="Curve" id="Curve_1ftnn"]
 _data = [Vector2(0.010869563, 1), 0.0, 0.0, 0, 0, Vector2(0.49456525, 0.55056185), -4.2564435, -4.2564435, 0, 0, Vector2(0.9891305, 0.022471905), 0.0, 0.0, 0, 0]
@@ -85,11 +86,6 @@ offset_right = 136.0
 offset_bottom = 59.0
 text = "Bring 3 object"
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3117621, 0)
-billboard = 1
-text = "0/3"
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 material_overlay = SubResource("ShaderMaterial_1ftnn")
@@ -116,6 +112,7 @@ skeleton = NodePath("../Sprite3D")
 
 [node name="win condition" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, 0.14, -1.13, 0)
+visible = false
 mesh = SubResource("QuadMesh_fw4tx")
 skeleton = NodePath("../SubViewport/Control")
 
@@ -136,6 +133,14 @@ offset_bottom = 23.0
 text = "test
 "
 label_settings = SubResource("LabelSettings_mu8cl")
+
+[node name="Pivot" type="Node3D" parent="."]
+script = ExtResource("4_2tc2x")
+
+[node name="Label3D" type="Label3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.0932119, 0.829)
+text = "0/3"
+font_size = 64
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
