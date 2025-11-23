@@ -38,7 +38,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				grow_sprite()
 				WorldData.wave_number += 1
 				if  maxcount >= initial_maxcount*5:
-					await get_tree().create_timer(.3).timeout
+					await get_tree().create_timer(1.).timeout
 					if get_parent().name != "ENDSCREEN":
 						get_tree().change_scene_to_file("res://Menus/ending.tscn")
 
