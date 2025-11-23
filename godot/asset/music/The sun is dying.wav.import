@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf6ta3dydqo5i"
+path="res://.godot/imported/The sun is dying.wav-0430012518d958cd9544bdccf90da2ef.sample"
+
+[deps]
+
+source_file="res://asset/music/The sun is dying.wav"
+dest_files=["res://.godot/imported/The sun is dying.wav-0430012518d958cd9544bdccf90da2ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

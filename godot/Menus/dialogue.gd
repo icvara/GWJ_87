@@ -7,6 +7,8 @@ var timer = 0
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+	play_hello()
+	
 	$Button.grab_focus()
 	$AnimationPlayer.play("cam0")
 	await get_tree().create_timer(1.1).timeout
@@ -27,21 +29,26 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	count += 1
 	
+	
 	if count == 1:
+
+
+		play_sun_dying()
 		$Label.text = ""
 		$AnimationPlayer.play("camera1")
 		await get_tree().create_timer(1.0).timeout
 		$Label.visible_ratio = 0.0
 		$Label.text = "The Sun is dying"
-
 		$AnimationPlayer.play("text1")
 
 	if count == 2:
+
+
+		play_bring_me()
 		$Label.text = ""
 		$AnimationPlayer.play("camera2")
 		await get_tree().create_timer(1.0).timeout
 		$Label.visible_ratio = 0.0
-
 		$Label.text = "Bring me back its Fire, and I shall reward you."
 		$AnimationPlayer.play("text2")
 		for i in 10:
@@ -49,6 +56,9 @@ func _on_button_pressed() -> void:
 			await get_tree().create_timer(.1).timeout
 
 	if count == 3:
+		
+
+		play_beware()
 		$AnimationPlayer.play("cam3")
 		$Label.text = ""
 		await get_tree().create_timer(1.2).timeout
@@ -58,5 +68,36 @@ func _on_button_pressed() -> void:
 		await get_tree().create_timer(1.5).timeout
 		
 	if count == 4:
+
 		hide()
 		%tuto.activate()
+
+
+func play_hello():
+	%voiceline.get_node("sun_dying").stop()
+	%voiceline.get_node("Beware").stop()
+	%voiceline.get_node("bring_me").stop()
+	%voiceline.get_node("Hello").stop()
+	await get_tree().create_timer(1.0).timeout
+	%voiceline.get_node("Hello").play()
+func play_sun_dying():
+	%voiceline.get_node("sun_dying").stop()
+	%voiceline.get_node("Beware").stop()
+	%voiceline.get_node("bring_me").stop()
+	%voiceline.get_node("Hello").stop()
+	await get_tree().create_timer(1.0).timeout
+	%voiceline.get_node("sun_dying").play()
+func play_bring_me():
+	%voiceline.get_node("sun_dying").stop()
+	%voiceline.get_node("Beware").stop()
+	%voiceline.get_node("bring_me").stop()
+	%voiceline.get_node("Hello").stop()
+	await get_tree().create_timer(1.0).timeout
+	%voiceline.get_node("bring_me").play()
+func play_beware():
+	%voiceline.get_node("sun_dying").stop()
+	%voiceline.get_node("Beware").stop()
+	%voiceline.get_node("bring_me").stop()
+	%voiceline.get_node("Hello").stop()
+	await get_tree().create_timer(1.0).timeout
+	%voiceline.get_node("Beware").play()

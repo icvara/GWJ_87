@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btfiurut7phx4"
+path="res://.godot/imported/random noise mouth.wav-2e07de5e7aecf3f5a51f373b1e39e1bb.sample"
+
+[deps]
+
+source_file="res://asset/music/random noise mouth.wav"
+dest_files=["res://.godot/imported/random noise mouth.wav-2e07de5e7aecf3f5a51f373b1e39e1bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
