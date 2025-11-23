@@ -51,6 +51,6 @@ func play_yes():
 func play_supreme():
 	%sound.get_node("Yes").stop()
 	%sound.get_node("Supreme").stop()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	%sound.get_node("Supreme").play()
 	
