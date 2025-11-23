@@ -12,6 +12,8 @@ func _ready():
 	maxcount = initial_maxcount
 	$Pivot/Label3D.text = "0/"+str(maxcount)
 	%score.text = str(count) + "/" + str(maxcount)
+	loading_bar_update(int((maxcount - initial_maxcount)/initial_maxcount))
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
@@ -30,6 +32,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				#get_tree().paused = true
 				print("text u win")
 				maxcount += initial_maxcount
+				loading_bar_update(int((maxcount - initial_maxcount)/initial_maxcount))
+
 				$Area3D/CollisionShape3D.scale*=1.1
 				grow_sprite()
 				WorldData.wave_number += 1
@@ -62,7 +66,19 @@ func grow_sprite():
 	# Move up by half the height increase (centered pivot)
 	$Sprite3D.position.y += (new_height - old_height) / 2.0
 
-
+func loading_bar_update(v):
+	if v == 0:
+		%grow.text = "[□□□□]"
+	if v == 1:
+		%grow.text = "[■□□□]"
+	if v == 2:
+		%grow.text = "[■■□□]"
+	if v == 3:
+		%grow.text = "[■■■□]"
+	if v == 4:
+		%grow.text = "[■■■■]"
+	if v == 10:
+		%grow.text = "[■■■■■]"
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "Player2D3D":
