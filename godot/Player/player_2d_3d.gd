@@ -65,9 +65,9 @@ func _process(delta: float) -> void:
 			value += delta * WorldData.gamespeed
 			if int(value) % 10 == 0:
 				HP = clamp(HP + 10, 0 ,100)
-				plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,50)
-				plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
-				plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
+				#plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,50)
+				#plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
+				#plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
 				value = 1
 		else:
 			timer_night += delta * WorldData.gamespeed
