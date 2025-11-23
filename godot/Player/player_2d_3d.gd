@@ -27,7 +27,7 @@ var timer_night = 0
 
 func _enter_tree() -> void:
 	plant_list = [plant1,plant2,plant3]
-	plant_amount = [10,5,3]
+	plant_amount = [50,10,3]
 
 	set_multiplayer_authority(name.to_int(), true)
 	#set_multiplayer_authority(multiplayer.get_unique_id(), true)
@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 			value += delta * WorldData.gamespeed
 			if int(value) % 10 == 0:
 				HP = clamp(HP + 10, 0 ,100)
-				plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,20)
+				plant_amount[0] = clamp(plant_amount[0] + 1, 0 ,50)
 				plant_amount[1] = clamp(plant_amount[1] + 1, 0 ,10)
 				plant_amount[2] = clamp(plant_amount[2] + 1, 0 ,5)
 				value = 1

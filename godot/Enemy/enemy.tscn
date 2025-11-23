@@ -108,6 +108,21 @@ radius = 0.25
 height = 1.4929199
 radius = 30.0
 
+[sub_resource type="Animation" id="Animation_nmr1a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.08245361, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_efk13"]
 resource_name = "new_animation"
 loop_mode = 2
@@ -122,21 +137,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.08245361, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_nmr1a"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.08245361, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_47ove"]
@@ -252,7 +252,7 @@ light_energy = 5.0
 omni_range = 0.1
 
 [node name="OmniLight3D13" type="OmniLight3D" parent="Sprite3D/Eye"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1354068, 0.09623116, -0.0013405085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1354068, 0.09623116, -0.041065827)
 light_color = Color(0.7068544, 0.13818803, 0.20058402, 1)
 light_energy = 5.0
 omni_range = 0.1
