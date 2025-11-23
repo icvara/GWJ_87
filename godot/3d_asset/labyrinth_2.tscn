@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://dlbb1chh1i0u0"]
+[gd_scene load_steps=25 format=3 uid="uid://dlbb1chh1i0u0"]
 
 [ext_resource type="Texture2D" uid="uid://do6y8sh0p8mp5" path="res://asset/Textures/rocky_ground_texture.jpg" id="1_fedtp"]
 [ext_resource type="Texture2D" uid="uid://fl7q2dul77qt" path="res://asset/Textures/ground-texture-arid-floor-cobblestone-1494.jpg" id="2_s2lxu"]
+[ext_resource type="PackedScene" uid="uid://dwl42pvt6cc7y" path="res://3d_asset/grotto_1.tscn" id="3_s2lxu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fedtp"]
 albedo_texture = ExtResource("1_fedtp")
@@ -3823,3 +3824,50 @@ collision_mask = 3
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Outer_walls/wall_2m30/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mce0m")
+
+[node name="Grottos" type="Node3D" parent="."]
+
+[node name="Grotto_1" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 27.5, 3, 1)
+
+[node name="Grotto_2" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(1.9318516, 0, 0.5176381, 0, 2, 0, -0.5176381, 0, 1.9318516, 29.5, 3, 13.5)
+
+[node name="Grotto_3" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-1, 0, -1.7320509, 0, 2, 0, 1.7320509, 0, -1, 21.5, 3, 28.5)
+
+[node name="Grotto_4" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(1.9318516, 0, -0.51763797, 0, 2, 0, 0.51763797, 0, 1.9318516, 14.5, 3, 32.5)
+
+[node name="Grotto_5" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-1.1920929e-07, 0, 1.9999999, 0, 2, 0, -1.9999999, 0, -1.1920929e-07, 6, 3, 22.5)
+
+[node name="Grotto_6" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-1.4142134, 0, 1.4142132, 0, 2, 0, -1.4142132, 0, -1.4142134, -10, 3, 24)
+
+[node name="Grotto_7" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-1.4142131, 0, -1.4142135, 0, 2, 0, 1.4142135, 0, -1.4142131, -23.5, 3, 27.5)
+
+[node name="Grotto_8" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-1.9318514, 0, 0.51763785, 0, 2, 0, -0.51763785, 0, -1.9318514, -29.5, 3, 13)
+
+[node name="Grotto_9" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(1.9999994, 0, 5.9604645e-08, 0, 2, 0, -5.9604645e-08, 0, 1.9999994, -22.5, 3, 4)
+
+[node name="Grotto_10" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(1.9999994, 0, 5.9604645e-08, 0, 2, 0, -5.9604645e-08, 0, 1.9999994, -22.5, 3, -10.5)
+
+[node name="Grotto_11" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-0.99999964, 0, 1.7320501, 0, 2, 0, -1.7320501, 0, -0.99999964, -16.5, 3, -30)
+
+[node name="Grotto_12" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(1.4142132, 0, -1.4142127, 0, 2, 0, 1.4142127, 0, 1.4142132, -3.5, 3, -24)
+
+[node name="Grotto_13" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(2.0861626e-07, 0, -1.999999, 0, 2, 0, 1.999999, 0, 2.0861626e-07, 2, 3, -22.5)
+
+[node name="Grotto_14" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(2.0861626e-07, 0, -1.999999, 0, 2, 0, 1.999999, 0, 2.0861626e-07, 14.5, 3, -22.5)
+
+[node name="Grotto_15" parent="Grottos" instance=ExtResource("3_s2lxu")]
+transform = Transform3D(-1.9999988, 0, -1.4901161e-07, 0, 2, 0, 1.4901161e-07, 0, -1.9999988, 22.5, 3, -17.5)
