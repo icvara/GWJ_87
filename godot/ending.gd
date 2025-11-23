@@ -23,16 +23,34 @@ func start() -> void:
 
 func _ready() -> void:
 	start()
+	play_yes()
 
 
 func _on_button_pressed() -> void:
 		count += 1
 		if count == 1:
+			play_supreme()
 			$Sprite3D.show()
 			$Sprite3D2.hide()	
 			$CanvasLayer/Panel/Label.text = "I AM THE NEW SUPREME BEING!!!!! \n HAHAHAHAHAHAHA"
 			$AnimationPlayer.play("Fly")
 		if count == 2:
+			%sound.get_node("Yes").stop()
+			%sound.get_node("Supreme").stop()
 			$AnimationPlayer.play("transition2")
 			await get_tree().create_timer(1.0).timeout
 			get_tree().change_scene_to_file("res://Menus/endscreen.tscn")
+
+
+func play_yes():
+	%sound.get_node("Yes").stop()
+	%sound.get_node("Supreme").stop()
+	await get_tree().create_timer(1.0).timeout
+	%sound.get_node("Yes").play()
+	
+func play_supreme():
+	%sound.get_node("Yes").stop()
+	%sound.get_node("Supreme").stop()
+	await get_tree().create_timer(1.0).timeout
+	%sound.get_node("Supreme").play()
+	

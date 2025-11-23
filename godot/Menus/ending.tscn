@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpdj2qh1idt4j"]
+[gd_scene load_steps=18 format=3 uid="uid://cpdj2qh1idt4j"]
 
 [ext_resource type="Script" uid="uid://da8imyacwxoqh" path="res://ending.gd" id="1_kvamt"]
 [ext_resource type="Texture2D" uid="uid://b324hy0dmvp3x" path="res://plant/asset/sun.png" id="2_r8nhn"]
 [ext_resource type="PackedScene" uid="uid://dlbb1chh1i0u0" path="res://3d_asset/labyrinth_2.tscn" id="3_6b527"]
+[ext_resource type="AudioStream" uid="uid://6as6alij36us" path="res://asset/music/YESS.wav" id="5_r8nhn"]
+[ext_resource type="AudioStream" uid="uid://0dmblmw8exls" path="res://asset/music/I am the new.wav" id="6_6b527"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="6_552vw"]
 
 [sub_resource type="Environment" id="Environment_q518b"]
@@ -293,7 +295,7 @@ script = ExtResource("1_kvamt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.9923335, -0.12358407, 0, 0.12358407, 0.9923335, 1.308414, 4.2211614, 3.52734)
+transform = Transform3D(1, 0, 0, 0, 0.9923334, -0.12358406, 0, 0.12358406, 0.9923334, 1.308414, 4.2211614, 3.52734)
 environment = SubResource("Environment_q518b")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -371,5 +373,22 @@ layers = 3
 light_size = 0.33
 shadow_enabled = true
 omni_range = 10.0
+
+[node name="sound" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Yes" type="AudioStreamPlayer3D" parent="sound"]
+stream = ExtResource("5_r8nhn")
+attenuation_model = 3
+volume_db = 15.0
+max_db = 5.0
+pitch_scale = 1.7
+
+[node name="Supreme" type="AudioStreamPlayer3D" parent="sound"]
+stream = ExtResource("6_6b527")
+attenuation_model = 3
+volume_db = 15.0
+max_db = 5.0
+pitch_scale = 1.7
 
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
