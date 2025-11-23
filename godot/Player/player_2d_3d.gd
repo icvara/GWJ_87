@@ -96,10 +96,12 @@ func _process(delta: float) -> void:
 			$Death_interface.activate()
 		elif HP <=0 and end == true:
 			alive = false
+			velocity = Vector3(0,0,0)
 			$Sprite3Ds.queue_free()
 			$HUD.queue_free()
 			$OmniLight3D.queue_free()
 			$State_manager.queue_free()
+			$music/Hurt.play()
 
 		#rint ("you died during endscreen")
 		

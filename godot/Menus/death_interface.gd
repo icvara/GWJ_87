@@ -7,6 +7,7 @@ func activate():
 	show()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$Panel/Button.grab_focus()
 
 
 func _on_button_pressed() -> void:

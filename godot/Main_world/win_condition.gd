@@ -10,8 +10,8 @@ var factor
 
 func _ready():
 	maxcount = initial_maxcount
-	$SubViewport/Control/Label.text = "Bring"+str(initial_maxcount) +"Object"
 	$Pivot/Label3D.text = "0/"+str(maxcount)
+	%score.text = str(count) + "/" + str(maxcount)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
@@ -22,6 +22,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			count += body.item
 			body.item = 0
 			$Pivot/Label3D.text = str(count) + "/" + str(maxcount)
+			%score.text = str(count) + "/" + str(maxcount)
 			#$CanvasLayer/Panel/Label.text = "Bring " + str(count) + " objects"
 			if count >= maxcount :
 				#$CanvasLayer/Panel/Label.text = "You Win"
@@ -45,6 +46,7 @@ func grow_sprite():
 	#factor = lerp(factor,1.1,1.2)
 	#factor = factor2_curve.get_point_position()
 	$Pivot/Label3D.text = str(count) + "/" + str(maxcount)
+	%score.text = str(count) + "/" + str(maxcount)
 	# Save previous height (assuming the pivot is at the center)
 	var old_height = $Sprite3D.scale.y
 
@@ -64,9 +66,10 @@ func grow_sprite():
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "Player2D3D":
-		$CanvasLayer.hide()
+		pass
 
 
 func _on_area_3d_zomb_kill_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Zombie"):
+		count -= 5
 		body.queue_free()

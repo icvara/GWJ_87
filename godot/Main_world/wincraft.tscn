@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=21 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
+[ext_resource type="Texture2D" uid="uid://b324hy0dmvp3x" path="res://plant/asset/sun.png" id="2_mu8cl"]
 [ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="3_1ftnn"]
+[ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="3_pahml"]
 [ext_resource type="Script" uid="uid://b85jrudur62k6" path="res://Main_world/pivot.gd" id="4_2tc2x"]
 
 [sub_resource type="Curve" id="Curve_1ftnn"]
@@ -13,6 +15,28 @@ point_count = 3
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1ftnn"]
 radius = 0.703125
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gk56"]
+atlas = ExtResource("3_pahml")
+region = Rect2(352, 160, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gokyl"]
+atlas = ExtResource("3_pahml")
+region = Rect2(384, 160, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpnmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gk56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gokyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ftnn"]
 
@@ -63,28 +87,38 @@ mesh = SubResource("CylinderMesh_1uepb")
 shape = SubResource("CylinderShape3D_1ftnn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -97.0
-offset_top = -56.0
-offset_right = 97.0
-offset_bottom = 56.0
+offset_left = -127.0
+offset_top = 9.0
+offset_right = 125.0
+offset_bottom = 63.0
 grow_horizontal = 2
-grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+[node name="score" type="Label" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 29.0
-offset_top = 36.0
-offset_right = 136.0
-offset_bottom = 59.0
-text = "Bring 3 object"
+offset_left = 87.0
+offset_top = 5.0
+offset_right = 191.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 30
+text = "0/ 40"
+horizontal_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(21, 53)
+texture = ExtResource("2_mu8cl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Panel"]
+texture_filter = 1
+position = Vector2(217, 23)
+scale = Vector2(2.3125005, 3)
+sprite_frames = SubResource("SpriteFrames_kpnmd")
+autoplay = "default"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

@@ -37,15 +37,15 @@ grow_vertical = 2
 color = Color(0.078431375, 0.13333334, 0.2509804, 1)
 
 [node name="87Decay" type="Sprite2D" parent="."]
-position = Vector2(178.00012, 361)
+position = Vector2(264.40024, 303.25003)
 scale = Vector2(0.11493512, 0.11493515)
 texture = ExtResource("3_glbon")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 535.0
-offset_top = 245.0
-offset_right = 919.0
-offset_bottom = 445.0
+offset_left = 584.0
+offset_top = 227.0
+offset_right = 968.0
+offset_bottom = 427.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -84,32 +84,32 @@ theme_override_font_sizes/font_size = 32
 text = "Quit"
 
 [node name="GwjFullLogoNoBg4k" type="Sprite2D" parent="."]
-position = Vector2(152, 114)
+position = Vector2(261, 161)
 scale = Vector2(0.13711113, 0.13711113)
 texture = ExtResource("3_fu7sn")
 
 [node name="Calm1" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(228, 628)
+position = Vector2(314.40012, 570.25)
 stream = ExtResource("5_glbon")
 autoplay = true
 
 [node name="OutOutBriefCandle" type="Sprite2D" parent="."]
-position = Vector2(92.99988, 528)
+position = Vector2(179.40001, 470.25003)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("5_gn11b")
 
 [node name="VennDiagram" type="Sprite2D" parent="."]
-position = Vector2(260.99994, 529)
+position = Vector2(347.4001, 471.25003)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("6_2k0p2")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 572.0
-offset_top = 127.0
-offset_right = 876.0
-offset_bottom = 210.0
+offset_left = 621.0
+offset_top = 109.0
+offset_right = 941.0
+offset_bottom = 192.0
 theme_override_font_sizes/font_size = 60
-text = "FireToSUN"
+text = "Fire To Sun"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 563.0
@@ -126,18 +126,18 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_y501u")
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 626.0
-offset_top = 470.0
-offset_right = 742.0
-offset_bottom = 504.0
+offset_left = 675.0
+offset_top = 452.0
+offset_right = 791.0
+offset_bottom = 486.0
 theme_override_font_sizes/font_size = 24
 text = "Skip Story"
 
 [node name="CheckButton" type="CheckButton" parent="."]
-offset_left = 744.0
-offset_top = 463.0
-offset_right = 788.0
-offset_bottom = 487.0
+offset_left = 793.0
+offset_top = 445.0
+offset_right = 837.0
+offset_bottom = 469.0
 scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]

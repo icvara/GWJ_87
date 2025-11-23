@@ -58,7 +58,7 @@ offset_top = 67.0
 offset_right = 348.0
 offset_bottom = 103.0
 theme_override_font_sizes/font_size = 20
-text = "Quit"
+text = "Restart"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -84,7 +84,7 @@ vertical_alignment = 1
 position = Vector2(179, 117)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3mn4v")
-frame_progress = 0.4928347
+frame_progress = 0.21919733
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
