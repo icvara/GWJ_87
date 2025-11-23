@@ -72,14 +72,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite3D/OmniLight3D:light_energy")
+tracks/4/path = NodePath("OmniLight3D:light_energy")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.01, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2.01, 2.98, 3.0666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 1.0, 10.0]
+"values": [1.0, 1.0, 50.0, 1.0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -92,6 +92,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("OmniLight3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7070246, 4.0545483, 0.84827495), Vector3(0.7139206, 20.407883, 3.1298234), Vector3(0.49976254, 9.806246, 11.841525)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OmniLight3D:omni_range")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10.0, 100.0]
 }
 
 [sub_resource type="Animation" id="Animation_ye55k"]
@@ -171,7 +195,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprite3D/OmniLight3D:light_energy")
+tracks/6/path = NodePath("OmniLight3D:light_energy")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -179,6 +203,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("OmniLight3D:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7070246, 4.0545483, 0.84827495)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("OmniLight3D:omni_range")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
 }
 
 [sub_resource type="Animation" id="Animation_r8nhn"]
@@ -239,7 +287,8 @@ _data = {
 script = ExtResource("1_kvamt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9923338, -0.123584114, 0, 0.123584114, 0.9923338, 1.308414, 4.2211614, 3.52734)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.99233365, -0.12358409, 0, 0.12358409, 0.99233365, 1.308414, 4.2211614, 3.52734)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.2194009, 3.3353996, 0.13409519)
@@ -247,13 +296,6 @@ billboard = 1
 shaded = true
 texture_filter = 0
 texture = ExtResource("2_r8nhn")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.110117525, 0.5, 0)
-layers = 3
-light_size = 0.25
-shadow_enabled = true
-omni_range = 50.0
 
 [node name="labyrinth 2" parent="." instance=ExtResource("3_6b527")]
 
@@ -309,13 +351,6 @@ billboard = 2
 shaded = true
 texture = ExtResource("6_552vw")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-layers = 3
-light_size = 0.25
-shadow_enabled = true
-omni_range = 0.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_552vw")
 
@@ -323,5 +358,12 @@ environment = SubResource("Environment_552vw")
 libraries = {
 &"": SubResource("AnimationLibrary_r8nhn")
 }
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(-0.014712563, 0, 0.9998918, 0, 1, 0, -0.9998918, 0, -0.014712563, 0.7070246, 4.0545483, 0.84827495)
+layers = 3
+light_size = 0.25
+shadow_enabled = true
+omni_range = 10.0
 
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_button_pressed"]
