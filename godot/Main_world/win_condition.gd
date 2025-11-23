@@ -9,14 +9,14 @@ var factor
 func _ready():
 	maxcount = initial_maxcount
 	$SubViewport/Control/Label.text = "Bring"+str(initial_maxcount) +"Object"
-	$Label3D.text = "0/"+str(maxcount)
+	$Pivot/Label3D.text = "0/"+str(maxcount)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
 		if body.item >0 :
 			count += body.item
 			body.item = 0
-			$Label3D.text = str(count) + "/" + str(maxcount)
+			$Pivot/Label3D.text = str(count) + "/" + str(maxcount)
 			#$CanvasLayer/Panel/Label.text = "Bring " + str(count) + " objects"
 			if count >= maxcount :
 				#$CanvasLayer/Panel/Label.text = "You Win"
