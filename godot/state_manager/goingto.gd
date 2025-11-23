@@ -3,8 +3,8 @@ class_name state_going_to
 
 
 var detection_distance = 500.
-var speed = 200
-var acceleration = 5  
+var speed = 100
+var acceleration = 1  
 var target_position
 
 @export var new_state_A: State

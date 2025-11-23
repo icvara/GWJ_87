@@ -297,12 +297,15 @@ omni_range = 0.1
 
 [node name="hurt" type="AudioStreamPlayer3D" parent="music"]
 stream = ExtResource("7_0rspp")
+max_distance = 10.0
 
 [node name="die" type="AudioStreamPlayer3D" parent="music"]
 stream = ExtResource("9_nmr1a")
+max_distance = 10.0
 
 [node name="vanish" type="AudioStreamPlayer3D" parent="music"]
 stream = ExtResource("10_nmr1a")
+max_distance = 10.0
 
 [node name="PlantDead" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("9_nmr1a")

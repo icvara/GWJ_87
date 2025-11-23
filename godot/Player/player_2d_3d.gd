@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if sun:
 		$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
-		if $RayCast3D.is_colliding() == false:
+		if day_is_active.get_light_factor() >0:
 			value += delta * WorldData.gamespeed
 			if int(value) % 10 == 0:
 				HP = clamp(HP + 10, 0 ,100)

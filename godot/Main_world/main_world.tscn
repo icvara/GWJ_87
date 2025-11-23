@@ -89,6 +89,12 @@ enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
 
+[node name="EnemySpawner4" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.576403, 0.9809303, -16.713017)
+enemy1 = ExtResource("5_yasq4")
+target = NodePath("../Player2D3D")
+sun = NodePath("../Sun")
+
 [node name="Plants" type="Node3D" parent="."]
 unique_name_in_owner = true
 
@@ -104,7 +110,7 @@ navigation_mesh = SubResource("NavigationMesh_p6qna")
 
 [node name="wincraft" parent="." instance=ExtResource("14_oaurr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 1.6780354, -0.1796689)
-initial_maxcount = 20.0
+initial_maxcount = 40.0
 
 [node name="Tuto_window" parent="." instance=ExtResource("19_atmmq")]
 
