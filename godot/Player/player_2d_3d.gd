@@ -32,7 +32,7 @@ var timer_decay = 0.1
 
 func _enter_tree() -> void:
 	plant_list = [plant1,plant2,plant3]
-	plant_amount = [50,10,3]
+	plant_amount = [30,10,3]
 
 	set_multiplayer_authority(name.to_int(), true)
 	#set_multiplayer_authority(multiplayer.get_unique_id(), true)
