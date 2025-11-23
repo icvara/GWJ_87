@@ -38,13 +38,16 @@ func Update_physique_process(delta):
 			dir = dir.normalized()
 			StateOwner.velocity.x = dir.x * speed * delta
 			StateOwner.velocity.z = dir.z * speed * delta'
-			
+			#print(StateOwner.target.name)
 			var destination = NavAgent.get_next_path_position()
 			var local_destination = destination - (StateOwner.global_position )
 			dir.x = local_destination.normalized().x
 			dir.z = local_destination.normalized().z
 			StateOwner.velocity.x = dir.x * speed * delta
 			StateOwner.velocity.z = dir.z * speed * delta
+			#print(destination)
+			#print(StateOwner.global_position )
+
 			if time_track  >= 10:
 				time_track = 0
 				if target_position != StateOwner.target.global_transform.origin:
