@@ -271,7 +271,7 @@ process_material = SubResource("ParticleProcessMaterial_nudm8")
 draw_pass_1 = SubResource("QuadMesh_y111g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99233395, -0.12358413, 0, 0.12358413, 0.99233395, -0.15195715, 18.562344, 1.7788825)
+transform = Transform3D(1, 0, 0, 0, 0.9923339, -0.12358412, 0, 0.12358412, 0.9923339, -0.15195715, 18.562344, 1.7788825)
 
 [node name="labyrinth 2" parent="." instance=ExtResource("3_wiadf")]
 

@@ -40,7 +40,7 @@ func _on_button_pressed() -> void:
 		await get_tree().create_timer(1.0).timeout
 		$Label.visible_ratio = 0.0
 
-		$Label.text = "Bring me back its Fire, please"
+		$Label.text = "Bring me back its Fire, and I shall reward you."
 		$AnimationPlayer.play("text2")
 		for i in 10:
 
@@ -51,7 +51,7 @@ func _on_button_pressed() -> void:
 		$Label.text = ""
 		await get_tree().create_timer(1.2).timeout
 		$Label.visible_ratio = 0.0
-		$Label.text = "Take care of the Night. Use my seeds to survive the Night"
+		$Label.text = "Beware of the Night. I'll give you my seeds to survive the Darkness."
 		$AnimationPlayer.play("text3")
 		await get_tree().create_timer(1.5).timeout
 		
