@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn0d4lboe0w77"]
+[gd_scene load_steps=6 format=3 uid="uid://bn0d4lboe0w77"]
 
 [ext_resource type="Script" uid="uid://cts1wcpognrcm" path="res://Menus/death_interface.gd" id="1_w7nci"]
+[ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="2_wokl7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gk56"]
+atlas = ExtResource("2_wokl7")
+region = Rect2(352, 160, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gokyl"]
+atlas = ExtResource("2_wokl7")
+region = Rect2(384, 160, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mn4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gk56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gokyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Death_interface" type="CanvasLayer"]
 process_mode = 3
@@ -12,42 +35,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -126.0
+offset_left = -303.0
 offset_top = -20.0
-offset_right = 39.5
-offset_bottom = 37.0
+offset_right = 156.0
+offset_bottom = 137.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.0
-offset_right = 37.0
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
-layout_mode = 2
-text = "Ÿou Died!"
-
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 23.0
-offset_right = 81.0
-offset_bottom = 54.0
-text = "Continue"
+offset_left = 60.0
+offset_top = 64.0
+offset_right = 140.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 20
+text = "Revive?"
 
 [node name="Button2" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 23.0
-offset_right = 160.0
-offset_bottom = 54.0
-text = "Restart"
+offset_left = 283.0
+offset_top = 67.0
+offset_right = 348.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 9.0
+offset_right = 431.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 30
+text = "You have been Extinguished"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 99.0
+offset_right = 141.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 20
+text = "cost 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(179, 117)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3mn4v")
+frame_progress = 0.69632244
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

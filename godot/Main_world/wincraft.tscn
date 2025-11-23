@@ -17,7 +17,7 @@ radius = 0.703125
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ftnn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1uepb"]
-radius = 1.2
+radius = 0.41598764
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_38ohv"]
 render_priority = 0
@@ -141,6 +141,14 @@ script = ExtResource("4_2tc2x")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.0932119, 0.829)
 text = "0/3"
 font_size = 64
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["light"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04110068, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.638852, 0)
+shape = SubResource("SphereShape3D_1uepb")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

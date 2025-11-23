@@ -17,8 +17,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
 		if body.item >0 :
 			
-			body.plant_amount[0] = clamp(body.plant_amount[0] + floor(body.item/2), 0 ,50)
-			body.plant_amount[1] = clamp(body.plant_amount[1] + floor(body.item/4), 0 ,10)
+			body.plant_amount[0] = body.plant_amount[0] + floor(body.item/2)
+			body.plant_amount[1] = body.plant_amount[1] + floor(body.item/4)
 			count += body.item
 			body.item = 0
 			$Pivot/Label3D.text = str(count) + "/" + str(maxcount)
