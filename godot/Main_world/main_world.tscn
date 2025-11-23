@@ -72,25 +72,25 @@ volume_db = -5.049
 autoplay = true
 
 [node name="EnemySpawner" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.903597, 0.9809303, -16.713017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.903597, 2.1578922, -16.713017)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
 
 [node name="EnemySpawner2" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.640717, 1, 17.379189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.640717, 2.176962, 17.379189)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
 
 [node name="EnemySpawner3" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.39744, 1, 17.30206)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.39744, 2.176962, 17.30206)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")
 
 [node name="EnemySpawner4" parent="." node_paths=PackedStringArray("target", "sun") instance=ExtResource("6_twcpi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.576403, 0.9809303, -16.713017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.576403, 2.1578922, -16.713017)
 enemy1 = ExtResource("5_yasq4")
 target = NodePath("../Player2D3D")
 sun = NodePath("../Sun")

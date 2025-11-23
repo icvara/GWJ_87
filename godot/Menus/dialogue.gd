@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 		timer = 1
 		var nc = collect.instantiate()
 		nc.position = Vector3(randf_range(-5,5),0,randf_range(-5,5))
-		
 		%Sun.add_child(nc)
 
 func _on_button_pressed() -> void:
