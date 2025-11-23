@@ -9,6 +9,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player2D3D":
 		body.item += 1
 		body.HP = clamp(body.HP+15,0.,100.)
-		body.get_node("music").get_node("PlantGrow").play()
+		body.get_node("music").get_node("Collect_object").play()
 		queue_free()
 		
