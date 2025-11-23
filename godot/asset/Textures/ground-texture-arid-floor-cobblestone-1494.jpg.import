@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://fl7q2dul77qt"
 path.s3tc="res://.godot/imported/ground-texture-arid-floor-cobblestone-1494.jpg-5ea911a5b59bfc962262f20f2db0a25b.s3tc.ctex"
+path.etc2="res://.godot/imported/ground-texture-arid-floor-cobblestone-1494.jpg-5ea911a5b59bfc962262f20f2db0a25b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://asset/Textures/ground-texture-arid-floor-cobblestone-1494.jpg"
-dest_files=["res://.godot/imported/ground-texture-arid-floor-cobblestone-1494.jpg-5ea911a5b59bfc962262f20f2db0a25b.s3tc.ctex"]
+dest_files=["res://.godot/imported/ground-texture-arid-floor-cobblestone-1494.jpg-5ea911a5b59bfc962262f20f2db0a25b.s3tc.ctex", "res://.godot/imported/ground-texture-arid-floor-cobblestone-1494.jpg-5ea911a5b59bfc962262f20f2db0a25b.etc2.ctex"]
 
 [params]
 

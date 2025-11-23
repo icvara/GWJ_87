@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds3ptturh0s3s"
 path.s3tc="res://.godot/imported/berry_4.png-cf835f93dfa6a25d8a69c2b98fe3a964.s3tc.ctex"
+path.etc2="res://.godot/imported/berry_4.png-cf835f93dfa6a25d8a69c2b98fe3a964.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://plant/asset/berry_4.png"
-dest_files=["res://.godot/imported/berry_4.png-cf835f93dfa6a25d8a69c2b98fe3a964.s3tc.ctex"]
+dest_files=["res://.godot/imported/berry_4.png-cf835f93dfa6a25d8a69c2b98fe3a964.s3tc.ctex", "res://.godot/imported/berry_4.png-cf835f93dfa6a25d8a69c2b98fe3a964.etc2.ctex"]
 
 [params]
 

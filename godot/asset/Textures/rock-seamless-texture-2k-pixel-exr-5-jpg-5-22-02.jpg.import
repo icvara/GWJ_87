@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3duch17nxuqi"
 path.s3tc="res://.godot/imported/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg-8f2bfd955d5378a4cb6e9d9112e27248.s3tc.ctex"
+path.etc2="res://.godot/imported/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg-8f2bfd955d5378a4cb6e9d9112e27248.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://asset/Textures/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg"
-dest_files=["res://.godot/imported/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg-8f2bfd955d5378a4cb6e9d9112e27248.s3tc.ctex"]
+dest_files=["res://.godot/imported/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg-8f2bfd955d5378a4cb6e9d9112e27248.s3tc.ctex", "res://.godot/imported/rock-seamless-texture-2k-pixel-exr-5-jpg-5-22-02.jpg-8f2bfd955d5378a4cb6e9d9112e27248.etc2.ctex"]
 
 [params]
 

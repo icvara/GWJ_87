@@ -68,7 +68,10 @@ func _on_button_pressed() -> void:
 		await get_tree().create_timer(1.5).timeout
 		
 	if count == 4:
-
+		%voiceline.get_node("sun_dying").stop()
+		%voiceline.get_node("Beware").stop()
+		%voiceline.get_node("bring_me").stop()
+		%voiceline.get_node("Hello").stop()
 		hide()
 		%tuto.activate()
 

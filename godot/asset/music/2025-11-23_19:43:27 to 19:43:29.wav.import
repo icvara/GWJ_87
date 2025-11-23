@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3ahljmfp6pll"
+path="res://.godot/imported/2025-11-23_19:43:27 to 19:43:29.wav-dcfec18962b8b261e18b656cbb5001b8.sample"
+
+[deps]
+
+source_file="res://asset/music/2025-11-23_19:43:27 to 19:43:29.wav"
+dest_files=["res://.godot/imported/2025-11-23_19:43:27 to 19:43:29.wav-dcfec18962b8b261e18b656cbb5001b8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpn5t3dhe8o5t"
 path.s3tc="res://.godot/imported/texture herbe_sol.jpg-4b8c11a3469fb6bc9c51fa2c2d9cdbee.s3tc.ctex"
+path.etc2="res://.godot/imported/texture herbe_sol.jpg-4b8c11a3469fb6bc9c51fa2c2d9cdbee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://asset/Textures/texture herbe_sol.jpg"
-dest_files=["res://.godot/imported/texture herbe_sol.jpg-4b8c11a3469fb6bc9c51fa2c2d9cdbee.s3tc.ctex"]
+dest_files=["res://.godot/imported/texture herbe_sol.jpg-4b8c11a3469fb6bc9c51fa2c2d9cdbee.s3tc.ctex", "res://.godot/imported/texture herbe_sol.jpg-4b8c11a3469fb6bc9c51fa2c2d9cdbee.etc2.ctex"]
 
 [params]
 
