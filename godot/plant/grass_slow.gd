@@ -33,6 +33,7 @@ func _process(delta: float) -> void:
 	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
 	if $RayCast3D.is_colliding() == false:
 		if value < 5 and hasgrown== false:
+			$Label3D.show()
 			value += delta
 			loading_bar_update(int(value))
 		elif value >= 5 and hasgrown== false :
@@ -40,7 +41,8 @@ func _process(delta: float) -> void:
 			$grow.play()
 			hasgrown = true
 			$MultiMeshInstance3D.show()
-
+	else :
+		$Label3D.hide()
 func Die():
 	queue_free()
 	

@@ -124,7 +124,7 @@ stream = ExtResource("16_qr1c5")
 
 [node name="PlantGrow" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("17_qr1c5")
-volume_db = -6.0
+volume_db = -10.0
 
 [node name="Collect_object" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("19_bv2hu")

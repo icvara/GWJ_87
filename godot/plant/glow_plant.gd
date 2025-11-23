@@ -5,13 +5,15 @@ var sun= Node3D
 var value = 0.0
 var hasgrown = false
 var HP = 3
+@export var day_night : Node3D
 
 func _process(delta: float) -> void:
 
 	$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
+	
 	if $RayCast3D.is_colliding() == false:
 		if value < 10 and hasgrown== false:
-
+			$Label3D.show()
 			value += delta
 			#$Label3D.text = str(int(value)*10) 
 			loading_bar_update(int(value))
@@ -26,7 +28,8 @@ func _process(delta: float) -> void:
 			$s2.show()
 			$s3.show()
 			#$AnimatedSprite3D.play("default")
-
+	else :
+		$Label3D.hide()
 func Die():
 	queue_free()
 	

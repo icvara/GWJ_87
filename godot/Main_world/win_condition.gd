@@ -34,7 +34,7 @@ func grow_sprite():
 	#print(factor)
 	#factor = lerp(factor,1.1,1.2)
 	#factor = factor2_curve.get_point_position()
-	$SubViewport/Control/Label.text = str(count) + "/" + str(maxcount)
+	$Pivot/Label3D.text = str(count) + "/" + str(maxcount)
 	# Save previous height (assuming the pivot is at the center)
 	var old_height = $Sprite3D.scale.y
 
