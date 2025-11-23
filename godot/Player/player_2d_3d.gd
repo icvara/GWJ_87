@@ -53,10 +53,10 @@ func _physics_process(delta: float) -> void:
 				#print(velocity.y )
 		velocity = speedmodifier*velocity
 		move_and_slide()
-		if Input.is_action_just_pressed("space") and player:
+		'if Input.is_action_just_pressed("space") and player:
 			var campfire_instance = campfire.instantiate()
 			get_tree().current_scene.add_child(campfire_instance)
-			campfire_instance.position = self.position -Vector3(0,0.2,0)
+			campfire_instance.position = self.position -Vector3(0,0.2,0)'
 func _process(delta: float) -> void:
 	if sun:
 		$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
