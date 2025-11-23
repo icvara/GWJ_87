@@ -5,11 +5,12 @@ func _ready():
 	activate()
 
 func activate():
-	show()
+	pass
+	'show()
 	$Panel/Button.grab_focus()
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().paused = true
+	get_tree().paused = true'
 
 func _on_button_pressed() -> void:
 	hide()

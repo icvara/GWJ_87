@@ -1,9 +1,13 @@
 extends Control
 
 var count = 0
+var isGame = false
 
-func activate():
+func activate(bb = true):
+	isGame = bb
 	show()
+	$Label.show()
+
 	$Button.grab_focus()
 	$AnimationPlayer.play("new_animation")
 
@@ -15,5 +19,14 @@ func _on_button_pressed() -> void:
 	$AnimationPlayer.play("2")
 
 	if count == 2:
+		count = 0
 		hide()
-		get_tree().change_scene_to_file("res://Main_world/main_world.tscn")
+		if isGame:
+			#print("1")
+			get_tree().change_scene_to_file("res://Main_world/main_world.tscn")
+		else:
+			$L_grass.hide()
+
+			#print("1")
+			#get_parent().close_menu()
+			get_parent().open_menu()

@@ -113,6 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9641013, 1.6780354, -0.179
 initial_maxcount = 40.0
 
 [node name="Tuto_window" parent="." instance=ExtResource("19_atmmq")]
+visible = false
 
 [node name="Spawner_collectable" parent="." node_paths=PackedStringArray("nav_region3d") instance=ExtResource("20_d4t0v")]
 nav_region3d = NodePath("../NavigationRegion3D")

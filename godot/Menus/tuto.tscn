@@ -1,7 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://sv4f6ene52hg"]
+[gd_scene load_steps=65 format=3 uid="uid://sv4f6ene52hg"]
 
 [ext_resource type="Script" uid="uid://dsjyd0xdx8ame" path="res://Menus/tuto.gd" id="1_omw08"]
 [ext_resource type="Texture2D" uid="uid://dd570urc3ebdm" path="res://asset/tuto-Sheet.png" id="1_px3nt"]
+[ext_resource type="Texture2D" uid="uid://st2lmr24lopo" path="res://asset/keyboard/gdb-xbox-2.png" id="3_5dwu1"]
+[ext_resource type="Texture2D" uid="uid://bqxdun00bvy2b" path="res://asset/keyboard/gdb-keyboard-2.png" id="4_nxnmr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbbjr"]
 atlas = ExtResource("1_px3nt")
@@ -226,12 +228,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_omw08"]
-resource_name = "new_animation"
+[sub_resource type="Animation" id="Animation_5dwu1"]
+resource_name = "2"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/path = NodePath("L_grass:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -239,6 +242,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("L_grass/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.52, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_ghhuq"]
@@ -280,13 +295,12 @@ tracks/2/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_5dwu1"]
-resource_name = "2"
-length = 1.5
+[sub_resource type="Animation" id="Animation_omw08"]
+resource_name = "new_animation"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("L_grass:visible_ratio")
+tracks/0/path = NodePath("Label:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -295,18 +309,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("L_grass/Label:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.52, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nxnmr"]
 _data = {
@@ -314,6 +316,186 @@ _data = {
 &"RESET": SubResource("Animation_ghhuq"),
 &"new_animation": SubResource("Animation_omw08")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8lws"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avoiy"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(32, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ytgv"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(48, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02a3l"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(64, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1cv"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(80, 176, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ygfps"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8lws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avoiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ytgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02a3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp1cv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awdi5"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(112, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr544"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(112, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jtnm"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(112, 288, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v61hp"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(112, 400, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vt5jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awdi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr544")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jtnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v61hp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbihe"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(496, 0, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rabp7"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(496, 32, 31, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a3v2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbihe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rabp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2chri"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(16, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at7cb"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(32, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0q60"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(48, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71vfy"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(64, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah1ty"]
+atlas = ExtResource("3_5dwu1")
+region = Rect2(80, 208, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1l4ey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2chri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at7cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0q60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71vfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah1ty")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baoic"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(93, 96, 116, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r31n3"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(93, 208, 116, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qahwy"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(93, 320, 116, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ikf4"]
+atlas = ExtResource("4_nxnmr")
+region = Rect2(93, 432, 116, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsuya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baoic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r31n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qahwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ikf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="tuto" type="Control"]
 layout_mode = 3
@@ -349,10 +531,10 @@ anchor_left = 0.057000004
 anchor_top = 0.27400002
 anchor_right = 0.057000004
 anchor_bottom = 0.27400002
-offset_left = 84.0
-offset_top = 309.0
-offset_right = 506.0
-offset_bottom = 351.0
+offset_left = 12.0
+offset_top = 360.0
+offset_right = 434.0
+offset_bottom = 402.0
 theme_override_font_sizes/font_size = 30
 text = "Plants need Sun light to grow"
 visible_characters = 0
@@ -368,17 +550,16 @@ theme_override_font_sizes/font_size = 40
 text = "Okay"
 
 [node name="L_grass" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.057000004
 anchor_top = 0.27400002
 anchor_right = 0.057000004
 anchor_bottom = 0.27400002
-offset_left = 581.0
-offset_top = 91.0
-offset_right = 1003.0
-offset_bottom = 133.0
+offset_left = 600.0
+offset_top = 211.0
+offset_right = 1022.0
+offset_bottom = 253.0
 theme_override_font_sizes/font_size = 30
 text = "Grass slow down Shadows"
 visible_characters = 0
@@ -391,10 +572,10 @@ anchor_left = 0.057000004
 anchor_top = 0.27400002
 anchor_right = 0.057000004
 anchor_bottom = 0.27400002
-offset_left = -105.054
-offset_top = 437.492
-offset_right = 320.94598
-offset_bottom = 479.492
+offset_left = -26.054
+offset_top = 217.492
+offset_right = 399.94598
+offset_bottom = 259.492
 theme_override_font_sizes/font_size = 30
 text = "Glow berries attract Shadows"
 visible_characters = 0
@@ -404,5 +585,152 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_nxnmr")
 }
+
+[node name="X" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(407, 308.8)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ygfps")
+autoplay = "default"
+frame_progress = 0.12267215
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = 454.0
+offset_top = 512.0
+offset_right = 498.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 30
+text = "or"
+
+[node name="Label2" type="Label" parent="Label2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = -18.508
+offset_top = -236.70807
+offset_right = 25.492
+offset_bottom = -194.70807
+theme_override_font_sizes/font_size = 30
+text = "or"
+
+[node name="Label2" type="Label" parent="Label2/Label2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = 122.492
+offset_top = -10.507939
+offset_right = 166.492
+offset_bottom = 31.492062
+theme_override_font_sizes/font_size = 30
+text = "or"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = 562.0
+offset_top = 512.0
+offset_right = 606.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 30
+text = "or"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = 699.0
+offset_top = 23.0
+offset_right = 1089.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 30
+text = "Move: W,A,S,D or L-Joystick"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = 703.0
+offset_top = 66.0
+offset_right = 1126.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 30
+text = "Camera: Mouse or R-Joystick"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057000004
+anchor_top = 0.27400002
+anchor_right = 0.057000004
+anchor_bottom = 0.27400002
+offset_left = 710.0
+offset_top = 109.0
+offset_right = 1133.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 30
+text = "Zoom: Wheel or Pad-Arrows"
+
+[node name="F" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(527, 535)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_vt5jv")
+autoplay = "default"
+frame_progress = 0.06598322
+
+[node name="clickL" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(626, 310.8)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_1a3v2")
+autoplay = "default"
+frame_progress = 0.679849
+
+[node name="clickR" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(630.00006, 536)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_1a3v2")
+autoplay = "default"
+frame_progress = 0.7268495
+flip_h = true
+
+[node name="X2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(425, 535)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1l4ey")
+autoplay = "default"
+frame_progress = 0.5484337
+
+[node name="F3" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(517, 309.8)
+scale = Vector2(0.6, 1.5)
+sprite_frames = SubResource("SpriteFrames_tsuya")
+autoplay = "default"
+frame_progress = 0.4297589
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
