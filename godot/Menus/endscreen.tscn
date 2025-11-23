@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://liejom652r6s"]
+[gd_scene load_steps=19 format=3 uid="uid://liejom652r6s"]
 
 [ext_resource type="PackedScene" uid="uid://d3clc63v3sp0b" path="res://Player/player_2d_3d.tscn" id="1_qxgnv"]
 [ext_resource type="Script" uid="uid://coricuiu7kx1u" path="res://Menus/endscreen.gd" id="1_vljsk"]
 [ext_resource type="PackedScene" uid="uid://egmb5vyiv5x6" path="res://Main_world/spawner_collectable.tscn" id="2_vljsk"]
 [ext_resource type="Texture2D" uid="uid://fl7q2dul77qt" path="res://asset/Textures/ground-texture-arid-floor-cobblestone-1494.jpg" id="4_xvcet"]
+[ext_resource type="AudioStream" uid="uid://fnlvwvsconqp" path="res://asset/music/end.wav" id="5_bpsqv"]
 
 [sub_resource type="Animation" id="Animation_vljsk"]
 length = 0.001
@@ -5892,6 +5893,12 @@ navigation_mesh = SubResource("NavigationMesh_vljsk")
 
 [node name="Player2D3D" parent="." instance=ExtResource("1_qxgnv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49046612, 0)
+
+[node name="End" type="AudioStreamPlayer3D" parent="Player2D3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49046612, 0)
+stream = ExtResource("5_bpsqv")
+volume_db = 1.0
+autoplay = true
 
 [node name="Spawner_collectable" parent="." node_paths=PackedStringArray("nav_region3d") instance=ExtResource("2_vljsk")]
 nav_region3d = NodePath("../MeshInstance3D/NavigationRegion3D")
