@@ -33,11 +33,14 @@ func spawn_on_nav():
 
 
 func spawn_object(pos):
+	print("there is " + str(WorldData.currentfire))
 	if WorldData.currentfire < WorldData.maxfire :
 		var c = colectable.instantiate()
 		c.position = pos
 		c.position.y = 8
 		add_child(c)
+		WorldData.currentfire += 1
+		
 
 
 func sun_detect():		
