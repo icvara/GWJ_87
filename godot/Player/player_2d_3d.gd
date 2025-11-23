@@ -25,6 +25,9 @@ var HP = 100
 var sunrise_bool = false
 var value = 0
 var timer_night = 0
+var end = false
+var timer =0
+var timer_decay = 0.1
 
 func _enter_tree() -> void:
 	plant_list = [plant1,plant2,plant3]
@@ -40,6 +43,8 @@ func _ready():
 		#camera =%top_view_camera
 		%Camera3D.make_current()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if get_parent().name == "ENDSCREEN":
+			end = true
 		
 		#skin_ID = randi_range(0,2)
 		#%Sprites.get_node(str(skin_ID)).show()
@@ -59,6 +64,12 @@ func _physics_process(delta: float) -> void:
 			get_tree().current_scene.add_child(campfire_instance)
 			campfire_instance.position = self.position -Vector3(0,0.2,0)'
 func _process(delta: float) -> void:
+	if end == true:
+		timer += delta*timer_decay * WorldData.gamespeed
+		if timer >= 0.5 :
+			timer= 0
+			timer_decay+= 0.02
+			HP = clamp(HP - health_decay, 0 ,100)
 	if sun:
 		$RayCast3D.target_position = sun.global_position #* 350.0  # make ray long
 		if day_is_active.get_light_factor() >0:
@@ -79,8 +90,11 @@ func _process(delta: float) -> void:
 	var nscale =lerp(0.1, 1., health_ratio)
 	$Sprite3Ds.scale =   Vector3(nscale,nscale,nscale)
 
-	if HP <=0:
+	if HP <=0 and end == false:
 		$Death_interface.activate()
+	elif HP <=0 and end == true:
+		print ("you died during endscreen")
+	
 
 	if is_multiplayer_authority():
 		pass
