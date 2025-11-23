@@ -29,4 +29,5 @@ func _on_button_pressed() -> void:
 
 			#print("1")
 			#get_parent().close_menu()
+			get_parent().locked = false
 			get_parent().open_menu()

@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var quit_button = $Panel/VBoxContainer/QuitGame
 
 var isPaused = false
+var locked = false
 
 func _ready():
 	visible = false
@@ -13,10 +14,11 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("open_menu") and isPaused == true:
-		close_menu()
+		if locked == false:
+			close_menu()
 	elif Input.is_action_just_pressed("open_menu") and isPaused == false : 
-		print("ddd")
-		open_menu()
+		if locked == false:
+			open_menu()
 	
 func open_menu():
 	#visible = true
@@ -52,4 +54,5 @@ func _on_full_screen_pressed() -> void:
 
 
 func _on_tuto_pressed() -> void:
+	locked = true
 	$tuto.activate(false)

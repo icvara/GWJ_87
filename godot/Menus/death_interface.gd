@@ -9,6 +9,7 @@ func activate():
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Panel/Button.grab_focus()
+	get_parent().get_node("InGame_Menu").locked= true
 
 
 func _on_button_pressed() -> void:
@@ -18,6 +19,8 @@ func _on_button_pressed() -> void:
 		get_parent().HP = 100
 		death_number += 1
 		get_tree().paused = false
+		get_parent().get_node("InGame_Menu").locked= false
+
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	else:
 		$Panel/Button.hide()
@@ -28,4 +31,5 @@ func _on_button_pressed() -> void:
 func _on_button_2_pressed() -> void:
 	get_tree().paused = false
 	WorldData.reset()
+
 	get_tree().reload_current_scene()
