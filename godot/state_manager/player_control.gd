@@ -93,7 +93,7 @@ func Update_physique_process(delta):
 				if StateOwner.plant_amount[0] > 0 :
 					StateOwner.plant_amount[0] -= 1
 					print(StateOwner.plant_amount)
-					var np = StateOwner.plant_list[StateOwner.plant_selected].instantiate()
+					var np = StateOwner.plant_list[0].instantiate()
 					np.position = StateOwner.global_position
 					np.sun = StateOwner.sun
 					if StateOwner.get_parent().has_node("Plants"):
@@ -108,7 +108,7 @@ func Update_physique_process(delta):
 					if StateOwner.plant_amount[1] > 0 :
 						StateOwner.plant_amount[1] -= 1
 						print(StateOwner.plant_amount)
-						var np = StateOwner.plant_list[StateOwner.plant_selected].instantiate()
+						var np = StateOwner.plant_list[1].instantiate()
 						np.position = StateOwner.global_position
 						np.sun = StateOwner.sun
 						if StateOwner.get_parent().has_node("Plants"):
