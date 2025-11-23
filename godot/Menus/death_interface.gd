@@ -4,7 +4,7 @@ var death_number = 0
 
 
 func activate():
-	$Panel/Label2.text = "cost" + str(clamp(10.0 +death_number*5.0,10.0,20.0))
+	$Panel/Label2.text = "cost " + str(clamp(10.0 +death_number*5.0,10.0,20.0))
 	show()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -22,6 +22,8 @@ func _on_button_pressed() -> void:
 	else:
 		$Panel/Button.hide()
 		$Panel/Label2.text = str("not enough")
+		$Panel/Button2.grab_focus()
+
 
 func _on_button_2_pressed() -> void:
 	get_tree().paused = false

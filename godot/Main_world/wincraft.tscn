@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=23 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
