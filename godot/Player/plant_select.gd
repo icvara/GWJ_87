@@ -5,6 +5,8 @@ var player: Node3D
 func _ready() -> void:
 		player = get_parent().get_parent()
 		changeColor(player.plant_selected )
+		if get_parent().get_parent().get_parent().name == "ENDSCREEN":
+			hide()
 		#$Label.text = str(player.plant_amount[player.plant_selected ])
 
 func _process(delta: float) -> void:

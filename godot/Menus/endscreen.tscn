@@ -5,20 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://egmb5vyiv5x6" path="res://Main_world/spawner_collectable.tscn" id="2_vljsk"]
 [ext_resource type="Texture2D" uid="uid://fl7q2dul77qt" path="res://asset/Textures/ground-texture-arid-floor-cobblestone-1494.jpg" id="4_xvcet"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvcet"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_bpsqv"]
-material = SubResource("StandardMaterial3D_xvcet")
-size = Vector2(500, 500)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qxgnv"]
-data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_vljsk"]
-vertices = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, -250)
-polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
-
 [sub_resource type="Animation" id="Animation_vljsk"]
 length = 0.001
 tracks/0/type = "value"
@@ -68,6 +54,20 @@ size = Vector3(6, 1, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6h5y3"]
 data = PackedVector3Array(-3, 0.5, 0.5, 3, 0.5, 0.5, -3, -0.5, 0.5, 3, 0.5, 0.5, 3, -0.5, 0.5, -3, -0.5, 0.5, 3, 0.5, -0.5, -3, 0.5, -0.5, 3, -0.5, -0.5, -3, 0.5, -0.5, -3, -0.5, -0.5, 3, -0.5, -0.5, 3, 0.5, 0.5, 3, 0.5, -0.5, 3, -0.5, 0.5, 3, 0.5, -0.5, 3, -0.5, -0.5, 3, -0.5, 0.5, -3, 0.5, -0.5, -3, 0.5, 0.5, -3, -0.5, -0.5, -3, 0.5, 0.5, -3, -0.5, 0.5, -3, -0.5, -0.5, 3, 0.5, 0.5, -3, 0.5, 0.5, 3, 0.5, -0.5, -3, 0.5, 0.5, -3, 0.5, -0.5, 3, 0.5, -0.5, -3, -0.5, 0.5, 3, -0.5, 0.5, -3, -0.5, -0.5, 3, -0.5, 0.5, 3, -0.5, -0.5, -3, -0.5, -0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvcet"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bpsqv"]
+material = SubResource("StandardMaterial3D_xvcet")
+size = Vector2(500, 500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qxgnv"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vljsk"]
+vertices = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, -250)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vljsk"]
 
 [sub_resource type="Sky" id="Sky_oaurr"]
@@ -81,38 +81,6 @@ volumetric_fog_density = 0.1
 
 [node name="ENDSCREEN" type="Node3D"]
 script = ExtResource("1_vljsk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_bpsqv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_qxgnv")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="MeshInstance3D"]
-navigation_mesh = SubResource("NavigationMesh_vljsk")
-
-[node name="Player2D3D" parent="." instance=ExtResource("1_qxgnv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49046612, 0)
-
-[node name="Spawner_collectable" parent="." node_paths=PackedStringArray("nav_region3d") instance=ExtResource("2_vljsk")]
-nav_region3d = NodePath("../MeshInstance3D/NavigationRegion3D")
-timeforspawn = 0.05
-worldsize = 200
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0005236427, 0.9999999, 0, -0.9999999, 0.0005236427, 0, 0.091480255, -3.9310699)
-shaded = true
-text = "THE END"
-font_size = 150
-
-[node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0005236427, 0.9999999, 0, -0.9999999, 0.0005236427, 0, 0.091480255, 1.8360772)
-shaded = true
-text = "THANKS FOR PLAYING 
-<3"
-font_size = 150
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -5910,6 +5878,38 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CanvasLayer/walls/wall_6m413/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -3)
 shape = SubResource("ConcavePolygonShape3D_6h5y3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_bpsqv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qxgnv")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="MeshInstance3D"]
+navigation_mesh = SubResource("NavigationMesh_vljsk")
+
+[node name="Player2D3D" parent="." instance=ExtResource("1_qxgnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49046612, 0)
+
+[node name="Spawner_collectable" parent="." node_paths=PackedStringArray("nav_region3d") instance=ExtResource("2_vljsk")]
+nav_region3d = NodePath("../MeshInstance3D/NavigationRegion3D")
+timeforspawn = 0.05
+worldsize = 200
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0005236427, 0.9999999, 0, -0.9999999, 0.0005236427, 0, 0.091480255, -3.9310699)
+shaded = true
+text = "THE END"
+font_size = 150
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0005236427, 0.9999999, 0, -0.9999999, 0.0005236427, 0, 0.091480255, 1.8360772)
+shaded = true
+text = "THANKS FOR PLAYING 
+<3"
+font_size = 150
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xvcet")

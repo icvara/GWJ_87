@@ -20,11 +20,11 @@ func _process(delta: float) -> void:
 	
 func open_menu():
 	#visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 	isPaused = true
 	show()
 	$Panel/VBoxContainer/Resume.grab_focus()
-
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 
 func close_menu():

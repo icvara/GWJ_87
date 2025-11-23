@@ -5,6 +5,8 @@ var timer = 0
 @export var collect : PackedScene
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 	$Button.grab_focus()
 	$AnimationPlayer.play("cam0")
 	await get_tree().create_timer(1.1).timeout

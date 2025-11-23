@@ -79,6 +79,7 @@ metadata/_custom_type_script = "uid://bjb8hbwltft21"
 
 [node name="InGame_Menu" parent="." instance=ExtResource("7_00ovx")]
 process_mode = 3
+process_priority = 1
 visible = false
 
 [node name="Death_interface" parent="." instance=ExtResource("8_lwjg3")]

@@ -116,9 +116,9 @@ script = ExtResource("2_sndvk")
 [node name="Label2" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 74.0
-offset_top = 626.0
+offset_top = 601.0
 offset_right = 85.0
-offset_bottom = 649.0
+offset_bottom = 624.0
 text = "2"
 
 [node name="Label3" type="Label" parent="Control"]
@@ -133,9 +133,9 @@ text = "3"
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 25.0
-offset_top = 624.0
+offset_top = 599.0
 offset_right = 39.0
-offset_bottom = 647.0
+offset_bottom = 622.0
 text = "1"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
@@ -149,9 +149,9 @@ offset_bottom = 627.0
 [node name="Plant" type="Control" parent="Control"]
 anchors_preset = 0
 offset_left = 135.0
-offset_top = 602.0
+offset_top = 577.0
 offset_right = 349.99997
-offset_bottom = 642.0
+offset_bottom = 617.0
 scale = Vector2(0.4, 0.4)
 
 [node name="1" type="Sprite2D" parent="Control/Plant"]

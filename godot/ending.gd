@@ -3,6 +3,7 @@ extends Node3D
 var count = 0 
 
 func start() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	$AnimationPlayer.play("transition")
 	await get_tree().create_timer(1.0).timeout
