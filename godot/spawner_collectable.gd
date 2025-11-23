@@ -7,6 +7,7 @@ var nav_map
 @export var timeforspawn = 0.5
 @export var worldsize = 12
 
+
 var count = .5
 
 func _ready() -> void:
@@ -32,10 +33,11 @@ func spawn_on_nav():
 
 
 func spawn_object(pos):
-	var c = colectable.instantiate()
-	c.position = pos
-	c.position.y = 8
-	add_child(c)
+	if WorldData.currentfire < WorldData.maxfire :
+		var c = colectable.instantiate()
+		c.position = pos
+		c.position.y = 8
+		add_child(c)
 
 
 func sun_detect():		
