@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ungr6l1e5t7e"]
+[gd_scene load_steps=18 format=3 uid="uid://ungr6l1e5t7e"]
 
 [ext_resource type="Script" uid="uid://dv4wry11qk3ra" path="res://Main_world/win_condition.gd" id="1_mtrxf"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="2_1uepb"]
@@ -6,6 +6,8 @@
 [ext_resource type="Shader" uid="uid://d1as8kk4efk5w" path="res://plant/grass.gdshader" id="3_1ftnn"]
 [ext_resource type="Texture2D" uid="uid://swohfcssc2fc" path="res://asset/placeholder/Slime.png" id="3_pahml"]
 [ext_resource type="Script" uid="uid://b85jrudur62k6" path="res://Main_world/pivot.gd" id="4_2tc2x"]
+[ext_resource type="AudioStream" uid="uid://d26egn4sl1svq" path="res://asset/music/Ramene Objet.wav" id="5_fw4tx"]
+[ext_resource type="AudioStream" uid="uid://2yvgy8v10vkx" path="res://asset/music/Plant Grow.wav" id="6_mu8cl"]
 
 [sub_resource type="Curve" id="Curve_1ftnn"]
 _data = [Vector2(0.010869563, 1), 0.0, 0.0, 0, 0, Vector2(0.49456525, 0.55056185), -4.2564435, -4.2564435, 0, 0, Vector2(0.9891305, 0.022471905), 0.0, 0.0, 0, 0]
@@ -183,6 +185,14 @@ collision_layer = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.638852, 0)
 shape = SubResource("SphereShape3D_1uepb")
+
+[node name="Collected" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_fw4tx")
+max_db = 0.0
+
+[node name="Growing" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_mu8cl")
+pitch_scale = 0.2
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
