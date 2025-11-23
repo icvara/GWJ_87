@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd8dxq34goerd"]
+[gd_scene load_steps=8 format=3 uid="uid://bd8dxq34goerd"]
 
 [ext_resource type="Script" uid="uid://0wwddddokr7q" path="res://Player/progress_bar.gd" id="1_ns4kc"]
 [ext_resource type="Script" uid="uid://cken2qv0b72ks" path="res://Player/plant_select.gd" id="2_sndvk"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cjeescrpovisi" path="res://plant/asset/grass.png" id="4_72dvq"]
 [ext_resource type="Texture2D" uid="uid://c4vlucvsxd77r" path="res://plant/asset/berry_5.png" id="5_vqtvn"]
 [ext_resource type="Texture2D" uid="uid://bwfrdllwscdre" path="res://plant/asset/sunflower.png" id="6_ufq23"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_72dvq"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -25,6 +27,7 @@ script = ExtResource("1_ns4kc")
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_72dvq")
 script = ExtResource("3_m6twi")
 
 [node name="Control" type="Control" parent="."]

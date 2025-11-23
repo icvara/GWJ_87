@@ -6,7 +6,7 @@ var detection_distance = 500.
 var speed = 100
 var acceleration = 1  
 var target_position
-@export var speed_factor_per_wave = 40
+@export var speed_factor_per_wave = 50
 
 @export var new_state_A: State
 @export var new_state_B: State
