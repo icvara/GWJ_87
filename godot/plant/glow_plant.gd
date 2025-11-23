@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 		elif value >= 10 and hasgrown== false :
 			add_to_group("light")
 			hasgrown = true
+			$grow.play()
+
 			$Label3D.hide()
 			$s1.show()
 			$s2.show()

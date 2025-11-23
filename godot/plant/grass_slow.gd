@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 			loading_bar_update(int(value))
 		elif value >= 5 and hasgrown== false :
 			$Label3D.hide()
+			$grow.play()
 			hasgrown = true
 			$MultiMeshInstance3D.show()
 

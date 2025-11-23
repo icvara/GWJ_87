@@ -11,32 +11,34 @@ var detect_array = []
 
 func _ready() -> void:
 	$Sprite3D/AnimationPlayer.play("new_animation")
+	get_node("music").get_node("vanish").play()
+
 
 func _physics_process(delta: float) -> void:
 		#print(rotation)
-		
-		if sun:
-			ray.target_position = sun.global_position #* 350.0  # make ray long
-			if ray.is_colliding() == false:
-				condition_time += delta * WorldData.gamespeed  # Add time the condition has been true
-				$AnimatedSprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
+		if is_dead == false:
+			if sun:
+				ray.target_position = sun.global_position #* 350.0  # make ray long
+				if ray.is_colliding() == false:
+					condition_time += delta * WorldData.gamespeed  # Add time the condition has been true
+					$Sprite3D.modulate = Color(0.0, 0.741, 0.0, 1.0)
 
-				if condition_time >= 5:
-					die_from_sunlight()
-			
-			else:
-				$AnimatedSprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+					if condition_time >= 2:
+						die_from_sunlight()
 				
-		if not is_on_floor():
-			velocity.y -= WorldData.gravity * delta	 
-		velocity = velocity *speedmodifier
-		move_and_slide()
-		#print(velocity)
+				else:
+					$Sprite3D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+					
+			if not is_on_floor():
+				velocity.y -= WorldData.gravity * delta	 
+			velocity = velocity *speedmodifier
+			move_and_slide()
+			#print(velocity)
 
 func die_from_sunlight():
 	is_dead = true
+	get_node("music").get_node("die").play()
 	await get_tree().create_timer(.5).timeout
-	get_node("music").get_node("vanish").playing = true
 
 	queue_free()
 

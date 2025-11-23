@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://ygpo174a2ano"]
+[gd_scene load_steps=8 format=3 uid="uid://ygpo174a2ano"]
 
 [ext_resource type="Script" uid="uid://01bvm2k7uu1x" path="res://plant/grass_slow.gd" id="1_l6jri"]
 [ext_resource type="QuadMesh" uid="uid://csoss2krcxl0e" path="res://plant/grass_new.tres" id="2_l6jri"]
+[ext_resource type="AudioStream" uid="uid://2yvgy8v10vkx" path="res://asset/music/Plant Grow.wav" id="3_2ob3d"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6jri"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdr8g"]
 albedo_color = Color(0.21568628, 0.5019608, 0.1882353, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_l6jri"]
-material = SubResource("StandardMaterial3D_l6jri")
+material = SubResource("StandardMaterial3D_rdr8g")
 height = 0.001
 
 [sub_resource type="MultiMesh" id="MultiMesh_l6jri"]
@@ -47,6 +48,9 @@ billboard = 1
 text = "eeee"
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="grow" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_2ob3d")
 
 [connection signal="area_entered" from="MultiMeshInstance3D/Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="MultiMeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]

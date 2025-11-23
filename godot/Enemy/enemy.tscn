@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://dpmnch8k03lgg" path="res://state_manager/goingto.gd" id="5_ncf7h"]
 [ext_resource type="Texture2D" uid="uid://c15dr6367pupv" path="res://Enemy/Sprite-0004.png" id="6_m6jha"]
 [ext_resource type="AudioStream" uid="uid://bj3lsa2laq2e8" path="res://asset/music/Hurt.wav" id="7_0rspp"]
-[ext_resource type="AudioStream" uid="uid://yfexioru5ck5" path="res://asset/music/Unalived.wav" id="8_efk13"]
 [ext_resource type="Script" uid="uid://c2cnxipj2hura" path="res://Enemy/node_3d.gd" id="9_efk13"]
+[ext_resource type="AudioStream" uid="uid://bhpcuesguc1ox" path="res://asset/music/Plant Dead.wav" id="9_nmr1a"]
 [ext_resource type="AudioStream" uid="uid://dj2kbwoj0kjua" path="res://asset/music/Regen.wav" id="10_nmr1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gyqm"]
@@ -299,10 +299,13 @@ omni_range = 0.1
 stream = ExtResource("7_0rspp")
 
 [node name="die" type="AudioStreamPlayer3D" parent="music"]
-stream = ExtResource("8_efk13")
+stream = ExtResource("9_nmr1a")
 
 [node name="vanish" type="AudioStreamPlayer3D" parent="music"]
 stream = ExtResource("10_nmr1a")
+
+[node name="PlantDead" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("9_nmr1a")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
