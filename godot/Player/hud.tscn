@@ -60,6 +60,7 @@ offset_bottom = 647.0
 text = "1"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
 layout_mode = 0
 offset_left = 106.0
 offset_top = 579.0

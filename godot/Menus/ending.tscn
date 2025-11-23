@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpdj2qh1idt4j"]
+
+[ext_resource type="Script" uid="uid://da8imyacwxoqh" path="res://ending.gd" id="1_kvamt"]
+
+[node name="Ending" type="Node3D"]
+script = ExtResource("1_kvamt")
+
+[node name="Camera3D" type="Camera3D" parent="."]

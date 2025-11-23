@@ -1,11 +1,15 @@
 extends Node2D
 
 var isFocus = false
-
+var skipStory = false
 func _on_button_pressed() -> void:
 	$Menu.play()
+	if skipStory:
+			get_tree().change_scene_to_file("res://Main_world/main_world.tscn")
 
-	get_tree().change_scene_to_file("res://Menus/story.tscn")
+	else:
+		
+		get_tree().change_scene_to_file("res://Menus/story.tscn")
 
 
 func _process(delta: float) -> void:
@@ -46,3 +50,8 @@ func _on_button_2_pressed() -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	skipStory = toggled_on
