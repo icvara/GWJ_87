@@ -8,7 +8,7 @@ var factor
 
 func _ready():
 	maxcount = initial_maxcount
-	$CanvasLayer/Panel/Label.text = "Bring"+str(initial_maxcount) +"Object"
+	$SubViewport/Control/Label.text = "Bring"+str(initial_maxcount) +"Object"
 	$Label3D.text = "0/"+str(maxcount)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -34,7 +34,7 @@ func grow_sprite():
 	#print(factor)
 	#factor = lerp(factor,1.1,1.2)
 	#factor = factor2_curve.get_point_position()
-	$Label3D.text = str(count) + "/" + str(maxcount)
+	$SubViewport/Control/Label.text = str(count) + "/" + str(maxcount)
 	# Save previous height (assuming the pivot is at the center)
 	var old_height = $Sprite3D.scale.y
 
